@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Project metadata -->
+  <meta name="title" content="SceneIntBench: Benchmarking Interaction-Level Physical Plausibility in 3D Indoor Scene Generation">
+  <meta name="description" content="SceneIntBench evaluates text-conditioned 3D indoor scene generation through semantic quality, static physics, and simulation-based interaction metrics.">
+  <meta name="keywords" content="SceneIntBench, 3D indoor scene generation, scene evaluation, physical plausibility, interaction, simulation">
+  <meta name="author" content="Wendi Ying, Daochang Liu, Leonid Sigal, Ajmal Saeed Mian">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Social previews; add the site URL and preview image when the website is published. -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="SceneIntBench">
+  <meta property="og:title" content="SceneIntBench: Benchmarking Interaction-Level Physical Plausibility in 3D Indoor Scene Generation">
+  <meta property="og:description" content="SceneIntBench evaluates text-conditioned 3D indoor scene generation through semantic quality, static physics, and simulation-based interaction metrics.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SceneIntBench: Benchmarking Interaction-Level Physical Plausibility in 3D Indoor Scene Generation">
+  <meta name="twitter:description" content="SceneIntBench evaluates text-conditioned 3D indoor scene generation through semantic quality, static physics, and simulation-based interaction metrics.">
+
+  <!-- Citation metadata; publication details will be added when available. -->
+  <meta name="citation_title" content="SceneIntBench: Benchmarking Interaction-Level Physical Plausibility in 3D Indoor Scene Generation">
+  <meta name="citation_author" content="Ying, Wendi">
+  <meta name="citation_author" content="Liu, Daochang">
+  <meta name="citation_author" content="Sigal, Leonid">
+  <meta name="citation_author" content="Mian, Ajmal Saeed">
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <title>SceneIntBench | Interaction-Level Physical Plausibility</title>
+  
+  <!-- Add a project favicon when available. -->
+
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured data uses confirmed paper details only. -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "SceneIntBench: Benchmarking Interaction-Level Physical Plausibility in 3D Indoor Scene Generation",
+  "description": "SceneIntBench evaluates text-conditioned 3D indoor scene generation through semantic quality, static physics, and simulation-based interaction metrics.",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Wendi Ying",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "The University of Western Australia"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Daochang Liu",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "The University of Western Australia"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Leonid Sigal",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "University of British Columbia"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Ajmal Saeed Mian",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "The University of Western Australia"
+      }
+    }
+  ],
+  "abstract": "Existing evaluations of text-conditioned 3D indoor scene generation largely emphasize semantic fidelity and physical validity at rest, leaving interaction-time physical reliability insufficiently assessed. To address this gap, we introduce SceneIntBench, a unified benchmark centered on interaction readiness: it executes prescribed manipulation actions (e.g., pushing, opening, and surface probing) in physics simulation and measures task success, capability and progress, post-interaction integrity, and dynamic plausibility. Multi-view semantic and static physical evaluations complement these metrics and help explain interaction outcomes. We systematically evaluate 12 state-of-the-art scene generation systems across 10 room types. Our results reveal that strong semantic and static physical performance does not necessarily translate into interaction readiness: a system with near-perfect static plausibility completes only 11.54% of interactions, 7 of the 12 systems produce scenes that cannot support any interaction, and even the best system succeeds in only 36.92% of prescribed tasks. These findings highlight two fundamental challenges in generating interaction-ready scenes: providing the necessary physical interaction capabilities and ensuring reliable physical behavior under active manipulation.",
+  "keywords": [
+    "3D indoor scene generation",
+    "scene evaluation",
+    "physical plausibility",
+    "interaction",
+    "simulation"
+  ]
+}
+  </script>
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- More Works Dropdown -->
+  <!--
+  <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
+      <i class="fas fa-flask"></i>
+      More Works
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>More Works from Our Lab</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="works-list">
+        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Paper Title 1</h5>
+            <p>Brief description of the work and its main contribution.</p>
+            <span class="work-venue">Conference/Journal 2024</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Paper Title 2</h5>
+            <p>Brief description of the work and its main contribution.</p>
+            <span class="work-venue">Conference/Journal 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Paper Title 3</h5>
+            <p>Brief description of the work and its main contribution.</p>
+            <span class="work-venue">Conference/Journal 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  -->
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- TODO: Replace with your paper title -->
+            <h1 class="title is-3 publication-title">SceneIntBench: Benchmarking Interaction-Level Physical Plausibility in 3D Indoor Scene Generation</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Wendi Ying<sup>1</sup></span>
+              <span class="author-block">Daochang Liu<sup>1</sup></span>
+              <span class="author-block">Leonid Sigal<sup>2,3</sup></span>
+              <span class="author-block">Ajmal Saeed Mian<sup>1</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>The University of Western Australia</span>
+              <span class="author-block"><sup>2</sup>University of British Columbia</span>
+              <span class="author-block"><sup>3</sup>Canada CIFAR AI Chair</span>
+            </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- TODO: Update with your arXiv paper ID -->
+                      <span class="link-block">
+                        <button type="button" class="button is-normal is-rounded is-dark" disabled title="Paper coming soon">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper · Coming soon</span>
+                      </button>
+                    </span>
+
+                    <!-- TODO: Add your supplementary material PDF or remove this section -->
+                    <!--
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+                  -->
+
+                  <!-- TODO: Replace with your GitHub repository URL -->
+                  <!--
+                  <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                -->
+
+                <!-- TODO: Update with your arXiv paper ID -->
+                <span class="link-block">
+                  <button type="button" class="button is-normal is-rounded is-dark" disabled title="arXiv coming soon">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv · Coming soon</span>
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SceneIntBench overview -->
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container">
+      <figure class="benchmark-overview">
+        <a href="static/pdfs/web1.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the SceneIntBench overview PDF">
+          <img src="static/images/sceneintbench-overview.svg" width="3200" height="1855" alt="SceneIntBench overview: multi-view semantic assessment, static physical plausibility, active interaction evaluation, and examples of interaction failures." loading="lazy">
+        </a>
+        <figcaption>
+          <strong>Overview of SceneIntBench.</strong> A comprehensive benchmark for text-conditioned 3D indoor scene generation that extends conventional evaluation with simulation-based, interaction-level physical plausibility metrics.
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+<!-- End SceneIntBench overview -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Existing evaluations of text-conditioned 3D indoor scene generation largely emphasize semantic fidelity and physical validity at rest, leaving interaction-time physical reliability insufficiently assessed. To address this gap, we introduce SceneIntBench, a unified benchmark centered on interaction readiness: it executes prescribed manipulation actions (e.g., pushing, opening, and surface probing) in physics simulation and measures task success, capability and progress, post-interaction integrity, and dynamic plausibility. Multi-view semantic and static physical evaluations complement these metrics and help explain interaction outcomes. We systematically evaluate 12 state-of-the-art scene generation systems across 10 room types. Our results reveal that strong semantic and static physical performance does not necessarily translate into interaction readiness: a system with near-perfect static plausibility completes only 11.54% of interactions, 7 of the 12 systems produce scenes that cannot support any interaction, and even the best system succeeds in only 36.92% of prescribed tasks. These findings highlight two fundamental challenges in generating interaction-ready scenes: providing the necessary physical interaction capabilities and ensuring reliable physical behavior under active manipulation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- SceneIntBench benchmark overview -->
+<section id="sceneintbench" class="section sceneintbench-benchmark" aria-labelledby="sceneintbench-heading">
+  <div class="container">
+    <h2 id="sceneintbench-heading" class="title is-3 has-text-centered">SceneIntBench</h2>
+
+    <dl class="benchmark-stats" aria-label="Benchmark statistics">
+      <div class="benchmark-stat benchmark-stat-scenes">
+        <dt>Scenes</dt>
+        <dd>30</dd>
+      </div>
+      <div class="benchmark-stat benchmark-stat-tasks">
+        <dt>Interaction Tasks</dt>
+        <dd>203</dd>
+      </div>
+      <div class="benchmark-stat benchmark-stat-instances">
+        <dt>Scene-Interaction Instances</dt>
+        <dd>2,436</dd>
+      </div>
+      <div class="benchmark-stat benchmark-stat-methods">
+        <dt>Generation Methods</dt>
+        <dd>12</dd>
+      </div>
+    </dl>
+
+    <div class="benchmark-figures">
+      <figure class="benchmark-figure">
+        <a href="static/images/sceneintbench-room-types.svg" target="_blank" rel="noopener noreferrer" aria-label="View the room types figure at full size (opens in a new tab)">
+          <img src="static/images/sceneintbench-room-types.svg" width="1200" height="1200" alt="Ten room types: bedroom, living room, dining room, playroom, gaming room, kitchen, bathroom, basement, den, and office." loading="lazy" decoding="async">
+        </a>
+        <figcaption>Room-type coverage</figcaption>
+      </figure>
+      <figure class="benchmark-figure">
+        <a href="static/images/sceneintbench-interaction-outcomes.svg" target="_blank" rel="noopener noreferrer" aria-label="View the interaction outcomes chart at full size (opens in a new tab)">
+          <img src="static/images/sceneintbench-interaction-outcomes.svg" width="1323" height="1299" alt="Interaction task outcomes for seven systems, showing successful, executed but unsuccessful, and unsupported tasks." loading="lazy" decoding="async">
+        </a>
+        <figcaption>Interaction outcomes</figcaption>
+      </figure>
+      <figure class="benchmark-figure">
+        <a href="static/images/sceneintbench-radar.svg" target="_blank" rel="noopener noreferrer" aria-label="View the performance radar chart at full size (opens in a new tab)">
+          <img src="static/images/sceneintbench-radar.svg" width="1323" height="1299" alt="Radar chart comparing five systems across semantic, static physical, and interactive evaluation dimensions." loading="lazy" decoding="async">
+        </a>
+        <figcaption>Performance across dimensions</figcaption>
+      </figure>
+    </div>
+    <p class="benchmark-figure-hint">Click any figure to view it at full size.</p>
+  </div>
+</section>
+<!-- End SceneIntBench benchmark overview -->
+
+<!-- Benchmark results -->
+<section id="benchmark-results" class="section benchmark-results" aria-labelledby="benchmark-results-heading">
+  <div class="container results-container">
+    <h2 id="benchmark-results-heading" class="title is-3 has-text-centered">Benchmark Results</h2>
+    <p class="results-intro">Performance comparison of 12 scene generation methods on SceneIntBench.</p>
+    <div class="results-reading-guide" id="results-reading-guide">
+      <p>Mean ± 95% t-distribution confidence interval. <strong>Bold</strong> = best; <span class="result-second">underline</span> = second best.</p>
+    </div>
+    <div class="results-table-wrap" role="region" aria-label="SceneIntBench results table" aria-describedby="results-reading-guide results-table-notes">
+      <table class="results-table">
+        <caption>SceneIntBench evaluation results by method and metric</caption>
+        <colgroup><col class="results-method-column"></colgroup>
+        <colgroup span="4"></colgroup>
+        <colgroup span="4"></colgroup>
+        <colgroup span="4"></colgroup>
+        <thead>
+          <tr class="results-group-headings">
+            <th class="results-method-heading" scope="col" rowspan="2">Method</th>
+            <th id="results-group-semantic" class="results-semantic results-group-start" scope="colgroup" colspan="4">Semantic Quality</th>
+            <th id="results-group-static" class="results-static results-group-start" scope="colgroup" colspan="4">Static Physical Plausibility</th>
+            <th id="results-group-interactive" class="results-interactive results-group-start" scope="colgroup" colspan="4">Interactive Physical Plausibility</th>
+          </tr>
+          <tr class="results-metric-headings">
+            <th id="metric-real" class="results-semantic results-group-start" headers="results-group-semantic" scope="col"><abbr title="Realism; higher is better">Real</abbr> ↑<span class="results-unit">0–10</span></th>
+            <th id="metric-func" class="results-semantic" headers="results-group-semantic" scope="col"><abbr title="Functionality; higher is better">Func</abbr> ↑<span class="results-unit">0–10</span></th>
+            <th id="metric-lay" class="results-semantic" headers="results-group-semantic" scope="col"><abbr title="Layout; higher is better">Lay</abbr> ↑<span class="results-unit">0–10</span></th>
+            <th id="metric-comp" class="results-semantic" headers="results-group-semantic" scope="col"><abbr title="Completeness; higher is better">Comp</abbr> ↑<span class="results-unit">0–10</span></th>
+            <th id="metric-col" class="results-static results-group-start" headers="results-group-static" scope="col"><abbr title="Collision rate; lower is better">COL</abbr> ↓<span class="results-unit">%</span></th>
+            <th id="metric-ob" class="results-static" headers="results-group-static" scope="col"><abbr title="Out-of-bounds; lower is better">OB</abbr> ↓<span class="results-unit">%</span></th>
+            <th id="metric-sup" class="results-static" headers="results-group-static" scope="col"><abbr title="Support; higher is better">SUP</abbr> ↑<span class="results-unit">%</span></th>
+            <th id="metric-stab" class="results-static" headers="results-group-static" scope="col"><abbr title="Stability; higher is better">STAB</abbr> ↑<span class="results-unit">%</span></th>
+            <th id="metric-isr" class="results-interactive results-group-start" headers="results-group-interactive" scope="col"><abbr title="Interaction success rate; higher is better">ISR</abbr> ↑<span class="results-unit">%</span></th>
+            <th id="metric-icp" class="results-interactive" headers="results-group-interactive" scope="col"><abbr title="Interaction capability progress; higher is better">ICP</abbr> ↑<span class="results-unit">0–10</span></th>
+            <th id="metric-piv" class="results-interactive" headers="results-group-interactive" scope="col"><abbr title="Post-interaction violation rate; lower is better">PIV</abbr> ↓<span class="results-unit">%</span></th>
+            <th id="metric-dp" class="results-interactive" headers="results-group-interactive" scope="col"><abbr title="Dynamic plausibility; higher is better">DP</abbr> ↑<span class="results-unit">0–10</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="results-category"><th id="method-category-0" scope="rowgroup" colspan="13"><span>Task-specific trained scene generators</span></th></tr>
+          <tr class="results-method-row">
+            <th id="method-atiss" class="results-method-name" scope="row" headers="method-category-0">ATISS</th>
+            <td headers="method-atiss metric-real" class="results-group-start"><span class="result-value">3.00</span><span class="result-ci">± 0.35</span></td>
+            <td headers="method-atiss metric-func"><span class="result-value">1.13</span><span class="result-ci">± 0.50</span></td>
+            <td headers="method-atiss metric-lay"><span class="result-value">1.93</span><span class="result-ci">± 0.39</span></td>
+            <td headers="method-atiss metric-comp"><span class="result-value">1.80</span><span class="result-ci">± 0.32</span></td>
+            <td headers="method-atiss metric-col" class="results-group-start"><span class="result-value">59.20</span><span class="result-ci">± 9.43</span></td>
+            <td headers="method-atiss metric-ob"><span class="result-value">27.04</span><span class="result-ci">± 5.65</span></td>
+            <td headers="method-atiss metric-sup"><span class="result-value">27.52</span><span class="result-ci">± 6.17</span></td>
+            <td headers="method-atiss metric-stab"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+            <td headers="method-atiss metric-isr" class="results-group-start"><span class="result-value">0.00</span><span class="result-ci">± 0.00</span></td>
+            <td headers="method-atiss metric-icp"><span class="result-value">0.72</span><span class="result-ci">± 0.44</span></td>
+            <td headers="method-atiss metric-piv"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+            <td headers="method-atiss metric-dp"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+          </tr>
+          <tr class="results-method-row">
+            <th id="method-diffuscene" class="results-method-name" scope="row" headers="method-category-0">DiffuScene</th>
+            <td headers="method-diffuscene metric-real" class="results-group-start"><span class="result-value">3.87</span><span class="result-ci">± 0.48</span></td>
+            <td headers="method-diffuscene metric-func"><span class="result-value">1.30</span><span class="result-ci">± 0.49</span></td>
+            <td headers="method-diffuscene metric-lay"><span class="result-value">2.53</span><span class="result-ci">± 0.39</span></td>
+            <td headers="method-diffuscene metric-comp"><span class="result-value">2.13</span><span class="result-ci">± 0.32</span></td>
+            <td headers="method-diffuscene metric-col" class="results-group-start"><span class="result-value">41.58</span><span class="result-ci">± 7.70</span></td>
+            <td headers="method-diffuscene metric-ob"><span class="result-value">14.69</span><span class="result-ci">± 4.87</span></td>
+            <td headers="method-diffuscene metric-sup"><span class="result-value">65.14</span><span class="result-ci">± 6.15</span></td>
+            <td headers="method-diffuscene metric-stab"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+            <td headers="method-diffuscene metric-isr" class="results-group-start"><span class="result-value">0.00</span><span class="result-ci">± 0.00</span></td>
+            <td headers="method-diffuscene metric-icp"><span class="result-value">0.84</span><span class="result-ci">± 0.44</span></td>
+            <td headers="method-diffuscene metric-piv"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+            <td headers="method-diffuscene metric-dp"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+          </tr>
+          <tr class="results-method-row">
+            <th id="method-instructscene" class="results-method-name" scope="row" headers="method-category-0">InstructScene</th>
+            <td headers="method-instructscene metric-real" class="results-group-start"><span class="result-value">3.33</span><span class="result-ci">± 0.32</span></td>
+            <td headers="method-instructscene metric-func"><span class="result-value">1.40</span><span class="result-ci">± 0.57</span></td>
+            <td headers="method-instructscene metric-lay"><span class="result-value">2.20</span><span class="result-ci">± 0.37</span></td>
+            <td headers="method-instructscene metric-comp"><span class="result-value">2.00</span><span class="result-ci">± 0.33</span></td>
+            <td headers="method-instructscene metric-col" class="results-group-start"><span class="result-value">35.14</span><span class="result-ci">± 7.58</span></td>
+            <td headers="method-instructscene metric-ob"><span class="result-value">23.22</span><span class="result-ci">± 7.55</span></td>
+            <td headers="method-instructscene metric-sup"><span class="result-value">62.30</span><span class="result-ci">± 7.63</span></td>
+            <td headers="method-instructscene metric-stab"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+            <td headers="method-instructscene metric-isr" class="results-group-start"><span class="result-value">0.00</span><span class="result-ci">± 0.00</span></td>
+            <td headers="method-instructscene metric-icp"><span class="result-value">0.77</span><span class="result-ci">± 0.49</span></td>
+            <td headers="method-instructscene metric-piv"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+            <td headers="method-instructscene metric-dp"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="results-category"><th id="method-category-1" scope="rowgroup" colspan="13"><span>LLM/VLM scene workflows</span></th></tr>
+          <tr class="results-method-row">
+            <th id="method-layoutgpt" class="results-method-name" scope="row" headers="method-category-1">LayoutGPT</th>
+            <td headers="method-layoutgpt metric-real" class="results-group-start"><span class="result-value">2.90</span><span class="result-ci">± 0.38</span></td>
+            <td headers="method-layoutgpt metric-func"><span class="result-value">3.60</span><span class="result-ci">± 0.48</span></td>
+            <td headers="method-layoutgpt metric-lay"><span class="result-value">2.40</span><span class="result-ci">± 0.42</span></td>
+            <td headers="method-layoutgpt metric-comp"><span class="result-value">1.90</span><span class="result-ci">± 0.27</span></td>
+            <td headers="method-layoutgpt metric-col" class="results-group-start"><span class="result-value">23.83</span><span class="result-ci">± 11.67</span></td>
+            <td headers="method-layoutgpt metric-ob"><span class="result-value">37.80</span><span class="result-ci">± 10.85</span></td>
+            <td headers="method-layoutgpt metric-sup"><span class="result-value">14.13</span><span class="result-ci">± 6.90</span></td>
+            <td headers="method-layoutgpt metric-stab"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+            <td headers="method-layoutgpt metric-isr" class="results-group-start"><span class="result-value">0.00</span><span class="result-ci">± 0.00</span></td>
+            <td headers="method-layoutgpt metric-icp"><span class="result-value">2.00</span><span class="result-ci">± 0.00</span></td>
+            <td headers="method-layoutgpt metric-piv"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+            <td headers="method-layoutgpt metric-dp"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+          </tr>
+          <tr class="results-method-row">
+            <th id="method-layoutvlm" class="results-method-name" scope="row" headers="method-category-1">LayoutVLM</th>
+            <td headers="method-layoutvlm metric-real" class="results-group-start"><span class="result-value">3.07</span><span class="result-ci">± 0.34</span></td>
+            <td headers="method-layoutvlm metric-func"><span class="result-value">4.03</span><span class="result-ci">± 0.45</span></td>
+            <td headers="method-layoutvlm metric-lay"><span class="result-value">3.00</span><span class="result-ci">± 0.43</span></td>
+            <td headers="method-layoutvlm metric-comp"><span class="result-value">2.10</span><span class="result-ci">± 0.27</span></td>
+            <td headers="method-layoutvlm metric-col" class="results-group-start"><span class="result-value">33.89</span><span class="result-ci">± 10.27</span></td>
+            <td headers="method-layoutvlm metric-ob"><span class="result-value">18.70</span><span class="result-ci">± 6.58</span></td>
+            <td headers="method-layoutvlm metric-sup"><span class="result-value">74.66</span><span class="result-ci">± 8.75</span></td>
+            <td headers="method-layoutvlm metric-stab"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+            <td headers="method-layoutvlm metric-isr" class="results-group-start"><span class="result-value">0.00</span><span class="result-ci">± 0.00</span></td>
+            <td headers="method-layoutvlm metric-icp"><span class="result-value">2.00</span><span class="result-ci">± 0.00</span></td>
+            <td headers="method-layoutvlm metric-piv"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+            <td headers="method-layoutvlm metric-dp"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+          </tr>
+          <tr class="results-method-row">
+            <th id="method-holodeck" class="results-method-name" scope="row" headers="method-category-1">Holodeck</th>
+            <td headers="method-holodeck metric-real" class="results-group-start"><span class="result-value">4.07</span><span class="result-ci">± 0.42</span></td>
+            <td headers="method-holodeck metric-func"><span class="result-value">3.80</span><span class="result-ci">± 0.53</span></td>
+            <td headers="method-holodeck metric-lay"><span class="result-value">2.97</span><span class="result-ci">± 0.30</span></td>
+            <td headers="method-holodeck metric-comp"><span class="result-value">3.13</span><span class="result-ci">± 0.47</span></td>
+            <td headers="method-holodeck metric-col" class="results-group-start"><span class="result-value">14.86</span><span class="result-ci">± 4.98</span></td>
+            <td headers="method-holodeck metric-ob"><span class="result-value">4.76</span><span class="result-ci">± 2.15</span></td>
+            <td headers="method-holodeck metric-sup"><span class="result-value">37.41</span><span class="result-ci">± 5.30</span></td>
+            <td headers="method-holodeck metric-stab"><span class="result-value">51.43</span><span class="result-ci">± 16.99</span></td>
+            <td headers="method-holodeck metric-isr" class="results-group-start"><span class="result-value">17.39</span><span class="result-ci">± 7.98</span></td>
+            <td headers="method-holodeck metric-icp"><span class="result-value">4.28</span><span class="result-ci">± 0.69</span></td>
+            <td headers="method-holodeck metric-piv"><span class="result-value">7.33</span><span class="result-ci">± 3.46</span></td>
+            <td headers="method-holodeck metric-dp"><span class="result-value">5.88</span><span class="result-ci">± 0.36</span></td>
+          </tr>
+          <tr class="results-method-row">
+            <th id="method-hsm" class="results-method-name" scope="row" headers="method-category-1">HSM</th>
+            <td headers="method-hsm metric-real" class="results-group-start"><span class="result-value">4.13</span><span class="result-ci">± 0.36</span></td>
+            <td headers="method-hsm metric-func"><span class="result-value">4.30</span><span class="result-ci">± 0.53</span></td>
+            <td headers="method-hsm metric-lay"><span class="result-value">3.50</span><span class="result-ci">± 0.38</span></td>
+            <td headers="method-hsm metric-comp"><span class="result-value">3.57</span><span class="result-ci">± 0.39</span></td>
+            <td headers="method-hsm metric-col" class="results-group-start"><span class="result-value">14.08</span><span class="result-ci">± 5.45</span></td>
+            <td headers="method-hsm metric-ob"><span class="result-value">10.36</span><span class="result-ci">± 3.55</span></td>
+            <td headers="method-hsm metric-sup"><span class="result-value">74.24</span><span class="result-ci">± 5.80</span></td>
+            <td headers="method-hsm metric-stab"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+            <td headers="method-hsm metric-isr" class="results-group-start"><span class="result-value">0.00</span><span class="result-ci">± 0.00</span></td>
+            <td headers="method-hsm metric-icp"><span class="result-value">1.50</span><span class="result-ci">± 0.48</span></td>
+            <td headers="method-hsm metric-piv"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+            <td headers="method-hsm metric-dp"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="results-category"><th id="method-category-2" scope="rowgroup" colspan="13"><span>Specialized agentic pipelines</span></th></tr>
+          <tr class="results-method-row">
+            <th id="method-sceneweaver" class="results-method-name" scope="row" headers="method-category-2">SceneWeaver</th>
+            <td headers="method-sceneweaver metric-real" class="results-group-start"><span class="result-value">4.40</span><span class="result-ci">± 0.84</span></td>
+            <td headers="method-sceneweaver metric-func"><span class="result-value">5.10</span><span class="result-ci">± 0.86</span></td>
+            <td headers="method-sceneweaver metric-lay"><span class="result-value">4.90</span><span class="result-ci">± 1.04</span></td>
+            <td headers="method-sceneweaver metric-comp"><span class="result-value">3.30</span><span class="result-ci">± 0.68</span></td>
+            <td headers="method-sceneweaver metric-col" class="results-group-start"><span class="result-value">6.94</span><span class="result-ci">± 10.97</span></td>
+            <td headers="method-sceneweaver metric-ob"><span class="result-value">2.68</span><span class="result-ci">± 4.05</span></td>
+            <td headers="method-sceneweaver metric-sup"><span class="result-value">4.38</span><span class="result-ci">± 5.92</span></td>
+            <td headers="method-sceneweaver metric-stab"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+            <td headers="method-sceneweaver metric-isr" class="results-group-start"><span class="result-value">0.00</span><span class="result-ci">± 0.00</span></td>
+            <td headers="method-sceneweaver metric-icp"><span class="result-value">1.80</span><span class="result-ci">± 0.24</span></td>
+            <td headers="method-sceneweaver metric-piv"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+            <td headers="method-sceneweaver metric-dp"><abbr class="result-unsupported" title="Interaction not supported due to missing targets or native physical prerequisites">N.S.A.</abbr></td>
+          </tr>
+          <tr class="results-method-row">
+            <th id="method-sage" class="results-method-name" scope="row" headers="method-category-2">SAGE</th>
+            <td headers="method-sage metric-real" class="results-group-start"><span class="result-value">4.83</span><span class="result-ci">± 0.45</span></td>
+            <td headers="method-sage metric-func"><span class="result-value">4.37</span><span class="result-ci">± 0.56</span></td>
+            <td headers="method-sage metric-lay"><span class="result-value">2.90</span><span class="result-ci">± 0.43</span></td>
+            <td headers="method-sage metric-comp" class="result-second"><span class="result-value">4.83</span><span class="result-ci">± 0.67</span></td>
+            <td headers="method-sage metric-col" class="results-group-start result-best"><span class="result-value"><strong>0.41</strong></span><span class="result-ci"><strong>± 0.41</strong></span></td>
+            <td headers="method-sage metric-ob" class="result-best"><span class="result-value"><strong>0.00</strong></span><span class="result-ci"><strong>± 0.00</strong></span></td>
+            <td headers="method-sage metric-sup"><span class="result-value">77.42</span><span class="result-ci">± 4.84</span></td>
+            <td headers="method-sage metric-stab" class="result-best"><span class="result-value"><strong>98.33</strong></span><span class="result-ci"><strong>± 1.46</strong></span></td>
+            <td headers="method-sage metric-isr" class="results-group-start"><span class="result-value">11.54</span><span class="result-ci">± 7.54</span></td>
+            <td headers="method-sage metric-icp"><span class="result-value">5.50</span><span class="result-ci">± 0.56</span></td>
+            <td headers="method-sage metric-piv" class="result-best"><span class="result-value"><strong>1.10</strong></span><span class="result-ci"><strong>± 0.56</strong></span></td>
+            <td headers="method-sage metric-dp"><span class="result-value">6.21</span><span class="result-ci">± 0.32</span></td>
+          </tr>
+          <tr class="results-method-row">
+            <th id="method-scenesmith" class="results-method-name" scope="row" headers="method-category-2">SceneSmith</th>
+            <td headers="method-scenesmith metric-real" class="results-group-start result-second"><span class="result-value">6.78</span><span class="result-ci">± 0.43</span></td>
+            <td headers="method-scenesmith metric-func"><span class="result-value">6.93</span><span class="result-ci">± 0.71</span></td>
+            <td headers="method-scenesmith metric-lay"><span class="result-value">6.00</span><span class="result-ci">± 0.53</span></td>
+            <td headers="method-scenesmith metric-comp" class="result-best"><span class="result-value"><strong>5.17</strong></span><span class="result-ci"><strong>± 0.56</strong></span></td>
+            <td headers="method-scenesmith metric-col" class="results-group-start"><span class="result-value">9.33</span><span class="result-ci">± 3.35</span></td>
+            <td headers="method-scenesmith metric-ob"><span class="result-value">5.03</span><span class="result-ci">± 1.86</span></td>
+            <td headers="method-scenesmith metric-sup" class="result-best"><span class="result-value"><strong>96.03</strong></span><span class="result-ci"><strong>± 2.02</strong></span></td>
+            <td headers="method-scenesmith metric-stab"><span class="result-value">76.98</span><span class="result-ci">± 9.83</span></td>
+            <td headers="method-scenesmith metric-isr" class="results-group-start"><span class="result-value">27.40</span><span class="result-ci">± 9.98</span></td>
+            <td headers="method-scenesmith metric-icp"><span class="result-value">6.43</span><span class="result-ci">± 0.55</span></td>
+            <td headers="method-scenesmith metric-piv" class="result-second"><span class="result-value">4.35</span><span class="result-ci">± 1.87</span></td>
+            <td headers="method-scenesmith metric-dp" class="result-best"><span class="result-value"><strong>6.57</strong></span><span class="result-ci"><strong>± 0.31</strong></span></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="results-category"><th id="method-category-3" scope="rowgroup" colspan="13"><span>General-purpose coding agents</span></th></tr>
+          <tr class="results-method-row">
+            <th id="method-codex" class="results-method-name" scope="row" headers="method-category-3">Codex</th>
+            <td headers="method-codex metric-real" class="results-group-start"><span class="result-value">6.73</span><span class="result-ci">± 0.29</span></td>
+            <td headers="method-codex metric-func" class="result-second"><span class="result-value">8.57</span><span class="result-ci">± 0.34</span></td>
+            <td headers="method-codex metric-lay" class="result-second"><span class="result-value">7.50</span><span class="result-ci">± 0.44</span></td>
+            <td headers="method-codex metric-comp"><span class="result-value">4.43</span><span class="result-ci">± 0.50</span></td>
+            <td headers="method-codex metric-col" class="results-group-start"><span class="result-value">3.04</span><span class="result-ci">± 3.14</span></td>
+            <td headers="method-codex metric-ob"><span class="result-value">2.19</span><span class="result-ci">± 1.91</span></td>
+            <td headers="method-codex metric-sup"><span class="result-value">83.66</span><span class="result-ci">± 7.82</span></td>
+            <td headers="method-codex metric-stab" class="result-second"><span class="result-value">97.46</span><span class="result-ci">± 2.89</span></td>
+            <td headers="method-codex metric-isr" class="results-group-start result-second"><span class="result-value">27.75</span><span class="result-ci">± 7.75</span></td>
+            <td headers="method-codex metric-icp" class="result-second"><span class="result-value">6.56</span><span class="result-ci">± 0.48</span></td>
+            <td headers="method-codex metric-piv"><span class="result-value">6.89</span><span class="result-ci">± 3.19</span></td>
+            <td headers="method-codex metric-dp" class="result-second"><span class="result-value">6.53</span><span class="result-ci">± 0.27</span></td>
+          </tr>
+          <tr class="results-method-row">
+            <th id="method-claude-code" class="results-method-name" scope="row" headers="method-category-3">Claude Code</th>
+            <td headers="method-claude-code metric-real" class="results-group-start result-best"><span class="result-value"><strong>7.33</strong></span><span class="result-ci"><strong>± 0.27</strong></span></td>
+            <td headers="method-claude-code metric-func" class="result-best"><span class="result-value"><strong>8.87</strong></span><span class="result-ci"><strong>± 0.32</strong></span></td>
+            <td headers="method-claude-code metric-lay" class="result-best"><span class="result-value"><strong>7.77</strong></span><span class="result-ci"><strong>± 0.29</strong></span></td>
+            <td headers="method-claude-code metric-comp"><span class="result-value">4.60</span><span class="result-ci">± 0.40</span></td>
+            <td headers="method-claude-code metric-col" class="results-group-start result-second"><span class="result-value">0.81</span><span class="result-ci">± 1.16</span></td>
+            <td headers="method-claude-code metric-ob" class="result-second"><span class="result-value">0.67</span><span class="result-ci">± 1.36</span></td>
+            <td headers="method-claude-code metric-sup" class="result-second"><span class="result-value">92.83</span><span class="result-ci">± 3.96</span></td>
+            <td headers="method-claude-code metric-stab"><span class="result-value">94.75</span><span class="result-ci">± 6.80</span></td>
+            <td headers="method-claude-code metric-isr" class="results-group-start result-best"><span class="result-value"><strong>36.92</strong></span><span class="result-ci"><strong>± 10.63</strong></span></td>
+            <td headers="method-claude-code metric-icp" class="result-best"><span class="result-value"><strong>7.35</strong></span><span class="result-ci"><strong>± 0.47</strong></span></td>
+            <td headers="method-claude-code metric-piv"><span class="result-value">12.52</span><span class="result-ci">± 5.16</span></td>
+            <td headers="method-claude-code metric-dp"><span class="result-value">6.43</span><span class="result-ci">± 0.39</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="results-table-notes" id="results-table-notes">
+      <p><strong>How to read the table.</strong> Values are reported as mean ± 95% t-distribution confidence interval. ↑ indicates higher is better; ↓ indicates lower is better. COL, OB, SUP, STAB, ISR, and PIV are percentages; the other metrics use a 0–10 scale.</p>
+      <p><strong>N.S.A.</strong> indicates that interaction is not supported due to missing targets or native physical prerequisites.</p>
+      <div class="results-metric-definitions">
+        <p class="results-definition-semantic"><strong class="results-definition-title">Semantic Quality</strong><strong>Real</strong>: realism; <strong>Func</strong>: functionality; <strong>Lay</strong>: layout; <strong>Comp</strong>: completeness.</p>
+        <p class="results-definition-static"><strong class="results-definition-title">Static Physical Plausibility</strong><strong>COL</strong>: collision rate; <strong>OB</strong>: out-of-bounds; <strong>SUP</strong>: support; <strong>STAB</strong>: stability.</p>
+        <p class="results-definition-interactive"><strong class="results-definition-title">Interactive Physical Plausibility</strong><strong>ISR</strong>: interaction success rate; <strong>ICP</strong>: interaction capability progress; <strong>PIV</strong>: post-interaction violation rate; <strong>DP</strong>: dynamic plausibility.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End benchmark results -->
+
+
+
+
+<!-- Video Presentation: temporarily commented out; add a project video iframe src before restoring.
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+
+      <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+
+          <div class="publication-video">
+
+            <iframe title="Project video presentation" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+End Video Presentation -->
+
+
+<!-- Another Carousel: temporarily commented out; add project video source src attributes before restoring.
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+
+          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+
+            <source type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+
+          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+
+            <source type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+
+          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
+
+            <source type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+End Another Carousel -->
+
+
+
+
+
+
+<!-- Poster: temporarily commented out; add a project poster iframe src before restoring.
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+
+      <iframe title="Project poster" width="100%" height="550">
+          </iframe>
+
+      </div>
+    </div>
+  </section>
+End Poster -->
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>Coming soon</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was adapted from the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a> and <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a>. Licensed under <a rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>

@@ -1,0 +1,7 @@
+# Local previews and generated working files
+/tmp/
+/.venv/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
