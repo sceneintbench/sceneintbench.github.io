@@ -68,6 +68,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Defer non-critical JavaScript -->
+  <script defer src="static/js/interaction-videos.js"></script>
+  <script defer src="static/js/scene-examples.js"></script>
+  <script defer src="static/js/scene-metrics.js"></script>
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -266,7 +269,7 @@
           <img src="static/images/sceneintbench-overview.svg" width="3200" height="1855" alt="SceneIntBench overview: multi-view semantic assessment, static physical plausibility, active interaction evaluation, and examples of interaction failures." loading="lazy">
         </a>
         <figcaption>
-          <strong>Overview of SceneIntBench.</strong> A comprehensive benchmark for text-conditioned 3D indoor scene generation that extends conventional evaluation with simulation-based, interaction-level physical plausibility metrics.
+          <strong>Overview of SceneIntBench.</strong> A comprehensive benchmark for text-conditioned 3D indoor scene generation that extends conventional evaluation with simulation-based, interaction-level physical plausibility metrics. Our framework integrates multi-view semantic assessment and static physical checks, while further measuring interaction success, capability progress, post-interaction violations, and dynamic plausibility. We benchmark various scene generation systems and identify representative failure modes, revealing that plausible appearance at rest does not guarantee interaction readiness.
         </figcaption>
       </figure>
     </div>
@@ -291,6 +294,71 @@
 </section>
 <!-- End paper abstract -->
 
+
+<!-- Interaction examples -->
+<section class="section interaction-examples" id="interactions" aria-labelledby="interactions-title">
+  <div class="container">
+    <div class="interaction-intro has-text-centered">
+      <h2 class="title is-3" id="interactions-title">Plausible at rest. <em>Reliable in action?</em></h2>
+      <p>Visual realism and static validity tell only part of the story. These assessments provide limited evidence of whether generated scenes can support physical manipulation and exhibit plausible responses to active interaction.</p>
+    </div>
+    <div class="interaction-grid">
+      <article class="interaction-case" aria-labelledby="fridge-case-title">
+        <div class="interaction-case-heading">
+          <span class="interaction-action">Open fridge</span>
+          <h3 id="fridge-case-title">Missing articulation</h3>
+        </div>
+        <figure>
+          <video autoplay muted playsinline loop preload="auto" poster="static/images/open-fridge-poster.jpg" aria-label="Illustrative animation of a robot attempting to open a fridge">
+            <source src="static/videos/open-fridge-illustrative.mp4" type="video/mp4">
+            <a href="static/videos/open-fridge-illustrative.mp4">Watch the illustrative fridge animation.</a>
+          </video>
+        </figure>
+        <p class="interaction-takeaway">A visible door is not necessarily an operable door.</p>
+      </article>
+      <article class="interaction-case" aria-labelledby="plant-case-title">
+        <div class="interaction-case-heading">
+          <span class="interaction-action">Push plant</span>
+          <h3 id="plant-case-title">Contact inconsistency</h3>
+        </div>
+        <figure>
+          <video autoplay muted playsinline loop preload="auto" poster="static/images/push-plant-poster.jpg" aria-label="Simulation recording showing robot and plant interpenetration">
+            <source src="static/videos/push-plant.mp4" type="video/mp4">
+            <a href="static/videos/push-plant.mp4">Watch the plant interaction recording.</a>
+          </video>
+        </figure>
+        <p class="interaction-takeaway">Passed the static checks, but failed in contact</p>
+      </article>
+      <article class="interaction-case" aria-labelledby="chair-case-title">
+        <div class="interaction-case-heading">
+          <span class="interaction-action">Push chair</span>
+          <h3 id="chair-case-title">Post-interaction violation</h3>
+        </div>
+        <figure>
+          <video autoplay muted playsinline loop preload="auto" poster="static/images/push-chair-poster.jpg" aria-label="Simulation recording showing a non-target book losing table support during a chair push">
+            <source src="static/videos/push-chair.mp4" type="video/mp4">
+            <a href="static/videos/push-chair.mp4">Watch the chair interaction recording.</a>
+          </video>
+        </figure>
+        <p class="interaction-takeaway">An action can disrupt objects beyond its target.</p>
+      </article>
+      <article class="interaction-case" id="spatial-obstruction" aria-labelledby="spatial-obstruction-title">
+        <div class="interaction-case-heading">
+          <span class="interaction-action">Open fridge</span>
+          <h3 id="spatial-obstruction-title">Spatial obstruction</h3>
+        </div>
+        <figure>
+          <video autoplay muted playsinline loop preload="auto" poster="static/images/sage-kitchen-open-poster.jpg" aria-label="Illustrative fridge opening attempt with an assumed hinge, blocked by the existing chair held in place">
+            <source src="static/videos/sage-kitchen-fridge-open-illustrative.mp4" type="video/mp4">
+            <a href="static/videos/sage-kitchen-fridge-open-illustrative.mp4">Watch the illustrative opening attempt.</a>
+          </video>
+        </figure>
+        <p class="interaction-takeaway">A chair can block the door's opening sweep.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- End interaction examples -->
 
 <!-- SceneIntBench benchmark overview -->
 <section id="sceneintbench" class="section sceneintbench-benchmark" aria-labelledby="sceneintbench-heading">
@@ -318,28 +386,453 @@
 
     <div class="benchmark-figures">
       <figure class="benchmark-figure">
-        <a href="static/images/sceneintbench-room-types.svg" target="_blank" rel="noopener noreferrer" aria-label="View the room types figure at full size (opens in a new tab)">
+        <div class="benchmark-figure-image">
           <img src="static/images/sceneintbench-room-types.svg" width="1200" height="1200" alt="Ten room types: bedroom, living room, dining room, playroom, gaming room, kitchen, bathroom, basement, den, and office." loading="lazy" decoding="async">
-        </a>
+        </div>
         <figcaption>Room-type coverage</figcaption>
       </figure>
       <figure class="benchmark-figure">
-        <a href="static/images/sceneintbench-interaction-outcomes.svg" target="_blank" rel="noopener noreferrer" aria-label="View the interaction outcomes chart at full size (opens in a new tab)">
+        <div class="benchmark-figure-image">
           <img src="static/images/sceneintbench-interaction-outcomes.svg" width="1323" height="1299" alt="Interaction task outcomes for seven systems, showing successful, executed but unsuccessful, and unsupported tasks." loading="lazy" decoding="async">
-        </a>
+        </div>
         <figcaption>Interaction outcomes</figcaption>
       </figure>
       <figure class="benchmark-figure">
-        <a href="static/images/sceneintbench-radar.svg" target="_blank" rel="noopener noreferrer" aria-label="View the performance radar chart at full size (opens in a new tab)">
+        <div class="benchmark-figure-image">
           <img src="static/images/sceneintbench-radar.svg" width="1323" height="1299" alt="Radar chart comparing five systems across semantic, static physical, and interactive evaluation dimensions." loading="lazy" decoding="async">
-        </a>
-        <figcaption>Performance across dimensions</figcaption>
+        </div>
+        <figcaption>Evaluation Radar Map</figcaption>
       </figure>
     </div>
-    <p class="benchmark-figure-hint">Click any figure to view it at full size.</p>
   </div>
 </section>
 <!-- End SceneIntBench benchmark overview -->
+
+<!-- Scene generation examples -->
+<section class="section scene-examples" id="scene-examples" aria-labelledby="scene-examples-title">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered" id="scene-examples-title">Scene Generation Examples</h2>
+    <div class="scene-example-tabs" role="tablist" aria-label="Room type" hidden>
+      <button type="button" class="scene-example-tab" id="example-tab-bedroom" role="tab" aria-controls="example-panel-bedroom" aria-selected="false" tabindex="-1">Bedroom</button>
+      <button type="button" class="scene-example-tab" id="example-tab-living-room" role="tab" aria-controls="example-panel-living-room" aria-selected="false" tabindex="-1">Living room</button>
+      <button type="button" class="scene-example-tab" id="example-tab-dining-room" role="tab" aria-controls="example-panel-dining-room" aria-selected="false" tabindex="-1">Dining room</button>
+    </div>
+    <div class="scene-example-panel" id="example-panel-bedroom" data-scene="scene3">
+      <h3 class="scene-example-room-title">Bedroom</h3>
+      <div class="scene-example-prompt">
+        <p class="scene-example-prompt-label">Input prompt</p>
+        <p>A bedroom with a double bed and a mini fridge near the bed, a table across from the door, and a painting on the wall above the bed.</p>
+        <!-- Task criteria: scene3 -->
+        <details class="scene-example-tasks">
+          <summary><span>Interaction Tasks &amp; Success Criteria</span><span class="scene-task-count">8 tasks</span></summary>
+          <div class="scene-task-content">
+            <p class="scene-task-intro">Tasks inferred from the input prompt, with the same task set and success criteria shared across generation methods.</p>
+            <table class="scene-task-table" aria-label="Bedroom interaction tasks and success criteria">
+              <thead><tr><th scope="col">Task</th><th scope="col">Target object</th><th scope="col">Success criteria</th></tr></thead>
+              <tbody>
+              <tr data-task-id="action_01">
+                <td data-label="Task"><strong>Open hinged part</strong><span>Open at least 60° from the closed position and hold for 1 s.</span></td>
+                <td data-label="Target object">Mini fridge</td>
+                <td data-label="Success criteria">Opening ≥60° throughout the final 1 s; manipulation contact ≥0.1 s; hinge anchor error ≤0.01 m; parent translation ≤0.05 m and rotation ≤10°.</td>
+              </tr>
+              <tr data-task-id="action_02">
+                <td data-label="Task"><strong>Open hinged part</strong><span>Open at least 60° from the closed position and hold for 1 s.</span></td>
+                <td data-label="Target object">Door</td>
+                <td data-label="Success criteria">Opening ≥60° throughout the final 1 s; manipulation contact ≥0.1 s; hinge anchor error ≤0.01 m; parent translation ≤0.05 m and rotation ≤10°.</td>
+              </tr>
+              <tr data-task-id="action_03">
+                <td data-label="Task"><strong>Push object</strong><span>Push 0.15 m along the prescribed horizontal direction.</span></td>
+                <td data-label="Target object">Double bed</td>
+                <td data-label="Success criteria">Displacement 0.13–0.17 m along the prescribed direction throughout the final 1 s; lateral and vertical changes ≤0.03 m; tilt ≤10°; floor support maintained; manipulation contact ≥0.1 s.</td>
+              </tr>
+              <tr data-task-id="action_04">
+                <td data-label="Task"><strong>Push object</strong><span>Push 0.15 m along the prescribed horizontal direction.</span></td>
+                <td data-label="Target object">Mini fridge</td>
+                <td data-label="Success criteria">Displacement 0.13–0.17 m along the prescribed direction throughout the final 1 s; lateral and vertical changes ≤0.03 m; tilt ≤10°; floor support maintained; manipulation contact ≥0.1 s.</td>
+              </tr>
+              <tr data-task-id="action_05">
+                <td data-label="Task"><strong>Push object</strong><span>Push 0.15 m along the prescribed horizontal direction.</span></td>
+                <td data-label="Target object">Table</td>
+                <td data-label="Success criteria">Displacement 0.13–0.17 m along the prescribed direction throughout the final 1 s; lateral and vertical changes ≤0.03 m; tilt ≤10°; floor support maintained; manipulation contact ≥0.1 s.</td>
+              </tr>
+              <tr data-task-id="action_06">
+                <td data-label="Task"><strong>Place and slide probe</strong><span>Place the standard probe, let it settle, then gradually increase horizontal force.</span></td>
+                <td data-label="Target object">Double bed</td>
+                <td data-label="Success criteria">Probe settles on the target; sliding begins below the force cap and remains supported for ≥0.20 s over ≥0.02 m; tilt ≤5°; no unrelated contact; kinetic friction is identifiable.</td>
+              </tr>
+              <tr data-task-id="action_07">
+                <td data-label="Task"><strong>Place and slide probe</strong><span>Place the standard probe, let it settle, then gradually increase horizontal force.</span></td>
+                <td data-label="Target object">Mini fridge</td>
+                <td data-label="Success criteria">Probe settles on the target; sliding begins below the force cap and remains supported for ≥0.20 s over ≥0.02 m; tilt ≤5°; no unrelated contact; kinetic friction is identifiable.</td>
+              </tr>
+              <tr data-task-id="action_08">
+                <td data-label="Task"><strong>Place and slide probe</strong><span>Place the standard probe, let it settle, then gradually increase horizontal force.</span></td>
+                <td data-label="Target object">Table</td>
+                <td data-label="Success criteria">Probe settles on the target; sliding begins below the force cap and remains supported for ≥0.20 s over ≥0.02 m; tilt ≤5°; no unrelated contact; kinetic friction is identifiable.</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <!-- End task criteria: scene3 -->
+      </div>
+      <div class="scene-example-grid">
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene3-atiss" aria-label="View ATISS evaluation metrics for Bedroom, scene3" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene3-atiss.webp" width="768" height="768" alt="ATISS: bedroom generated from scene 3 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>ATISS</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene3-diffuscene" aria-label="View DiffuScene evaluation metrics for Bedroom, scene3" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene3-diffuscene.webp" width="768" height="768" alt="DiffuScene: bedroom generated from scene 3 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>DiffuScene</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene3-instructscene" aria-label="View InstructScene evaluation metrics for Bedroom, scene3" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene3-instructscene.webp" width="768" height="768" alt="InstructScene: bedroom generated from scene 3 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>InstructScene</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene3-layoutgpt" aria-label="View LayoutGPT evaluation metrics for Bedroom, scene3" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene3-layoutgpt.webp" width="768" height="768" alt="LayoutGPT: bedroom generated from scene 3 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>LayoutGPT</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene3-layoutvlm" aria-label="View LayoutVLM evaluation metrics for Bedroom, scene3" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene3-layoutvlm.webp" width="768" height="768" alt="LayoutVLM: bedroom generated from scene 3 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>LayoutVLM</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene3-holodeck" aria-label="View Holodeck evaluation metrics for Bedroom, scene3" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene3-holodeck.webp" width="768" height="768" alt="Holodeck: bedroom generated from scene 3 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>Holodeck</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene3-hsm" aria-label="View HSM evaluation metrics for Bedroom, scene3" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene3-hsm.webp" width="768" height="768" alt="HSM: bedroom generated from scene 3 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>HSM</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene3-sceneweaver" aria-label="View SceneWeaver evaluation metrics for Bedroom, scene3" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene3-sceneweaver.webp" width="768" height="768" alt="SceneWeaver: bedroom generated from scene 3 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>SceneWeaver</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene3-sage" aria-label="View SAGE evaluation metrics for Bedroom, scene3" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene3-sage.webp" width="768" height="768" alt="SAGE: bedroom generated from scene 3 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>SAGE</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene3-scenesmith" aria-label="View SceneSmith evaluation metrics for Bedroom, scene3" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene3-scenesmith.webp" width="768" height="768" alt="SceneSmith: bedroom generated from scene 3 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>SceneSmith</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene3-codex" aria-label="View Codex evaluation metrics for Bedroom, scene3" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene3-codex.webp" width="768" height="768" alt="Codex: bedroom generated from scene 3 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>Codex</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene3-claudecode" aria-label="View Claude Code evaluation metrics for Bedroom, scene3" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene3-claudecode.webp" width="768" height="768" alt="Claude Code: bedroom generated from scene 3 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>Claude Code</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="scene-example-panel" id="example-panel-living-room" data-scene="scene9">
+      <h3 class="scene-example-room-title">Living room</h3>
+      <div class="scene-example-prompt">
+        <p class="scene-example-prompt-label">Input prompt</p>
+        <p>A living room with a sofa in front of a wall-mounted TV, a lamp behind the sofa, and a stool near the TV against the wall.</p>
+        <!-- Task criteria: scene9 -->
+        <details class="scene-example-tasks">
+          <summary><span>Interaction Tasks &amp; Success Criteria</span><span class="scene-task-count">3 tasks</span></summary>
+          <div class="scene-task-content">
+            <p class="scene-task-intro">Tasks inferred from the input prompt, with the same task set and success criteria shared across generation methods.</p>
+            <table class="scene-task-table" aria-label="Living room interaction tasks and success criteria">
+              <thead><tr><th scope="col">Task</th><th scope="col">Target object</th><th scope="col">Success criteria</th></tr></thead>
+              <tbody>
+              <tr data-task-id="action_01">
+                <td data-label="Task"><strong>Push object</strong><span>Push 0.15 m along the prescribed horizontal direction.</span></td>
+                <td data-label="Target object">Sofa</td>
+                <td data-label="Success criteria">Displacement 0.13–0.17 m along the prescribed direction throughout the final 1 s; lateral and vertical changes ≤0.03 m; tilt ≤10°; floor support maintained; manipulation contact ≥0.1 s.</td>
+              </tr>
+              <tr data-task-id="action_02">
+                <td data-label="Task"><strong>Push object</strong><span>Push 0.15 m along the prescribed horizontal direction.</span></td>
+                <td data-label="Target object">Lamp</td>
+                <td data-label="Success criteria">Displacement 0.13–0.17 m along the prescribed direction throughout the final 1 s; lateral and vertical changes ≤0.03 m; tilt ≤10°; floor support maintained; manipulation contact ≥0.1 s.</td>
+              </tr>
+              <tr data-task-id="action_03">
+                <td data-label="Task"><strong>Push object</strong><span>Push 0.15 m along the prescribed horizontal direction.</span></td>
+                <td data-label="Target object">Stool</td>
+                <td data-label="Success criteria">Displacement 0.13–0.17 m along the prescribed direction throughout the final 1 s; lateral and vertical changes ≤0.03 m; tilt ≤10°; floor support maintained; manipulation contact ≥0.1 s.</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <!-- End task criteria: scene9 -->
+      </div>
+      <div class="scene-example-grid">
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene9-atiss" aria-label="View ATISS evaluation metrics for Living room, scene9" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene9-atiss.webp" width="768" height="768" alt="ATISS: living room generated from scene 9 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>ATISS</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene9-diffuscene" aria-label="View DiffuScene evaluation metrics for Living room, scene9" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene9-diffuscene.webp" width="768" height="768" alt="DiffuScene: living room generated from scene 9 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>DiffuScene</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene9-instructscene" aria-label="View InstructScene evaluation metrics for Living room, scene9" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene9-instructscene.webp" width="768" height="768" alt="InstructScene: living room generated from scene 9 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>InstructScene</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene9-layoutgpt" aria-label="View LayoutGPT evaluation metrics for Living room, scene9" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene9-layoutgpt.webp" width="768" height="768" alt="LayoutGPT: living room generated from scene 9 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>LayoutGPT</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene9-layoutvlm" aria-label="View LayoutVLM evaluation metrics for Living room, scene9" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene9-layoutvlm.webp" width="768" height="768" alt="LayoutVLM: living room generated from scene 9 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>LayoutVLM</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene9-holodeck" aria-label="View Holodeck evaluation metrics for Living room, scene9" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene9-holodeck.webp" width="768" height="768" alt="Holodeck: living room generated from scene 9 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>Holodeck</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene9-hsm" aria-label="View HSM evaluation metrics for Living room, scene9" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene9-hsm.webp" width="768" height="768" alt="HSM: living room generated from scene 9 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>HSM</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene9-sceneweaver" aria-label="View SceneWeaver evaluation metrics for Living room, scene9" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene9-sceneweaver.webp" width="768" height="768" alt="SceneWeaver: living room generated from scene 9 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>SceneWeaver</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene9-sage" aria-label="View SAGE evaluation metrics for Living room, scene9" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene9-sage.webp" width="768" height="768" alt="SAGE: living room generated from scene 9 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>SAGE</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene9-scenesmith" aria-label="View SceneSmith evaluation metrics for Living room, scene9" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene9-scenesmith.webp" width="768" height="768" alt="SceneSmith: living room generated from scene 9 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>SceneSmith</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene9-codex" aria-label="View Codex evaluation metrics for Living room, scene9" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene9-codex.webp" width="768" height="768" alt="Codex: living room generated from scene 9 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>Codex</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene9-claudecode" aria-label="View Claude Code evaluation metrics for Living room, scene9" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene9-claudecode.webp" width="768" height="768" alt="Claude Code: living room generated from scene 9 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>Claude Code</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="scene-example-panel" id="example-panel-dining-room" data-scene="scene34">
+      <h3 class="scene-example-room-title">Dining room</h3>
+      <div class="scene-example-prompt">
+        <p class="scene-example-prompt-label">Input prompt</p>
+        <p>A dining room with a bar table positioned in the middle of the room. A wooden shelf is mounted on the wall, holding a potted plant and a jug, adding a touch of decor and functionality. Along the wall, there is a fridge and a wine cabinet, providing ample storage and a cohesive design.</p>
+        <!-- Task criteria: scene34 -->
+        <details class="scene-example-tasks">
+          <summary><span>Interaction Tasks &amp; Success Criteria</span><span class="scene-task-count">8 tasks</span></summary>
+          <div class="scene-task-content">
+            <p class="scene-task-intro">Tasks inferred from the input prompt, with the same task set and success criteria shared across generation methods.</p>
+            <table class="scene-task-table" aria-label="Dining room interaction tasks and success criteria">
+              <thead><tr><th scope="col">Task</th><th scope="col">Target object</th><th scope="col">Success criteria</th></tr></thead>
+              <tbody>
+              <tr data-task-id="action_01">
+                <td data-label="Task"><strong>Open hinged part</strong><span>Open at least 60° from the closed position and hold for 1 s.</span></td>
+                <td data-label="Target object">Fridge</td>
+                <td data-label="Success criteria">Opening ≥60° throughout the final 1 s; manipulation contact ≥0.1 s; hinge anchor error ≤0.01 m; parent translation ≤0.05 m and rotation ≤10°.</td>
+              </tr>
+              <tr data-task-id="action_02">
+                <td data-label="Task"><strong>Open hinged part</strong><span>Open at least 60° from the closed position and hold for 1 s.</span></td>
+                <td data-label="Target object">Wine cabinet</td>
+                <td data-label="Success criteria">Opening ≥60° throughout the final 1 s; manipulation contact ≥0.1 s; hinge anchor error ≤0.01 m; parent translation ≤0.05 m and rotation ≤10°.</td>
+              </tr>
+              <tr data-task-id="action_03">
+                <td data-label="Task"><strong>Push object</strong><span>Push 0.15 m along the prescribed horizontal direction.</span></td>
+                <td data-label="Target object">Bar table</td>
+                <td data-label="Success criteria">Displacement 0.13–0.17 m along the prescribed direction throughout the final 1 s; lateral and vertical changes ≤0.03 m; tilt ≤10°; floor support maintained; manipulation contact ≥0.1 s.</td>
+              </tr>
+              <tr data-task-id="action_04">
+                <td data-label="Task"><strong>Push object</strong><span>Push 0.15 m along the prescribed horizontal direction.</span></td>
+                <td data-label="Target object">Fridge</td>
+                <td data-label="Success criteria">Displacement 0.13–0.17 m along the prescribed direction throughout the final 1 s; lateral and vertical changes ≤0.03 m; tilt ≤10°; floor support maintained; manipulation contact ≥0.1 s.</td>
+              </tr>
+              <tr data-task-id="action_05">
+                <td data-label="Task"><strong>Push object</strong><span>Push 0.15 m along the prescribed horizontal direction.</span></td>
+                <td data-label="Target object">Wine cabinet</td>
+                <td data-label="Success criteria">Displacement 0.13–0.17 m along the prescribed direction throughout the final 1 s; lateral and vertical changes ≤0.03 m; tilt ≤10°; floor support maintained; manipulation contact ≥0.1 s.</td>
+              </tr>
+              <tr data-task-id="action_06">
+                <td data-label="Task"><strong>Place and slide probe</strong><span>Place the standard probe, let it settle, then gradually increase horizontal force.</span></td>
+                <td data-label="Target object">Bar table</td>
+                <td data-label="Success criteria">Probe settles on the target; sliding begins below the force cap and remains supported for ≥0.20 s over ≥0.02 m; tilt ≤5°; no unrelated contact; kinetic friction is identifiable.</td>
+              </tr>
+              <tr data-task-id="action_07">
+                <td data-label="Task"><strong>Place and slide probe</strong><span>Place the standard probe, let it settle, then gradually increase horizontal force.</span></td>
+                <td data-label="Target object">Wooden shelf</td>
+                <td data-label="Success criteria">Probe settles on the target; sliding begins below the force cap and remains supported for ≥0.20 s over ≥0.02 m; tilt ≤5°; no unrelated contact; kinetic friction is identifiable.</td>
+              </tr>
+              <tr data-task-id="action_08">
+                <td data-label="Task"><strong>Place and slide probe</strong><span>Place the standard probe, let it settle, then gradually increase horizontal force.</span></td>
+                <td data-label="Target object">Fridge</td>
+                <td data-label="Success criteria">Probe settles on the target; sliding begins below the force cap and remains supported for ≥0.20 s over ≥0.02 m; tilt ≤5°; no unrelated contact; kinetic friction is identifiable.</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <!-- End task criteria: scene34 -->
+      </div>
+      <div class="scene-example-grid">
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene34-atiss" aria-label="View ATISS evaluation metrics for Dining room, scene34" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene34-atiss.webp" width="768" height="768" alt="ATISS: dining room generated from scene 34 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>ATISS</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene34-diffuscene" aria-label="View DiffuScene evaluation metrics for Dining room, scene34" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene34-diffuscene.webp" width="768" height="768" alt="DiffuScene: dining room generated from scene 34 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>DiffuScene</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene34-instructscene" aria-label="View InstructScene evaluation metrics for Dining room, scene34" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene34-instructscene.webp" width="768" height="768" alt="InstructScene: dining room generated from scene 34 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>InstructScene</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene34-layoutgpt" aria-label="View LayoutGPT evaluation metrics for Dining room, scene34" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene34-layoutgpt.webp" width="768" height="768" alt="LayoutGPT: dining room generated from scene 34 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>LayoutGPT</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene34-layoutvlm" aria-label="View LayoutVLM evaluation metrics for Dining room, scene34" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene34-layoutvlm.webp" width="768" height="768" alt="LayoutVLM: dining room generated from scene 34 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>LayoutVLM</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene34-holodeck" aria-label="View Holodeck evaluation metrics for Dining room, scene34" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene34-holodeck.webp" width="768" height="768" alt="Holodeck: dining room generated from scene 34 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>Holodeck</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene34-hsm" aria-label="View HSM evaluation metrics for Dining room, scene34" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene34-hsm.webp" width="768" height="768" alt="HSM: dining room generated from scene 34 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>HSM</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene34-sceneweaver" aria-label="View SceneWeaver evaluation metrics for Dining room, scene34" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene34-sceneweaver.webp" width="768" height="768" alt="SceneWeaver: dining room generated from scene 34 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>SceneWeaver</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene34-sage" aria-label="View SAGE evaluation metrics for Dining room, scene34" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene34-sage.webp" width="768" height="768" alt="SAGE: dining room generated from scene 34 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>SAGE</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene34-scenesmith" aria-label="View SceneSmith evaluation metrics for Dining room, scene34" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene34-scenesmith.webp" width="768" height="768" alt="SceneSmith: dining room generated from scene 34 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>SceneSmith</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene34-codex" aria-label="View Codex evaluation metrics for Dining room, scene34" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene34-codex.webp" width="768" height="768" alt="Codex: dining room generated from scene 34 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>Codex</figcaption>
+        </figure>
+        <figure class="scene-example-result">
+          <button type="button" class="scene-metrics-trigger" data-metrics-key="scene34-claudecode" aria-label="View Claude Code evaluation metrics for Dining room, scene34" aria-haspopup="dialog" aria-controls="scene-metrics-dialog">
+            <img src="static/images/scene-examples/scene34-claudecode.webp" width="768" height="768" alt="Claude Code: dining room generated from scene 34 prompt, southwest corner view." loading="lazy" decoding="async">
+          </button>
+          <figcaption>Claude Code</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End scene generation examples -->
+
+<!-- Per-scene evaluation details -->
+<dialog id="scene-metrics-dialog" class="scene-metrics-dialog" aria-labelledby="scene-metrics-title">
+  <div class="scene-metrics-surface">
+    <header class="scene-metrics-header">
+      <div>
+        <h2 id="scene-metrics-title"></h2>
+        <p id="scene-metrics-meta"></p>
+      </div>
+      <button type="button" class="scene-metrics-close" aria-label="Close evaluation metrics" autofocus>&times;</button>
+    </header>
+    <div class="scene-metrics-body">
+      <div class="scene-metrics-layout">
+        <div class="scene-metrics-preview">
+          <div class="scene-metrics-view-picker">
+            <label for="scene-metrics-view">View</label>
+            <select id="scene-metrics-view" aria-controls="scene-metrics-image">
+              <option value="corner_sw" selected>Corner SW (default)</option>
+              <option value="corner_se">Corner SE</option>
+              <option value="corner_ne">Corner NE</option>
+              <option value="corner_nw">Corner NW</option>
+              <option value="topdown">Top-down</option>
+            </select>
+          </div>
+          <img id="scene-metrics-image" width="768" height="768" alt="">
+          <p class="scene-metrics-prompt-label">Input prompt</p>
+          <p id="scene-metrics-prompt"></p>
+        </div>
+        <div id="scene-metrics-values"></div>
+      </div>
+    </div>
+  </div>
+</dialog>
+<script type="application/json" id="scene-example-metrics">{"scene3-atiss":{"scene":"scene3","room":"Bedroom","method":"ATISS","prompt":"A bedroom with a double bed and a mini fridge near the bed, a table across from the door, and a painting on the wall above the bed.","image":"static/images/scene-examples/scene3-atiss.webp","tasks":8,"metrics":{"realism":5,"functionality":3,"layout":4,"completion":2,"collision_percent":0.0,"out_of_bound_percent":60.0,"support_percent":0.0,"stability_native_percent":null,"ie_success_percent":0.0,"ie_score":0.5,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"method":"atiss","shared_action_denominator":8,"ie_resolved_cases":8,"observed_ie_percent":0.0,"ie_score":0.5,"pi_rate":null,"md_m":null,"dp":null,"executed_cases":0,"post_metrics_n":0,"dp_n":0,"ie_score_n":8},"views":{"corner_sw":"static/images/scene-examples/scene3-atiss.webp","corner_se":"static/images/scene-examples/views/scene3-atiss-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene3-atiss-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene3-atiss-corner_nw.webp","topdown":"static/images/scene-examples/views/scene3-atiss-topdown.webp"}},"scene3-diffuscene":{"scene":"scene3","room":"Bedroom","method":"DiffuScene","prompt":"A bedroom with a double bed and a mini fridge near the bed, a table across from the door, and a painting on the wall above the bed.","image":"static/images/scene-examples/scene3-diffuscene.webp","tasks":8,"metrics":{"realism":5,"functionality":4,"layout":3,"completion":3,"collision_percent":50.0,"out_of_bound_percent":0.0,"support_percent":50.0,"stability_native_percent":null,"ie_success_percent":0.0,"ie_score":0.5,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"method":"diffuscene","shared_action_denominator":8,"ie_resolved_cases":8,"observed_ie_percent":0.0,"ie_score":0.5,"pi_rate":null,"md_m":null,"dp":null,"executed_cases":0,"post_metrics_n":0,"dp_n":0,"ie_score_n":8},"views":{"corner_sw":"static/images/scene-examples/scene3-diffuscene.webp","corner_se":"static/images/scene-examples/views/scene3-diffuscene-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene3-diffuscene-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene3-diffuscene-corner_nw.webp","topdown":"static/images/scene-examples/views/scene3-diffuscene-topdown.webp"}},"scene3-instructscene":{"scene":"scene3","room":"Bedroom","method":"InstructScene","prompt":"A bedroom with a double bed and a mini fridge near the bed, a table across from the door, and a painting on the wall above the bed.","image":"static/images/scene-examples/scene3-instructscene.webp","tasks":8,"metrics":{"realism":4,"functionality":3,"layout":2,"completion":2,"collision_percent":50.0,"out_of_bound_percent":25.0,"support_percent":25.0,"stability_native_percent":null,"ie_success_percent":0.0,"ie_score":0.5,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"method":"instructscene","shared_action_denominator":8,"ie_resolved_cases":8,"observed_ie_percent":0.0,"ie_score":0.5,"pi_rate":null,"md_m":null,"dp":null,"executed_cases":0,"post_metrics_n":0,"dp_n":0,"ie_score_n":8},"views":{"corner_sw":"static/images/scene-examples/scene3-instructscene.webp","corner_se":"static/images/scene-examples/views/scene3-instructscene-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene3-instructscene-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene3-instructscene-corner_nw.webp","topdown":"static/images/scene-examples/views/scene3-instructscene-topdown.webp"}},"scene3-layoutgpt":{"scene":"scene3","room":"Bedroom","method":"LayoutGPT","prompt":"A bedroom with a double bed and a mini fridge near the bed, a table across from the door, and a painting on the wall above the bed.","image":"static/images/scene-examples/scene3-layoutgpt.webp","tasks":8,"metrics":{"realism":4,"functionality":5,"layout":3,"completion":2,"collision_percent":75.0,"out_of_bound_percent":0.0,"support_percent":25.0,"stability_native_percent":null,"ie_success_percent":0.0,"ie_score":2,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"method":"layoutgpt","shared_action_denominator":8,"ie_resolved_cases":8,"observed_ie_percent":0.0,"ie_score":2,"pi_rate":null,"md_m":null,"dp":null,"executed_cases":0,"post_metrics_n":0,"dp_n":0,"ie_score_n":8},"views":{"corner_sw":"static/images/scene-examples/scene3-layoutgpt.webp","corner_se":"static/images/scene-examples/views/scene3-layoutgpt-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene3-layoutgpt-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene3-layoutgpt-corner_nw.webp","topdown":"static/images/scene-examples/views/scene3-layoutgpt-topdown.webp"}},"scene3-layoutvlm":{"scene":"scene3","room":"Bedroom","method":"LayoutVLM","prompt":"A bedroom with a double bed and a mini fridge near the bed, a table across from the door, and a painting on the wall above the bed.","image":"static/images/scene-examples/scene3-layoutvlm.webp","tasks":8,"metrics":{"realism":4,"functionality":5,"layout":4,"completion":2,"collision_percent":0.0,"out_of_bound_percent":25.0,"support_percent":100.0,"stability_native_percent":null,"ie_success_percent":0.0,"ie_score":2,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"method":"layoutvlm","shared_action_denominator":8,"ie_resolved_cases":8,"observed_ie_percent":0.0,"ie_score":2,"pi_rate":null,"md_m":null,"dp":null,"executed_cases":0,"post_metrics_n":0,"dp_n":0,"ie_score_n":8},"views":{"corner_sw":"static/images/scene-examples/scene3-layoutvlm.webp","corner_se":"static/images/scene-examples/views/scene3-layoutvlm-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene3-layoutvlm-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene3-layoutvlm-corner_nw.webp","topdown":"static/images/scene-examples/views/scene3-layoutvlm-topdown.webp"}},"scene3-holodeck":{"scene":"scene3","room":"Bedroom","method":"Holodeck","prompt":"A bedroom with a double bed and a mini fridge near the bed, a table across from the door, and a painting on the wall above the bed.","image":"static/images/scene-examples/scene3-holodeck.webp","tasks":8,"metrics":{"realism":4,"functionality":5,"layout":4,"completion":6,"collision_percent":0.0,"out_of_bound_percent":0.0,"support_percent":11.11111111111111,"stability_native_percent":100.0,"ie_success_percent":37.5,"ie_score":5.5,"damage_rate_percent":0.0,"dp":7},"status":{"semantic":"completed","static":"completed","stability":"completed_partial_adapter","dynamic":"completed"},"coverage":{"method":"holodeck","shared_action_denominator":8,"ie_resolved_cases":8,"observed_ie_percent":37.5,"ie_score":5.5,"pi_rate":0.0,"md_m":0.00041830082070305004,"dp":7,"executed_cases":6,"post_metrics_n":6,"dp_n":5,"ie_score_n":8},"views":{"corner_sw":"static/images/scene-examples/scene3-holodeck.webp","corner_se":"static/images/scene-examples/views/scene3-holodeck-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene3-holodeck-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene3-holodeck-corner_nw.webp","topdown":"static/images/scene-examples/views/scene3-holodeck-topdown.webp"}},"scene3-hsm":{"scene":"scene3","room":"Bedroom","method":"HSM","prompt":"A bedroom with a double bed and a mini fridge near the bed, a table across from the door, and a painting on the wall above the bed.","image":"static/images/scene-examples/scene3-hsm.webp","tasks":8,"metrics":{"realism":5,"functionality":5,"layout":4,"completion":3,"collision_percent":0.0,"out_of_bound_percent":10.0,"support_percent":80.0,"stability_native_percent":null,"ie_success_percent":0.0,"ie_score":1.75,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"method":"hsm","shared_action_denominator":8,"ie_resolved_cases":8,"observed_ie_percent":0.0,"ie_score":1.75,"pi_rate":null,"md_m":null,"dp":null,"executed_cases":0,"post_metrics_n":0,"dp_n":0,"ie_score_n":8},"views":{"corner_sw":"static/images/scene-examples/scene3-hsm.webp","corner_se":"static/images/scene-examples/views/scene3-hsm-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene3-hsm-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene3-hsm-corner_nw.webp","topdown":"static/images/scene-examples/views/scene3-hsm-topdown.webp"}},"scene3-sceneweaver":{"scene":"scene3","room":"Bedroom","method":"SceneWeaver","prompt":"A bedroom with a double bed and a mini fridge near the bed, a table across from the door, and a painting on the wall above the bed.","image":"static/images/scene-examples/scene3-sceneweaver.webp","tasks":8,"metrics":{"realism":6,"functionality":6,"layout":4,"completion":4,"collision_percent":44.44444444444444,"out_of_bound_percent":0.0,"support_percent":11.11111111111111,"stability_native_percent":null,"ie_success_percent":0.0,"ie_score":1.75,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"method":"sceneweaver","shared_action_denominator":8,"ie_resolved_cases":8,"observed_ie_percent":0.0,"ie_score":1.75,"pi_rate":null,"md_m":null,"dp":null,"executed_cases":0,"post_metrics_n":0,"dp_n":0,"ie_score_n":8},"views":{"corner_sw":"static/images/scene-examples/scene3-sceneweaver.webp","corner_se":"static/images/scene-examples/views/scene3-sceneweaver-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene3-sceneweaver-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene3-sceneweaver-corner_nw.webp","topdown":"static/images/scene-examples/views/scene3-sceneweaver-topdown.webp"}},"scene3-sage":{"scene":"scene3","room":"Bedroom","method":"SAGE","prompt":"A bedroom with a double bed and a mini fridge near the bed, a table across from the door, and a painting on the wall above the bed.","image":"static/images/scene-examples/scene3-sage.webp","tasks":8,"metrics":{"realism":6,"functionality":7,"layout":5,"completion":8,"collision_percent":4.25531914893617,"out_of_bound_percent":0.0,"support_percent":82.97872340425532,"stability_native_percent":100.0,"ie_success_percent":25.0,"ie_score":6.25,"damage_rate_percent":2.127659574468085,"dp":7},"status":{"semantic":"completed","static":"completed","stability":"completed","dynamic":"completed"},"coverage":{"method":"sage","shared_action_denominator":8,"ie_resolved_cases":8,"observed_ie_percent":25.0,"ie_score":6.25,"pi_rate":2.127659574468085,"md_m":0.008746637822373754,"dp":7,"executed_cases":7,"post_metrics_n":7,"dp_n":4,"ie_score_n":8},"views":{"corner_sw":"static/images/scene-examples/scene3-sage.webp","corner_se":"static/images/scene-examples/views/scene3-sage-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene3-sage-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene3-sage-corner_nw.webp","topdown":"static/images/scene-examples/views/scene3-sage-topdown.webp"}},"scene3-scenesmith":{"scene":"scene3","room":"Bedroom","method":"SceneSmith","prompt":"A bedroom with a double bed and a mini fridge near the bed, a table across from the door, and a painting on the wall above the bed.","image":"static/images/scene-examples/scene3-scenesmith.webp","tasks":8,"metrics":{"realism":6,"functionality":7,"layout":5,"completion":4,"collision_percent":0.0,"out_of_bound_percent":0.0,"support_percent":94.28571428571429,"stability_native_percent":71.42857142857143,"ie_success_percent":62.5,"ie_score":7.75,"damage_rate_percent":1.6326530612244898,"dp":7.142857142857143},"status":{"semantic":"completed","static":"completed","stability":"completed","dynamic":"completed"},"coverage":{"method":"scenesmith","shared_action_denominator":8,"ie_resolved_cases":8,"observed_ie_percent":62.5,"ie_score":7.75,"pi_rate":1.6326530612244898,"md_m":0.03311405791108949,"dp":7.142857142857143,"executed_cases":7,"post_metrics_n":7,"dp_n":7,"ie_score_n":8},"views":{"corner_sw":"static/images/scene-examples/scene3-scenesmith.webp","corner_se":"static/images/scene-examples/views/scene3-scenesmith-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene3-scenesmith-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene3-scenesmith-corner_nw.webp","topdown":"static/images/scene-examples/views/scene3-scenesmith-topdown.webp"}},"scene3-codex":{"scene":"scene3","room":"Bedroom","method":"Codex","prompt":"A bedroom with a double bed and a mini fridge near the bed, a table across from the door, and a painting on the wall above the bed.","image":"static/images/scene-examples/scene3-codex.webp","tasks":8,"metrics":{"realism":6,"functionality":8,"layout":8,"completion":4,"collision_percent":18.181818181818183,"out_of_bound_percent":0.0,"support_percent":100.0,"stability_native_percent":100.0,"ie_success_percent":37.5,"ie_score":7.5,"damage_rate_percent":11.363636363636365,"dp":7},"status":{"semantic":"completed","static":"completed","stability":"completed","dynamic":"completed"},"coverage":{"method":"codex","shared_action_denominator":8,"ie_resolved_cases":8,"observed_ie_percent":37.5,"ie_score":7.5,"pi_rate":11.363636363636365,"md_m":0.0004909489008789734,"dp":7,"executed_cases":8,"post_metrics_n":8,"dp_n":8,"ie_score_n":8},"views":{"corner_sw":"static/images/scene-examples/scene3-codex.webp","corner_se":"static/images/scene-examples/views/scene3-codex-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene3-codex-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene3-codex-corner_nw.webp","topdown":"static/images/scene-examples/views/scene3-codex-topdown.webp"}},"scene3-claudecode":{"scene":"scene3","room":"Bedroom","method":"Claude Code","prompt":"A bedroom with a double bed and a mini fridge near the bed, a table across from the door, and a painting on the wall above the bed.","image":"static/images/scene-examples/scene3-claudecode.webp","tasks":8,"metrics":{"realism":8,"functionality":9,"layout":8,"completion":4,"collision_percent":0.0,"out_of_bound_percent":0.0,"support_percent":100.0,"stability_native_percent":100.0,"ie_success_percent":62.5,"ie_score":8.5,"damage_rate_percent":6.578947368421053,"dp":6.625},"status":{"semantic":"completed","static":"completed","stability":"completed","dynamic":"completed"},"coverage":{"method":"claudecode","shared_action_denominator":8,"ie_resolved_cases":8,"observed_ie_percent":62.5,"ie_score":8.5,"pi_rate":6.578947368421053,"md_m":0.005615641707106965,"dp":6.625,"executed_cases":8,"post_metrics_n":8,"dp_n":8,"ie_score_n":8},"views":{"corner_sw":"static/images/scene-examples/scene3-claudecode.webp","corner_se":"static/images/scene-examples/views/scene3-claudecode-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene3-claudecode-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene3-claudecode-corner_nw.webp","topdown":"static/images/scene-examples/views/scene3-claudecode-topdown.webp"}},"scene9-atiss":{"scene":"scene9","room":"Living room","method":"ATISS","prompt":"A living room with a sofa in front of a wall-mounted TV, a lamp behind the sofa, and a stool near the TV against the wall.","image":"static/images/scene-examples/scene9-atiss.webp","tasks":3,"metrics":{"realism":4,"functionality":3,"layout":4,"completion":3,"collision_percent":0.0,"out_of_bound_percent":33.333333333333336,"support_percent":16.666666666666668,"stability_native_percent":null,"ie_success_percent":0,"ie_score":0.6666666666666666,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"shared_actions":3,"analyzed_cases":3,"executed_cases":0,"ie_n":3,"ie_score_n":3,"post_metrics_n":0,"dp_n":0},"views":{"corner_sw":"static/images/scene-examples/scene9-atiss.webp","corner_se":"static/images/scene-examples/views/scene9-atiss-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene9-atiss-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene9-atiss-corner_nw.webp","topdown":"static/images/scene-examples/views/scene9-atiss-topdown.webp"}},"scene9-diffuscene":{"scene":"scene9","room":"Living room","method":"DiffuScene","prompt":"A living room with a sofa in front of a wall-mounted TV, a lamp behind the sofa, and a stool near the TV against the wall.","image":"static/images/scene-examples/scene9-diffuscene.webp","tasks":3,"metrics":{"realism":4,"functionality":3,"layout":4,"completion":4,"collision_percent":28.571428571428573,"out_of_bound_percent":0.0,"support_percent":64.28571428571429,"stability_native_percent":null,"ie_success_percent":0,"ie_score":1.3333333333333333,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"shared_actions":3,"analyzed_cases":3,"executed_cases":0,"ie_n":3,"ie_score_n":3,"post_metrics_n":0,"dp_n":0},"views":{"corner_sw":"static/images/scene-examples/scene9-diffuscene.webp","corner_se":"static/images/scene-examples/views/scene9-diffuscene-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene9-diffuscene-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene9-diffuscene-corner_nw.webp","topdown":"static/images/scene-examples/views/scene9-diffuscene-topdown.webp"}},"scene9-instructscene":{"scene":"scene9","room":"Living room","method":"InstructScene","prompt":"A living room with a sofa in front of a wall-mounted TV, a lamp behind the sofa, and a stool near the TV against the wall.","image":"static/images/scene-examples/scene9-instructscene.webp","tasks":3,"metrics":{"realism":5,"functionality":5,"layout":4,"completion":4,"collision_percent":23.076923076923077,"out_of_bound_percent":53.84615384615385,"support_percent":76.92307692307692,"stability_native_percent":null,"ie_success_percent":0,"ie_score":1.3333333333333333,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"shared_actions":3,"analyzed_cases":3,"executed_cases":0,"ie_n":3,"ie_score_n":3,"post_metrics_n":0,"dp_n":0},"views":{"corner_sw":"static/images/scene-examples/scene9-instructscene.webp","corner_se":"static/images/scene-examples/views/scene9-instructscene-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene9-instructscene-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene9-instructscene-corner_nw.webp","topdown":"static/images/scene-examples/views/scene9-instructscene-topdown.webp"}},"scene9-layoutgpt":{"scene":"scene9","room":"Living room","method":"LayoutGPT","prompt":"A living room with a sofa in front of a wall-mounted TV, a lamp behind the sofa, and a stool near the TV against the wall.","image":"static/images/scene-examples/scene9-layoutgpt.webp","tasks":3,"metrics":{"realism":5,"functionality":4,"layout":5,"completion":3,"collision_percent":0.0,"out_of_bound_percent":0.0,"support_percent":0.0,"stability_native_percent":null,"ie_success_percent":0,"ie_score":2,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"shared_actions":3,"analyzed_cases":3,"executed_cases":0,"ie_n":3,"ie_score_n":3,"post_metrics_n":0,"dp_n":0},"views":{"corner_sw":"static/images/scene-examples/scene9-layoutgpt.webp","corner_se":"static/images/scene-examples/views/scene9-layoutgpt-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene9-layoutgpt-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene9-layoutgpt-corner_nw.webp","topdown":"static/images/scene-examples/views/scene9-layoutgpt-topdown.webp"}},"scene9-layoutvlm":{"scene":"scene9","room":"Living room","method":"LayoutVLM","prompt":"A living room with a sofa in front of a wall-mounted TV, a lamp behind the sofa, and a stool near the TV against the wall.","image":"static/images/scene-examples/scene9-layoutvlm.webp","tasks":3,"metrics":{"realism":4,"functionality":5,"layout":4,"completion":3,"collision_percent":0.0,"out_of_bound_percent":25.0,"support_percent":100.0,"stability_native_percent":null,"ie_success_percent":0,"ie_score":2,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"shared_actions":3,"analyzed_cases":3,"executed_cases":0,"ie_n":3,"ie_score_n":3,"post_metrics_n":0,"dp_n":0},"views":{"corner_sw":"static/images/scene-examples/scene9-layoutvlm.webp","corner_se":"static/images/scene-examples/views/scene9-layoutvlm-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene9-layoutvlm-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene9-layoutvlm-corner_nw.webp","topdown":"static/images/scene-examples/views/scene9-layoutvlm-topdown.webp"}},"scene9-holodeck":{"scene":"scene9","room":"Living room","method":"Holodeck","prompt":"A living room with a sofa in front of a wall-mounted TV, a lamp behind the sofa, and a stool near the TV against the wall.","image":"static/images/scene-examples/scene9-holodeck.webp","tasks":3,"metrics":{"realism":4,"functionality":5,"layout":3,"completion":5,"collision_percent":18.75,"out_of_bound_percent":0.0,"support_percent":34.375,"stability_native_percent":11.11111111111111,"ie_success_percent":0,"ie_score":1.3333333333333333,"damage_rate_percent":21.875,"dp":6},"status":{"semantic":"completed","static":"completed","stability":"completed_partial_adapter","dynamic":"completed"},"coverage":{"shared_actions":3,"analyzed_cases":3,"executed_cases":2,"ie_n":3,"ie_score_n":3,"post_metrics_n":2,"dp_n":1},"views":{"corner_sw":"static/images/scene-examples/scene9-holodeck.webp","corner_se":"static/images/scene-examples/views/scene9-holodeck-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene9-holodeck-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene9-holodeck-corner_nw.webp","topdown":"static/images/scene-examples/views/scene9-holodeck-topdown.webp"}},"scene9-hsm":{"scene":"scene9","room":"Living room","method":"HSM","prompt":"A living room with a sofa in front of a wall-mounted TV, a lamp behind the sofa, and a stool near the TV against the wall.","image":"static/images/scene-examples/scene9-hsm.webp","tasks":3,"metrics":{"realism":5,"functionality":4,"layout":3,"completion":6,"collision_percent":28.571428571428573,"out_of_bound_percent":5.714285714285714,"support_percent":77.14285714285714,"stability_native_percent":null,"ie_success_percent":0,"ie_score":2,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"shared_actions":3,"analyzed_cases":3,"executed_cases":0,"ie_n":3,"ie_score_n":3,"post_metrics_n":0,"dp_n":0},"views":{"corner_sw":"static/images/scene-examples/scene9-hsm.webp","corner_se":"static/images/scene-examples/views/scene9-hsm-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene9-hsm-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene9-hsm-corner_nw.webp","topdown":"static/images/scene-examples/views/scene9-hsm-topdown.webp"}},"scene9-sceneweaver":{"scene":"scene9","room":"Living room","method":"SceneWeaver","prompt":"A living room with a sofa in front of a wall-mounted TV, a lamp behind the sofa, and a stool near the TV against the wall.","image":"static/images/scene-examples/scene9-sceneweaver.webp","tasks":3,"metrics":{"realism":6,"functionality":7,"layout":6,"completion":5,"collision_percent":0.0,"out_of_bound_percent":0.0,"support_percent":0.0,"stability_native_percent":null,"ie_success_percent":0,"ie_score":2,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"shared_actions":3,"analyzed_cases":3,"executed_cases":0,"ie_n":3,"ie_score_n":3,"post_metrics_n":0,"dp_n":0},"views":{"corner_sw":"static/images/scene-examples/scene9-sceneweaver.webp","corner_se":"static/images/scene-examples/views/scene9-sceneweaver-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene9-sceneweaver-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene9-sceneweaver-corner_nw.webp","topdown":"static/images/scene-examples/views/scene9-sceneweaver-topdown.webp"}},"scene9-sage":{"scene":"scene9","room":"Living room","method":"SAGE","prompt":"A living room with a sofa in front of a wall-mounted TV, a lamp behind the sofa, and a stool near the TV against the wall.","image":"static/images/scene-examples/scene9-sage.webp","tasks":3,"metrics":{"realism":5,"functionality":4,"layout":3,"completion":8,"collision_percent":0.0,"out_of_bound_percent":0.0,"support_percent":90.27777777777777,"stability_native_percent":100.0,"ie_success_percent":0,"ie_score":6,"damage_rate_percent":0.46296296296296297,"dp":7},"status":{"semantic":"completed","static":"completed","stability":"completed","dynamic":"completed"},"coverage":{"shared_actions":3,"analyzed_cases":3,"executed_cases":3,"ie_n":3,"ie_score_n":3,"post_metrics_n":3,"dp_n":2},"views":{"corner_sw":"static/images/scene-examples/scene9-sage.webp","corner_se":"static/images/scene-examples/views/scene9-sage-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene9-sage-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene9-sage-corner_nw.webp","topdown":"static/images/scene-examples/views/scene9-sage-topdown.webp"}},"scene9-scenesmith":{"scene":"scene9","room":"Living room","method":"SceneSmith","prompt":"A living room with a sofa in front of a wall-mounted TV, a lamp behind the sofa, and a stool near the TV against the wall.","image":"static/images/scene-examples/scene9-scenesmith.webp","tasks":3,"metrics":{"realism":8,"functionality":9,"layout":8,"completion":7,"collision_percent":13.333333333333334,"out_of_bound_percent":3.3333333333333335,"support_percent":100.0,"stability_native_percent":86.66666666666667,"ie_success_percent":0,"ie_score":6,"damage_rate_percent":5.555555555555555,"dp":7},"status":{"semantic":"completed","static":"completed","stability":"completed","dynamic":"completed"},"coverage":{"shared_actions":3,"analyzed_cases":3,"executed_cases":3,"ie_n":3,"ie_score_n":3,"post_metrics_n":3,"dp_n":2},"views":{"corner_sw":"static/images/scene-examples/scene9-scenesmith.webp","corner_se":"static/images/scene-examples/views/scene9-scenesmith-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene9-scenesmith-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene9-scenesmith-corner_nw.webp","topdown":"static/images/scene-examples/views/scene9-scenesmith-topdown.webp"}},"scene9-codex":{"scene":"scene9","room":"Living room","method":"Codex","prompt":"A living room with a sofa in front of a wall-mounted TV, a lamp behind the sofa, and a stool near the TV against the wall.","image":"static/images/scene-examples/scene9-codex.webp","tasks":3,"metrics":{"realism":6,"functionality":8,"layout":8,"completion":4,"collision_percent":0.0,"out_of_bound_percent":0.0,"support_percent":100.0,"stability_native_percent":100.0,"ie_success_percent":0,"ie_score":5.333333333333333,"damage_rate_percent":20.0,"dp":8},"status":{"semantic":"completed","static":"completed","stability":"completed","dynamic":"completed"},"coverage":{"shared_actions":3,"analyzed_cases":3,"executed_cases":2,"ie_n":3,"ie_score_n":3,"post_metrics_n":2,"dp_n":2},"views":{"corner_sw":"static/images/scene-examples/scene9-codex.webp","corner_se":"static/images/scene-examples/views/scene9-codex-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene9-codex-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene9-codex-corner_nw.webp","topdown":"static/images/scene-examples/views/scene9-codex-topdown.webp"}},"scene9-claudecode":{"scene":"scene9","room":"Living room","method":"Claude Code","prompt":"A living room with a sofa in front of a wall-mounted TV, a lamp behind the sofa, and a stool near the TV against the wall.","image":"static/images/scene-examples/scene9-claudecode.webp","tasks":3,"metrics":{"realism":8,"functionality":9,"layout":9,"completion":7,"collision_percent":0.0,"out_of_bound_percent":0.0,"support_percent":90.9090909090909,"stability_native_percent":100.0,"ie_success_percent":0,"ie_score":6,"damage_rate_percent":21.21212121212121,"dp":7},"status":{"semantic":"completed","static":"completed","stability":"completed","dynamic":"completed"},"coverage":{"shared_actions":3,"analyzed_cases":3,"executed_cases":3,"ie_n":3,"ie_score_n":3,"post_metrics_n":3,"dp_n":3},"views":{"corner_sw":"static/images/scene-examples/scene9-claudecode.webp","corner_se":"static/images/scene-examples/views/scene9-claudecode-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene9-claudecode-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene9-claudecode-corner_nw.webp","topdown":"static/images/scene-examples/views/scene9-claudecode-topdown.webp"}},"scene34-atiss":{"scene":"scene34","room":"Dining room","method":"ATISS","prompt":"A dining room with a bar table positioned in the middle of the room. A wooden shelf is mounted on the wall, holding a potted plant and a jug, adding a touch of decor and functionality. Along the wall, there is a fridge and a wine cabinet, providing ample storage and a cohesive design.","image":"static/images/scene-examples/scene34-atiss.webp","tasks":8,"metrics":{"realism":2,"functionality":3,"layout":1,"completion":2,"collision_percent":82.3529411764706,"out_of_bound_percent":29.41176470588235,"support_percent":35.294117647058826,"stability_native_percent":null,"ie_success_percent":0,"ie_score":1,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"shared_actions":8,"analyzed_cases":8,"executed_cases":0,"ie_n":8,"ie_score_n":8,"post_metrics_n":0,"dp_n":0},"views":{"corner_sw":"static/images/scene-examples/scene34-atiss.webp","corner_se":"static/images/scene-examples/views/scene34-atiss-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene34-atiss-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene34-atiss-corner_nw.webp","topdown":"static/images/scene-examples/views/scene34-atiss-topdown.webp"}},"scene34-diffuscene":{"scene":"scene34","room":"Dining room","method":"DiffuScene","prompt":"A dining room with a bar table positioned in the middle of the room. A wooden shelf is mounted on the wall, holding a potted plant and a jug, adding a touch of decor and functionality. Along the wall, there is a fridge and a wine cabinet, providing ample storage and a cohesive design.","image":"static/images/scene-examples/scene34-diffuscene.webp","tasks":8,"metrics":{"realism":5,"functionality":3,"layout":4,"completion":3,"collision_percent":54.54545454545455,"out_of_bound_percent":18.181818181818183,"support_percent":63.63636363636363,"stability_native_percent":null,"ie_success_percent":0,"ie_score":1,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"shared_actions":8,"analyzed_cases":8,"executed_cases":0,"ie_n":8,"ie_score_n":8,"post_metrics_n":0,"dp_n":0},"views":{"corner_sw":"static/images/scene-examples/scene34-diffuscene.webp","corner_se":"static/images/scene-examples/views/scene34-diffuscene-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene34-diffuscene-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene34-diffuscene-corner_nw.webp","topdown":"static/images/scene-examples/views/scene34-diffuscene-topdown.webp"}},"scene34-instructscene":{"scene":"scene34","room":"Dining room","method":"InstructScene","prompt":"A dining room with a bar table positioned in the middle of the room. A wooden shelf is mounted on the wall, holding a potted plant and a jug, adding a touch of decor and functionality. Along the wall, there is a fridge and a wine cabinet, providing ample storage and a cohesive design.","image":"static/images/scene-examples/scene34-instructscene.webp","tasks":8,"metrics":{"realism":4,"functionality":4,"layout":4,"completion":4,"collision_percent":44.44444444444444,"out_of_bound_percent":33.333333333333336,"support_percent":88.88888888888889,"stability_native_percent":null,"ie_success_percent":0,"ie_score":1,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"shared_actions":8,"analyzed_cases":8,"executed_cases":0,"ie_n":8,"ie_score_n":8,"post_metrics_n":0,"dp_n":0},"views":{"corner_sw":"static/images/scene-examples/scene34-instructscene.webp","corner_se":"static/images/scene-examples/views/scene34-instructscene-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene34-instructscene-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene34-instructscene-corner_nw.webp","topdown":"static/images/scene-examples/views/scene34-instructscene-topdown.webp"}},"scene34-layoutgpt":{"scene":"scene34","room":"Dining room","method":"LayoutGPT","prompt":"A dining room with a bar table positioned in the middle of the room. A wooden shelf is mounted on the wall, holding a potted plant and a jug, adding a touch of decor and functionality. Along the wall, there is a fridge and a wine cabinet, providing ample storage and a cohesive design.","image":"static/images/scene-examples/scene34-layoutgpt.webp","tasks":8,"metrics":{"realism":2,"functionality":3,"layout":2,"completion":2,"collision_percent":0.0,"out_of_bound_percent":16.666666666666668,"support_percent":0.0,"stability_native_percent":null,"ie_success_percent":0,"ie_score":2,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"shared_actions":8,"analyzed_cases":8,"executed_cases":0,"ie_n":8,"ie_score_n":8,"post_metrics_n":0,"dp_n":0},"views":{"corner_sw":"static/images/scene-examples/scene34-layoutgpt.webp","corner_se":"static/images/scene-examples/views/scene34-layoutgpt-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene34-layoutgpt-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene34-layoutgpt-corner_nw.webp","topdown":"static/images/scene-examples/views/scene34-layoutgpt-topdown.webp"}},"scene34-layoutvlm":{"scene":"scene34","room":"Dining room","method":"LayoutVLM","prompt":"A dining room with a bar table positioned in the middle of the room. A wooden shelf is mounted on the wall, holding a potted plant and a jug, adding a touch of decor and functionality. Along the wall, there is a fridge and a wine cabinet, providing ample storage and a cohesive design.","image":"static/images/scene-examples/scene34-layoutvlm.webp","tasks":8,"metrics":{"realism":3,"functionality":4,"layout":3,"completion":2,"collision_percent":33.333333333333336,"out_of_bound_percent":0.0,"support_percent":100.0,"stability_native_percent":null,"ie_success_percent":0,"ie_score":2,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"shared_actions":8,"analyzed_cases":8,"executed_cases":0,"ie_n":8,"ie_score_n":8,"post_metrics_n":0,"dp_n":0},"views":{"corner_sw":"static/images/scene-examples/scene34-layoutvlm.webp","corner_se":"static/images/scene-examples/views/scene34-layoutvlm-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene34-layoutvlm-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene34-layoutvlm-corner_nw.webp","topdown":"static/images/scene-examples/views/scene34-layoutvlm-topdown.webp"}},"scene34-holodeck":{"scene":"scene34","room":"Dining room","method":"Holodeck","prompt":"A dining room with a bar table positioned in the middle of the room. A wooden shelf is mounted on the wall, holding a potted plant and a jug, adding a touch of decor and functionality. Along the wall, there is a fridge and a wine cabinet, providing ample storage and a cohesive design.","image":"static/images/scene-examples/scene34-holodeck.webp","tasks":8,"metrics":{"realism":4,"functionality":5,"layout":3,"completion":4,"collision_percent":19.35483870967742,"out_of_bound_percent":6.451612903225806,"support_percent":32.25806451612903,"stability_native_percent":60.0,"ie_success_percent":37.5,"ie_score":6,"damage_rate_percent":3.225806451612903,"dp":7},"status":{"semantic":"completed","static":"completed","stability":"completed_partial_adapter","dynamic":"completed"},"coverage":{"shared_actions":8,"analyzed_cases":8,"executed_cases":6,"ie_n":8,"ie_score_n":8,"post_metrics_n":6,"dp_n":6},"views":{"corner_sw":"static/images/scene-examples/scene34-holodeck.webp","corner_se":"static/images/scene-examples/views/scene34-holodeck-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene34-holodeck-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene34-holodeck-corner_nw.webp","topdown":"static/images/scene-examples/views/scene34-holodeck-topdown.webp"}},"scene34-hsm":{"scene":"scene34","room":"Dining room","method":"HSM","prompt":"A dining room with a bar table positioned in the middle of the room. A wooden shelf is mounted on the wall, holding a potted plant and a jug, adding a touch of decor and functionality. Along the wall, there is a fridge and a wine cabinet, providing ample storage and a cohesive design.","image":"static/images/scene-examples/scene34-hsm.webp","tasks":8,"metrics":{"realism":5,"functionality":4,"layout":5,"completion":3,"collision_percent":20.0,"out_of_bound_percent":4.0,"support_percent":68.0,"stability_native_percent":null,"ie_success_percent":0,"ie_score":2,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"shared_actions":8,"analyzed_cases":8,"executed_cases":0,"ie_n":8,"ie_score_n":8,"post_metrics_n":0,"dp_n":0},"views":{"corner_sw":"static/images/scene-examples/scene34-hsm.webp","corner_se":"static/images/scene-examples/views/scene34-hsm-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene34-hsm-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene34-hsm-corner_nw.webp","topdown":"static/images/scene-examples/views/scene34-hsm-topdown.webp"}},"scene34-sceneweaver":{"scene":"scene34","room":"Dining room","method":"SceneWeaver","prompt":"A dining room with a bar table positioned in the middle of the room. A wooden shelf is mounted on the wall, holding a potted plant and a jug, adding a touch of decor and functionality. Along the wall, there is a fridge and a wine cabinet, providing ample storage and a cohesive design.","image":"static/images/scene-examples/scene34-sceneweaver.webp","tasks":8,"metrics":{"realism":5,"functionality":6,"layout":6,"completion":4,"collision_percent":0.0,"out_of_bound_percent":0.0,"support_percent":0.0,"stability_native_percent":null,"ie_success_percent":0,"ie_score":1.5,"damage_rate_percent":null,"dp":null},"status":{"semantic":"completed","static":"completed","stability":"not_applicable_no_dynamic_objects","dynamic":"completed"},"coverage":{"shared_actions":8,"analyzed_cases":8,"executed_cases":0,"ie_n":8,"ie_score_n":8,"post_metrics_n":0,"dp_n":0},"views":{"corner_sw":"static/images/scene-examples/scene34-sceneweaver.webp","corner_se":"static/images/scene-examples/views/scene34-sceneweaver-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene34-sceneweaver-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene34-sceneweaver-corner_nw.webp","topdown":"static/images/scene-examples/views/scene34-sceneweaver-topdown.webp"}},"scene34-sage":{"scene":"scene34","room":"Dining room","method":"SAGE","prompt":"A dining room with a bar table positioned in the middle of the room. A wooden shelf is mounted on the wall, holding a potted plant and a jug, adding a touch of decor and functionality. Along the wall, there is a fridge and a wine cabinet, providing ample storage and a cohesive design.","image":"static/images/scene-examples/scene34-sage.webp","tasks":8,"metrics":{"realism":2,"functionality":4,"layout":1,"completion":4,"collision_percent":0.0,"out_of_bound_percent":0.0,"support_percent":78.94736842105263,"stability_native_percent":100.0,"ie_success_percent":25.0,"ie_score":5.25,"damage_rate_percent":0.0,"dp":7},"status":{"semantic":"completed","static":"completed","stability":"completed","dynamic":"completed"},"coverage":{"shared_actions":8,"analyzed_cases":8,"executed_cases":5,"ie_n":8,"ie_score_n":8,"post_metrics_n":5,"dp_n":5},"views":{"corner_sw":"static/images/scene-examples/scene34-sage.webp","corner_se":"static/images/scene-examples/views/scene34-sage-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene34-sage-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene34-sage-corner_nw.webp","topdown":"static/images/scene-examples/views/scene34-sage-topdown.webp"}},"scene34-scenesmith":{"scene":"scene34","room":"Dining room","method":"SceneSmith","prompt":"A dining room with a bar table positioned in the middle of the room. A wooden shelf is mounted on the wall, holding a potted plant and a jug, adding a touch of decor and functionality. Along the wall, there is a fridge and a wine cabinet, providing ample storage and a cohesive design.","image":"static/images/scene-examples/scene34-scenesmith.webp","tasks":8,"metrics":{"realism":7,"functionality":9,"layout":7,"completion":6,"collision_percent":15.384615384615385,"out_of_bound_percent":2.5641025641025643,"support_percent":97.43589743589743,"stability_native_percent":90.9090909090909,"ie_success_percent":37.5,"ie_score":7.25,"damage_rate_percent":8.333333333333334,"dp":6.285714285714286},"status":{"semantic":"completed","static":"completed","stability":"completed","dynamic":"completed"},"coverage":{"shared_actions":8,"analyzed_cases":8,"executed_cases":8,"ie_n":8,"ie_score_n":8,"post_metrics_n":8,"dp_n":7},"views":{"corner_sw":"static/images/scene-examples/scene34-scenesmith.webp","corner_se":"static/images/scene-examples/views/scene34-scenesmith-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene34-scenesmith-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene34-scenesmith-corner_nw.webp","topdown":"static/images/scene-examples/views/scene34-scenesmith-topdown.webp"}},"scene34-codex":{"scene":"scene34","room":"Dining room","method":"Codex","prompt":"A dining room with a bar table positioned in the middle of the room. A wooden shelf is mounted on the wall, holding a potted plant and a jug, adding a touch of decor and functionality. Along the wall, there is a fridge and a wine cabinet, providing ample storage and a cohesive design.","image":"static/images/scene-examples/scene34-codex.webp","tasks":8,"metrics":{"realism":7,"functionality":9,"layout":9,"completion":4,"collision_percent":0.0,"out_of_bound_percent":0.0,"support_percent":68.0,"stability_native_percent":100.0,"ie_success_percent":37.5,"ie_score":6.25,"damage_rate_percent":7.5,"dp":7},"status":{"semantic":"completed","static":"completed","stability":"completed","dynamic":"completed"},"coverage":{"shared_actions":8,"analyzed_cases":8,"executed_cases":8,"ie_n":8,"ie_score_n":8,"post_metrics_n":8,"dp_n":7},"views":{"corner_sw":"static/images/scene-examples/scene34-codex.webp","corner_se":"static/images/scene-examples/views/scene34-codex-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene34-codex-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene34-codex-corner_nw.webp","topdown":"static/images/scene-examples/views/scene34-codex-topdown.webp"}},"scene34-claudecode":{"scene":"scene34","room":"Dining room","method":"Claude Code","prompt":"A dining room with a bar table positioned in the middle of the room. A wooden shelf is mounted on the wall, holding a potted plant and a jug, adding a touch of decor and functionality. Along the wall, there is a fridge and a wine cabinet, providing ample storage and a cohesive design.","image":"static/images/scene-examples/scene34-claudecode.webp","tasks":8,"metrics":{"realism":7,"functionality":9,"layout":8,"completion":4,"collision_percent":0.0,"out_of_bound_percent":0.0,"support_percent":90.47619047619048,"stability_native_percent":100.0,"ie_success_percent":37.5,"ie_score":7,"damage_rate_percent":2.0408163265306123,"dp":7},"status":{"semantic":"completed","static":"completed","stability":"completed","dynamic":"completed"},"coverage":{"shared_actions":8,"analyzed_cases":8,"executed_cases":7,"ie_n":8,"ie_score_n":8,"post_metrics_n":7,"dp_n":6},"views":{"corner_sw":"static/images/scene-examples/scene34-claudecode.webp","corner_se":"static/images/scene-examples/views/scene34-claudecode-corner_se.webp","corner_ne":"static/images/scene-examples/views/scene34-claudecode-corner_ne.webp","corner_nw":"static/images/scene-examples/views/scene34-claudecode-corner_nw.webp","topdown":"static/images/scene-examples/views/scene34-claudecode-topdown.webp"}}}</script>
+<!-- End per-scene evaluation details -->
+
 
 <!-- Benchmark results -->
 <section id="benchmark-results" class="section benchmark-results" aria-labelledby="benchmark-results-heading">
@@ -584,9 +1077,6 @@
   </div>
 </section>
 <!-- End benchmark results -->
-
-
-
 
 <!-- Video Presentation: temporarily commented out; add a project video iframe src before restoring.
 <section class="hero is-small is-light">

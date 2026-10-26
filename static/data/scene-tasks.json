@@ -1,0 +1,1354 @@
+{
+  "description": "Prompt-inferred task sets and source success states from frozen evaluation plans. Displayed push displacement range updated to 0.13–0.17 m for the website at the user's request; source success states retain the saved evaluation thresholds.",
+  "scenes": {
+    "scene3": {
+      "prompt": "A bedroom with a double bed and a mini fridge near the bed, a table across from the door, and a painting on the wall above the bed.",
+      "source": "evaluation/benchmarks/action_plans/scene3_exhaustive_actions_v2/actions.frozen.json",
+      "source_sha256": "a37d761bf8a27a768d47fe6a69054c012bf492f397234eae3affd1044d3c553b",
+      "tasks": [
+        {
+          "id": "action_01",
+          "template_id": "open_hinged",
+          "target": {
+            "category": "fridge",
+            "reference": "a mini fridge",
+            "prompt_quote": "a mini fridge",
+            "origin": "llm_prompt_only"
+          },
+          "action": "Use Franka Panda real contact to open the native hinged part of a mini fridge at least 60 degrees from its verified closed reference and hold it for one second.",
+          "success_state": {
+            "description": "At least 60 degrees during the final 1 s, with actual manipulation contact, retained hinge attachment and bounded parent motion.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "min_opening_last_hold_deg",
+                "op": ">=",
+                "value": 60,
+                "unit": "deg"
+              },
+              {
+                "measurement": "hold_duration_s",
+                "op": ">=",
+                "value": 1,
+                "unit": "s"
+              },
+              {
+                "measurement": "max_hinge_anchor_error_m",
+                "op": "<=",
+                "value": 0.01,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_parent_translation_m",
+                "op": "<=",
+                "value": 0.05,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_parent_rotation_deg",
+                "op": "<=",
+                "value": 10,
+                "unit": "deg"
+              },
+              {
+                "measurement": "manipulation_contact_s",
+                "op": ">=",
+                "value": 0.1,
+                "unit": "s"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Open hinged part",
+            "instruction": "Open at least 60° from the closed position and hold for 1 s.",
+            "criteria": "Opening ≥60° throughout the final 1 s; manipulation contact ≥0.1 s; hinge anchor error ≤0.01 m; parent translation ≤0.05 m and rotation ≤10°.",
+            "target": "Mini fridge"
+          }
+        },
+        {
+          "id": "action_02",
+          "template_id": "open_hinged",
+          "target": {
+            "category": "door",
+            "reference": "the door",
+            "prompt_quote": "the door",
+            "origin": "llm_prompt_only"
+          },
+          "action": "Use Franka Panda real contact to open the native hinged part of the door at least 60 degrees from its verified closed reference and hold it for one second.",
+          "success_state": {
+            "description": "At least 60 degrees during the final 1 s, with actual manipulation contact, retained hinge attachment and bounded parent motion.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "min_opening_last_hold_deg",
+                "op": ">=",
+                "value": 60,
+                "unit": "deg"
+              },
+              {
+                "measurement": "hold_duration_s",
+                "op": ">=",
+                "value": 1,
+                "unit": "s"
+              },
+              {
+                "measurement": "max_hinge_anchor_error_m",
+                "op": "<=",
+                "value": 0.01,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_parent_translation_m",
+                "op": "<=",
+                "value": 0.05,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_parent_rotation_deg",
+                "op": "<=",
+                "value": 10,
+                "unit": "deg"
+              },
+              {
+                "measurement": "manipulation_contact_s",
+                "op": ">=",
+                "value": 0.1,
+                "unit": "s"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Open hinged part",
+            "instruction": "Open at least 60° from the closed position and hold for 1 s.",
+            "criteria": "Opening ≥60° throughout the final 1 s; manipulation contact ≥0.1 s; hinge anchor error ≤0.01 m; parent translation ≤0.05 m and rotation ≤10°.",
+            "target": "Door"
+          }
+        },
+        {
+          "id": "action_03",
+          "template_id": "push_rigid",
+          "target": {
+            "category": "bed",
+            "reference": "a double bed",
+            "prompt_quote": "a double bed",
+            "origin": "llm_prompt_only"
+          },
+          "action": "Use Franka Panda real contact to push a double bed 0.15 m along its predeclared horizontal direction, leaving it upright and floor-supported for one second.",
+          "success_state": {
+            "description": "During the final 1 s, along displacement is 0.12-0.18 m, lateral/vertical changes are <=3 cm, tilt <=10 degrees, with floor support and >=0.1 s hand contact.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "min_along_displacement_last_hold_m",
+                "op": ">=",
+                "value": 0.12,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_along_displacement_last_hold_m",
+                "op": "<=",
+                "value": 0.18,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_lateral_error_last_hold_m",
+                "op": "<=",
+                "value": 0.03,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_vertical_change_last_hold_m",
+                "op": "<=",
+                "value": 0.03,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_tilt_last_hold_deg",
+                "op": "<=",
+                "value": 10,
+                "unit": "deg"
+              },
+              {
+                "measurement": "hold_duration_s",
+                "op": ">=",
+                "value": 1,
+                "unit": "s"
+              },
+              {
+                "measurement": "manipulation_contact_s",
+                "op": ">=",
+                "value": 0.1,
+                "unit": "s"
+              },
+              {
+                "measurement": "floor_supported_last_hold",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Push object",
+            "instruction": "Push 0.15 m along the prescribed horizontal direction.",
+            "criteria": "Displacement 0.13–0.17 m along the prescribed direction throughout the final 1 s; lateral and vertical changes ≤0.03 m; tilt ≤10°; floor support maintained; manipulation contact ≥0.1 s.",
+            "target": "Double bed"
+          }
+        },
+        {
+          "id": "action_04",
+          "template_id": "push_rigid",
+          "target": {
+            "category": "fridge",
+            "reference": "a mini fridge",
+            "prompt_quote": "a mini fridge",
+            "origin": "llm_prompt_only"
+          },
+          "action": "Use Franka Panda real contact to push a mini fridge 0.15 m along its predeclared horizontal direction, leaving it upright and floor-supported for one second.",
+          "success_state": {
+            "description": "During the final 1 s, along displacement is 0.12-0.18 m, lateral/vertical changes are <=3 cm, tilt <=10 degrees, with floor support and >=0.1 s hand contact.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "min_along_displacement_last_hold_m",
+                "op": ">=",
+                "value": 0.12,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_along_displacement_last_hold_m",
+                "op": "<=",
+                "value": 0.18,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_lateral_error_last_hold_m",
+                "op": "<=",
+                "value": 0.03,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_vertical_change_last_hold_m",
+                "op": "<=",
+                "value": 0.03,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_tilt_last_hold_deg",
+                "op": "<=",
+                "value": 10,
+                "unit": "deg"
+              },
+              {
+                "measurement": "hold_duration_s",
+                "op": ">=",
+                "value": 1,
+                "unit": "s"
+              },
+              {
+                "measurement": "manipulation_contact_s",
+                "op": ">=",
+                "value": 0.1,
+                "unit": "s"
+              },
+              {
+                "measurement": "floor_supported_last_hold",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Push object",
+            "instruction": "Push 0.15 m along the prescribed horizontal direction.",
+            "criteria": "Displacement 0.13–0.17 m along the prescribed direction throughout the final 1 s; lateral and vertical changes ≤0.03 m; tilt ≤10°; floor support maintained; manipulation contact ≥0.1 s.",
+            "target": "Mini fridge"
+          }
+        },
+        {
+          "id": "action_05",
+          "template_id": "push_rigid",
+          "target": {
+            "category": "table",
+            "reference": "a table",
+            "prompt_quote": "a table",
+            "origin": "llm_prompt_only"
+          },
+          "action": "Use Franka Panda real contact to push a table 0.15 m along its predeclared horizontal direction, leaving it upright and floor-supported for one second.",
+          "success_state": {
+            "description": "During the final 1 s, along displacement is 0.12-0.18 m, lateral/vertical changes are <=3 cm, tilt <=10 degrees, with floor support and >=0.1 s hand contact.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "min_along_displacement_last_hold_m",
+                "op": ">=",
+                "value": 0.12,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_along_displacement_last_hold_m",
+                "op": "<=",
+                "value": 0.18,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_lateral_error_last_hold_m",
+                "op": "<=",
+                "value": 0.03,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_vertical_change_last_hold_m",
+                "op": "<=",
+                "value": 0.03,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_tilt_last_hold_deg",
+                "op": "<=",
+                "value": 10,
+                "unit": "deg"
+              },
+              {
+                "measurement": "hold_duration_s",
+                "op": ">=",
+                "value": 1,
+                "unit": "s"
+              },
+              {
+                "measurement": "manipulation_contact_s",
+                "op": ">=",
+                "value": 0.1,
+                "unit": "s"
+              },
+              {
+                "measurement": "floor_supported_last_hold",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Push object",
+            "instruction": "Push 0.15 m along the prescribed horizontal direction.",
+            "criteria": "Displacement 0.13–0.17 m along the prescribed direction throughout the final 1 s; lateral and vertical changes ≤0.03 m; tilt ≤10°; floor support maintained; manipulation contact ≥0.1 s.",
+            "target": "Table"
+          }
+        },
+        {
+          "id": "action_06",
+          "template_id": "place_push_probe",
+          "target": {
+            "category": "bed",
+            "reference": "a double bed",
+            "prompt_quote": "a double bed",
+            "origin": "llm_prompt_only"
+          },
+          "action": "Place the standardized probe on a double bed, let it settle, and gradually increase horizontal force on the probe until supported sliding begins.",
+          "success_state": {
+            "description": "Probe settles on target, slides below force cap for >=0.20 s and >=0.02 m relative travel, tilt <=5 degrees, no unrelated contact, and identifiable kinetic friction.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "settled_on_target",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              },
+              {
+                "measurement": "onset_detected_under_force_cap",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              },
+              {
+                "measurement": "supported_sliding_duration_s",
+                "op": ">=",
+                "value": 0.2,
+                "unit": "s"
+              },
+              {
+                "measurement": "relative_sliding_distance_m",
+                "op": ">=",
+                "value": 0.02,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_sliding_tilt_deg",
+                "op": "<=",
+                "value": 5,
+                "unit": "deg"
+              },
+              {
+                "measurement": "unrelated_contact",
+                "op": "==",
+                "value": false,
+                "unit": "boolean"
+              },
+              {
+                "measurement": "kinetic_identifiable",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Place and slide probe",
+            "instruction": "Place the standard probe, let it settle, then gradually increase horizontal force.",
+            "criteria": "Probe settles on the target; sliding begins below the force cap and remains supported for ≥0.20 s over ≥0.02 m; tilt ≤5°; no unrelated contact; kinetic friction is identifiable.",
+            "target": "Double bed"
+          }
+        },
+        {
+          "id": "action_07",
+          "template_id": "place_push_probe",
+          "target": {
+            "category": "fridge",
+            "reference": "a mini fridge",
+            "prompt_quote": "a mini fridge",
+            "origin": "llm_prompt_only"
+          },
+          "action": "Place the standardized probe on a mini fridge, let it settle, and gradually increase horizontal force on the probe until supported sliding begins.",
+          "success_state": {
+            "description": "Probe settles on target, slides below force cap for >=0.20 s and >=0.02 m relative travel, tilt <=5 degrees, no unrelated contact, and identifiable kinetic friction.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "settled_on_target",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              },
+              {
+                "measurement": "onset_detected_under_force_cap",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              },
+              {
+                "measurement": "supported_sliding_duration_s",
+                "op": ">=",
+                "value": 0.2,
+                "unit": "s"
+              },
+              {
+                "measurement": "relative_sliding_distance_m",
+                "op": ">=",
+                "value": 0.02,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_sliding_tilt_deg",
+                "op": "<=",
+                "value": 5,
+                "unit": "deg"
+              },
+              {
+                "measurement": "unrelated_contact",
+                "op": "==",
+                "value": false,
+                "unit": "boolean"
+              },
+              {
+                "measurement": "kinetic_identifiable",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Place and slide probe",
+            "instruction": "Place the standard probe, let it settle, then gradually increase horizontal force.",
+            "criteria": "Probe settles on the target; sliding begins below the force cap and remains supported for ≥0.20 s over ≥0.02 m; tilt ≤5°; no unrelated contact; kinetic friction is identifiable.",
+            "target": "Mini fridge"
+          }
+        },
+        {
+          "id": "action_08",
+          "template_id": "place_push_probe",
+          "target": {
+            "category": "table",
+            "reference": "a table",
+            "prompt_quote": "a table",
+            "origin": "llm_prompt_only"
+          },
+          "action": "Place the standardized probe on a table, let it settle, and gradually increase horizontal force on the probe until supported sliding begins.",
+          "success_state": {
+            "description": "Probe settles on target, slides below force cap for >=0.20 s and >=0.02 m relative travel, tilt <=5 degrees, no unrelated contact, and identifiable kinetic friction.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "settled_on_target",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              },
+              {
+                "measurement": "onset_detected_under_force_cap",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              },
+              {
+                "measurement": "supported_sliding_duration_s",
+                "op": ">=",
+                "value": 0.2,
+                "unit": "s"
+              },
+              {
+                "measurement": "relative_sliding_distance_m",
+                "op": ">=",
+                "value": 0.02,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_sliding_tilt_deg",
+                "op": "<=",
+                "value": 5,
+                "unit": "deg"
+              },
+              {
+                "measurement": "unrelated_contact",
+                "op": "==",
+                "value": false,
+                "unit": "boolean"
+              },
+              {
+                "measurement": "kinetic_identifiable",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Place and slide probe",
+            "instruction": "Place the standard probe, let it settle, then gradually increase horizontal force.",
+            "criteria": "Probe settles on the target; sliding begins below the force cap and remains supported for ≥0.20 s over ≥0.02 m; tilt ≤5°; no unrelated contact; kinetic friction is identifiable.",
+            "target": "Table"
+          }
+        }
+      ]
+    },
+    "scene9": {
+      "prompt": "A living room with a sofa in front of a wall-mounted TV, a lamp behind the sofa, and a stool near the TV against the wall.",
+      "source": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/dynamic_v1/actions.frozen.json",
+      "source_sha256": "1b531cebb7fe710b4a18503b051a9696350019db6675ff5adb66a79b62f40601",
+      "tasks": [
+        {
+          "id": "action_01",
+          "template_id": "push_rigid",
+          "target": {
+            "category": "sofa",
+            "reference": "a sofa",
+            "prompt_quote": "a sofa",
+            "origin": "llm_prompt_only",
+            "prompt_entity_key": "sofa",
+            "prompt_instance": 1,
+            "prompt_instance_count": 1,
+            "binding_order": "Distinct compatible native instance IDs sorted lexicographically, independently of outcomes. Missing slots remain absent."
+          },
+          "action": "Use Franka Panda real contact to push a sofa 0.15 m along its predeclared horizontal direction, leaving it upright and floor-supported for one second.",
+          "success_state": {
+            "description": "During the final 1 s, along displacement is 0.12-0.18 m, lateral/vertical changes are <=3 cm, tilt <=10 degrees, with floor support and >=0.1 s hand contact.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "min_along_displacement_last_hold_m",
+                "op": ">=",
+                "value": 0.12,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_along_displacement_last_hold_m",
+                "op": "<=",
+                "value": 0.18,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_lateral_error_last_hold_m",
+                "op": "<=",
+                "value": 0.03,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_vertical_change_last_hold_m",
+                "op": "<=",
+                "value": 0.03,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_tilt_last_hold_deg",
+                "op": "<=",
+                "value": 10,
+                "unit": "deg"
+              },
+              {
+                "measurement": "hold_duration_s",
+                "op": ">=",
+                "value": 1,
+                "unit": "s"
+              },
+              {
+                "measurement": "manipulation_contact_s",
+                "op": ">=",
+                "value": 0.1,
+                "unit": "s"
+              },
+              {
+                "measurement": "floor_supported_last_hold",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Push object",
+            "instruction": "Push 0.15 m along the prescribed horizontal direction.",
+            "criteria": "Displacement 0.13–0.17 m along the prescribed direction throughout the final 1 s; lateral and vertical changes ≤0.03 m; tilt ≤10°; floor support maintained; manipulation contact ≥0.1 s.",
+            "target": "Sofa"
+          }
+        },
+        {
+          "id": "action_02",
+          "template_id": "push_rigid",
+          "target": {
+            "category": "lamp",
+            "reference": "a lamp",
+            "prompt_quote": "a lamp",
+            "origin": "llm_prompt_only",
+            "prompt_entity_key": "lamp",
+            "prompt_instance": 1,
+            "prompt_instance_count": 1,
+            "binding_order": "Distinct compatible native instance IDs sorted lexicographically, independently of outcomes. Missing slots remain absent."
+          },
+          "action": "Use Franka Panda real contact to push a lamp 0.15 m along its predeclared horizontal direction, leaving it upright and floor-supported for one second.",
+          "success_state": {
+            "description": "During the final 1 s, along displacement is 0.12-0.18 m, lateral/vertical changes are <=3 cm, tilt <=10 degrees, with floor support and >=0.1 s hand contact.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "min_along_displacement_last_hold_m",
+                "op": ">=",
+                "value": 0.12,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_along_displacement_last_hold_m",
+                "op": "<=",
+                "value": 0.18,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_lateral_error_last_hold_m",
+                "op": "<=",
+                "value": 0.03,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_vertical_change_last_hold_m",
+                "op": "<=",
+                "value": 0.03,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_tilt_last_hold_deg",
+                "op": "<=",
+                "value": 10,
+                "unit": "deg"
+              },
+              {
+                "measurement": "hold_duration_s",
+                "op": ">=",
+                "value": 1,
+                "unit": "s"
+              },
+              {
+                "measurement": "manipulation_contact_s",
+                "op": ">=",
+                "value": 0.1,
+                "unit": "s"
+              },
+              {
+                "measurement": "floor_supported_last_hold",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Push object",
+            "instruction": "Push 0.15 m along the prescribed horizontal direction.",
+            "criteria": "Displacement 0.13–0.17 m along the prescribed direction throughout the final 1 s; lateral and vertical changes ≤0.03 m; tilt ≤10°; floor support maintained; manipulation contact ≥0.1 s.",
+            "target": "Lamp"
+          }
+        },
+        {
+          "id": "action_03",
+          "template_id": "push_rigid",
+          "target": {
+            "category": "stool",
+            "reference": "a stool",
+            "prompt_quote": "a stool",
+            "origin": "llm_prompt_only",
+            "prompt_entity_key": "stool",
+            "prompt_instance": 1,
+            "prompt_instance_count": 1,
+            "binding_order": "Distinct compatible native instance IDs sorted lexicographically, independently of outcomes. Missing slots remain absent."
+          },
+          "action": "Use Franka Panda real contact to push a stool 0.15 m along its predeclared horizontal direction, leaving it upright and floor-supported for one second.",
+          "success_state": {
+            "description": "During the final 1 s, along displacement is 0.12-0.18 m, lateral/vertical changes are <=3 cm, tilt <=10 degrees, with floor support and >=0.1 s hand contact.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "min_along_displacement_last_hold_m",
+                "op": ">=",
+                "value": 0.12,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_along_displacement_last_hold_m",
+                "op": "<=",
+                "value": 0.18,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_lateral_error_last_hold_m",
+                "op": "<=",
+                "value": 0.03,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_vertical_change_last_hold_m",
+                "op": "<=",
+                "value": 0.03,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_tilt_last_hold_deg",
+                "op": "<=",
+                "value": 10,
+                "unit": "deg"
+              },
+              {
+                "measurement": "hold_duration_s",
+                "op": ">=",
+                "value": 1,
+                "unit": "s"
+              },
+              {
+                "measurement": "manipulation_contact_s",
+                "op": ">=",
+                "value": 0.1,
+                "unit": "s"
+              },
+              {
+                "measurement": "floor_supported_last_hold",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Push object",
+            "instruction": "Push 0.15 m along the prescribed horizontal direction.",
+            "criteria": "Displacement 0.13–0.17 m along the prescribed direction throughout the final 1 s; lateral and vertical changes ≤0.03 m; tilt ≤10°; floor support maintained; manipulation contact ≥0.1 s.",
+            "target": "Stool"
+          }
+        }
+      ]
+    },
+    "scene34": {
+      "prompt": "A dining room with a bar table positioned in the middle of the room. A wooden shelf is mounted on the wall, holding a potted plant and a jug, adding a touch of decor and functionality. Along the wall, there is a fridge and a wine cabinet, providing ample storage and a cohesive design.",
+      "source": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/dynamic_v1/actions.frozen.json",
+      "source_sha256": "af9a1cb6a6f68ca078a6c94213784f6d622de6919e509ba7d85103eba4f343c9",
+      "tasks": [
+        {
+          "id": "action_01",
+          "template_id": "open_hinged",
+          "target": {
+            "category": "fridge",
+            "reference": "a fridge",
+            "prompt_quote": "a fridge",
+            "origin": "llm_prompt_only",
+            "prompt_entity_key": "fridge",
+            "prompt_instance": 1,
+            "prompt_instance_count": 1,
+            "binding_order": "Distinct compatible native instance IDs sorted lexicographically, independently of outcomes. Missing slots remain absent."
+          },
+          "action": "Use Franka Panda real contact to open the native hinged part of a fridge at least 60 degrees from its verified closed reference and hold it for one second.",
+          "success_state": {
+            "description": "At least 60 degrees during the final 1 s, with actual manipulation contact, retained hinge attachment and bounded parent motion.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "min_opening_last_hold_deg",
+                "op": ">=",
+                "value": 60,
+                "unit": "deg"
+              },
+              {
+                "measurement": "hold_duration_s",
+                "op": ">=",
+                "value": 1,
+                "unit": "s"
+              },
+              {
+                "measurement": "max_hinge_anchor_error_m",
+                "op": "<=",
+                "value": 0.01,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_parent_translation_m",
+                "op": "<=",
+                "value": 0.05,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_parent_rotation_deg",
+                "op": "<=",
+                "value": 10,
+                "unit": "deg"
+              },
+              {
+                "measurement": "manipulation_contact_s",
+                "op": ">=",
+                "value": 0.1,
+                "unit": "s"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Open hinged part",
+            "instruction": "Open at least 60° from the closed position and hold for 1 s.",
+            "criteria": "Opening ≥60° throughout the final 1 s; manipulation contact ≥0.1 s; hinge anchor error ≤0.01 m; parent translation ≤0.05 m and rotation ≤10°.",
+            "target": "Fridge"
+          }
+        },
+        {
+          "id": "action_02",
+          "template_id": "open_hinged",
+          "target": {
+            "category": "cabinet",
+            "reference": "a wine cabinet",
+            "prompt_quote": "a wine cabinet",
+            "origin": "llm_prompt_only",
+            "prompt_entity_key": "wine_cabinet",
+            "prompt_instance": 1,
+            "prompt_instance_count": 1,
+            "binding_order": "Distinct compatible native instance IDs sorted lexicographically, independently of outcomes. Missing slots remain absent."
+          },
+          "action": "Use Franka Panda real contact to open the native hinged part of a wine cabinet at least 60 degrees from its verified closed reference and hold it for one second.",
+          "success_state": {
+            "description": "At least 60 degrees during the final 1 s, with actual manipulation contact, retained hinge attachment and bounded parent motion.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "min_opening_last_hold_deg",
+                "op": ">=",
+                "value": 60,
+                "unit": "deg"
+              },
+              {
+                "measurement": "hold_duration_s",
+                "op": ">=",
+                "value": 1,
+                "unit": "s"
+              },
+              {
+                "measurement": "max_hinge_anchor_error_m",
+                "op": "<=",
+                "value": 0.01,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_parent_translation_m",
+                "op": "<=",
+                "value": 0.05,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_parent_rotation_deg",
+                "op": "<=",
+                "value": 10,
+                "unit": "deg"
+              },
+              {
+                "measurement": "manipulation_contact_s",
+                "op": ">=",
+                "value": 0.1,
+                "unit": "s"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Open hinged part",
+            "instruction": "Open at least 60° from the closed position and hold for 1 s.",
+            "criteria": "Opening ≥60° throughout the final 1 s; manipulation contact ≥0.1 s; hinge anchor error ≤0.01 m; parent translation ≤0.05 m and rotation ≤10°.",
+            "target": "Wine cabinet"
+          }
+        },
+        {
+          "id": "action_03",
+          "template_id": "push_rigid",
+          "target": {
+            "category": "table",
+            "reference": "a bar table",
+            "prompt_quote": "a bar table",
+            "origin": "llm_prompt_only",
+            "prompt_entity_key": "bar_table",
+            "prompt_instance": 1,
+            "prompt_instance_count": 1,
+            "binding_order": "Distinct compatible native instance IDs sorted lexicographically, independently of outcomes. Missing slots remain absent."
+          },
+          "action": "Use Franka Panda real contact to push a bar table 0.15 m along its predeclared horizontal direction, leaving it upright and floor-supported for one second.",
+          "success_state": {
+            "description": "During the final 1 s, along displacement is 0.12-0.18 m, lateral/vertical changes are <=3 cm, tilt <=10 degrees, with floor support and >=0.1 s hand contact.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "min_along_displacement_last_hold_m",
+                "op": ">=",
+                "value": 0.12,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_along_displacement_last_hold_m",
+                "op": "<=",
+                "value": 0.18,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_lateral_error_last_hold_m",
+                "op": "<=",
+                "value": 0.03,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_vertical_change_last_hold_m",
+                "op": "<=",
+                "value": 0.03,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_tilt_last_hold_deg",
+                "op": "<=",
+                "value": 10,
+                "unit": "deg"
+              },
+              {
+                "measurement": "hold_duration_s",
+                "op": ">=",
+                "value": 1,
+                "unit": "s"
+              },
+              {
+                "measurement": "manipulation_contact_s",
+                "op": ">=",
+                "value": 0.1,
+                "unit": "s"
+              },
+              {
+                "measurement": "floor_supported_last_hold",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Push object",
+            "instruction": "Push 0.15 m along the prescribed horizontal direction.",
+            "criteria": "Displacement 0.13–0.17 m along the prescribed direction throughout the final 1 s; lateral and vertical changes ≤0.03 m; tilt ≤10°; floor support maintained; manipulation contact ≥0.1 s.",
+            "target": "Bar table"
+          }
+        },
+        {
+          "id": "action_04",
+          "template_id": "push_rigid",
+          "target": {
+            "category": "fridge",
+            "reference": "a fridge",
+            "prompt_quote": "a fridge",
+            "origin": "llm_prompt_only",
+            "prompt_entity_key": "fridge",
+            "prompt_instance": 1,
+            "prompt_instance_count": 1,
+            "binding_order": "Distinct compatible native instance IDs sorted lexicographically, independently of outcomes. Missing slots remain absent."
+          },
+          "action": "Use Franka Panda real contact to push a fridge 0.15 m along its predeclared horizontal direction, leaving it upright and floor-supported for one second.",
+          "success_state": {
+            "description": "During the final 1 s, along displacement is 0.12-0.18 m, lateral/vertical changes are <=3 cm, tilt <=10 degrees, with floor support and >=0.1 s hand contact.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "min_along_displacement_last_hold_m",
+                "op": ">=",
+                "value": 0.12,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_along_displacement_last_hold_m",
+                "op": "<=",
+                "value": 0.18,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_lateral_error_last_hold_m",
+                "op": "<=",
+                "value": 0.03,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_vertical_change_last_hold_m",
+                "op": "<=",
+                "value": 0.03,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_tilt_last_hold_deg",
+                "op": "<=",
+                "value": 10,
+                "unit": "deg"
+              },
+              {
+                "measurement": "hold_duration_s",
+                "op": ">=",
+                "value": 1,
+                "unit": "s"
+              },
+              {
+                "measurement": "manipulation_contact_s",
+                "op": ">=",
+                "value": 0.1,
+                "unit": "s"
+              },
+              {
+                "measurement": "floor_supported_last_hold",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Push object",
+            "instruction": "Push 0.15 m along the prescribed horizontal direction.",
+            "criteria": "Displacement 0.13–0.17 m along the prescribed direction throughout the final 1 s; lateral and vertical changes ≤0.03 m; tilt ≤10°; floor support maintained; manipulation contact ≥0.1 s.",
+            "target": "Fridge"
+          }
+        },
+        {
+          "id": "action_05",
+          "template_id": "push_rigid",
+          "target": {
+            "category": "cabinet",
+            "reference": "a wine cabinet",
+            "prompt_quote": "a wine cabinet",
+            "origin": "llm_prompt_only",
+            "prompt_entity_key": "wine_cabinet",
+            "prompt_instance": 1,
+            "prompt_instance_count": 1,
+            "binding_order": "Distinct compatible native instance IDs sorted lexicographically, independently of outcomes. Missing slots remain absent."
+          },
+          "action": "Use Franka Panda real contact to push a wine cabinet 0.15 m along its predeclared horizontal direction, leaving it upright and floor-supported for one second.",
+          "success_state": {
+            "description": "During the final 1 s, along displacement is 0.12-0.18 m, lateral/vertical changes are <=3 cm, tilt <=10 degrees, with floor support and >=0.1 s hand contact.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "min_along_displacement_last_hold_m",
+                "op": ">=",
+                "value": 0.12,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_along_displacement_last_hold_m",
+                "op": "<=",
+                "value": 0.18,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_lateral_error_last_hold_m",
+                "op": "<=",
+                "value": 0.03,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_vertical_change_last_hold_m",
+                "op": "<=",
+                "value": 0.03,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_tilt_last_hold_deg",
+                "op": "<=",
+                "value": 10,
+                "unit": "deg"
+              },
+              {
+                "measurement": "hold_duration_s",
+                "op": ">=",
+                "value": 1,
+                "unit": "s"
+              },
+              {
+                "measurement": "manipulation_contact_s",
+                "op": ">=",
+                "value": 0.1,
+                "unit": "s"
+              },
+              {
+                "measurement": "floor_supported_last_hold",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Push object",
+            "instruction": "Push 0.15 m along the prescribed horizontal direction.",
+            "criteria": "Displacement 0.13–0.17 m along the prescribed direction throughout the final 1 s; lateral and vertical changes ≤0.03 m; tilt ≤10°; floor support maintained; manipulation contact ≥0.1 s.",
+            "target": "Wine cabinet"
+          }
+        },
+        {
+          "id": "action_06",
+          "template_id": "place_push_probe",
+          "target": {
+            "category": "table",
+            "reference": "a bar table",
+            "prompt_quote": "a bar table",
+            "origin": "llm_prompt_only",
+            "prompt_entity_key": "bar_table",
+            "prompt_instance": 1,
+            "prompt_instance_count": 1,
+            "binding_order": "Distinct compatible native instance IDs sorted lexicographically, independently of outcomes. Missing slots remain absent."
+          },
+          "action": "Place the standardized probe on a bar table, let it settle, and gradually increase horizontal force on the probe until supported sliding begins.",
+          "success_state": {
+            "description": "Probe settles on target, slides below force cap for >=0.20 s and >=0.02 m relative travel, tilt <=5 degrees, no unrelated contact, and identifiable kinetic friction.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "settled_on_target",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              },
+              {
+                "measurement": "onset_detected_under_force_cap",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              },
+              {
+                "measurement": "supported_sliding_duration_s",
+                "op": ">=",
+                "value": 0.2,
+                "unit": "s"
+              },
+              {
+                "measurement": "relative_sliding_distance_m",
+                "op": ">=",
+                "value": 0.02,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_sliding_tilt_deg",
+                "op": "<=",
+                "value": 5,
+                "unit": "deg"
+              },
+              {
+                "measurement": "unrelated_contact",
+                "op": "==",
+                "value": false,
+                "unit": "boolean"
+              },
+              {
+                "measurement": "kinetic_identifiable",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Place and slide probe",
+            "instruction": "Place the standard probe, let it settle, then gradually increase horizontal force.",
+            "criteria": "Probe settles on the target; sliding begins below the force cap and remains supported for ≥0.20 s over ≥0.02 m; tilt ≤5°; no unrelated contact; kinetic friction is identifiable.",
+            "target": "Bar table"
+          }
+        },
+        {
+          "id": "action_07",
+          "template_id": "place_push_probe",
+          "target": {
+            "category": "shelf",
+            "reference": "A wooden shelf",
+            "prompt_quote": "A wooden shelf",
+            "origin": "llm_prompt_only",
+            "prompt_entity_key": "wooden_shelf",
+            "prompt_instance": 1,
+            "prompt_instance_count": 1,
+            "binding_order": "Distinct compatible native instance IDs sorted lexicographically, independently of outcomes. Missing slots remain absent."
+          },
+          "action": "Place the standardized probe on A wooden shelf, let it settle, and gradually increase horizontal force on the probe until supported sliding begins.",
+          "success_state": {
+            "description": "Probe settles on target, slides below force cap for >=0.20 s and >=0.02 m relative travel, tilt <=5 degrees, no unrelated contact, and identifiable kinetic friction.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "settled_on_target",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              },
+              {
+                "measurement": "onset_detected_under_force_cap",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              },
+              {
+                "measurement": "supported_sliding_duration_s",
+                "op": ">=",
+                "value": 0.2,
+                "unit": "s"
+              },
+              {
+                "measurement": "relative_sliding_distance_m",
+                "op": ">=",
+                "value": 0.02,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_sliding_tilt_deg",
+                "op": "<=",
+                "value": 5,
+                "unit": "deg"
+              },
+              {
+                "measurement": "unrelated_contact",
+                "op": "==",
+                "value": false,
+                "unit": "boolean"
+              },
+              {
+                "measurement": "kinetic_identifiable",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Place and slide probe",
+            "instruction": "Place the standard probe, let it settle, then gradually increase horizontal force.",
+            "criteria": "Probe settles on the target; sliding begins below the force cap and remains supported for ≥0.20 s over ≥0.02 m; tilt ≤5°; no unrelated contact; kinetic friction is identifiable.",
+            "target": "Wooden shelf"
+          }
+        },
+        {
+          "id": "action_08",
+          "template_id": "place_push_probe",
+          "target": {
+            "category": "fridge",
+            "reference": "a fridge",
+            "prompt_quote": "a fridge",
+            "origin": "llm_prompt_only",
+            "prompt_entity_key": "fridge",
+            "prompt_instance": 1,
+            "prompt_instance_count": 1,
+            "binding_order": "Distinct compatible native instance IDs sorted lexicographically, independently of outcomes. Missing slots remain absent."
+          },
+          "action": "Place the standardized probe on a fridge, let it settle, and gradually increase horizontal force on the probe until supported sliding begins.",
+          "success_state": {
+            "description": "Probe settles on target, slides below force cap for >=0.20 s and >=0.02 m relative travel, tilt <=5 degrees, no unrelated contact, and identifiable kinetic friction.",
+            "aggregation": "all",
+            "checks": [
+              {
+                "measurement": "settled_on_target",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              },
+              {
+                "measurement": "onset_detected_under_force_cap",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              },
+              {
+                "measurement": "supported_sliding_duration_s",
+                "op": ">=",
+                "value": 0.2,
+                "unit": "s"
+              },
+              {
+                "measurement": "relative_sliding_distance_m",
+                "op": ">=",
+                "value": 0.02,
+                "unit": "m"
+              },
+              {
+                "measurement": "max_sliding_tilt_deg",
+                "op": "<=",
+                "value": 5,
+                "unit": "deg"
+              },
+              {
+                "measurement": "unrelated_contact",
+                "op": "==",
+                "value": false,
+                "unit": "boolean"
+              },
+              {
+                "measurement": "kinetic_identifiable",
+                "op": "==",
+                "value": true,
+                "unit": "boolean"
+              }
+            ],
+            "evidence": "Actual simulator measurements, never commands or VLM guesses. Missing/nonfinite telemetry is unresolved."
+          },
+          "display": {
+            "label": "Place and slide probe",
+            "instruction": "Place the standard probe, let it settle, then gradually increase horizontal force.",
+            "criteria": "Probe settles on the target; sliding begins below the force cap and remains supported for ≥0.20 s over ≥0.02 m; tilt ≤5°; no unrelated contact; kinetic friction is identifiable.",
+            "target": "Fridge"
+          }
+        }
+      ]
+    }
+  }
+}

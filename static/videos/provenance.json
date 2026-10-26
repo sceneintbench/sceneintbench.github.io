@@ -1,0 +1,94 @@
+[
+  {
+    "asset": "open-fridge-illustrative.mp4",
+    "kind": "illustrative scripted animation, not an experimental rollout",
+    "method": "SAGE",
+    "scene": "scene3",
+    "action": "open fridge",
+    "source_scene": "evaluation/unified_fiveview/output/sage/reconstructed.blend",
+    "motion": "Scripted robot IK; original refrigerator stays fixed; no dynamics simulation.",
+    "evaluation_fact": "Native hinge absent; original action is NSA and simulation_executed=false.",
+    "not_evaluation_evidence": true,
+    "duration_s": 8,
+    "on_video_text": false
+  },
+  {
+    "asset": "push-plant.mp4",
+    "kind": "cropped and temporally edited original simulation recording",
+    "method": "SceneSmith",
+    "scene": "scene338",
+    "action": "action_05 / push plant",
+    "source": "evaluation\\unified_fiveview\\output\\benchmark10_v1\\scenes\\scene338\\dynamic_v1\\action_05\\scenesmith\\action_01\\target.mp4",
+    "crop_w_h_x_y": "500:334:245:330",
+    "playback": "original speed for retained intervals; original 00:03–00:08 omitted; trimmed to 7 seconds of edited playback",
+    "finding": "Target passes initial collision, bounds, support and no-action stability checks, but arm/foliage overlap persists during the action.",
+    "limitation": "Visible contact defect, not proof of an incorrect particular mass/friction parameter. Whole-room static pass is not claimed.",
+    "duration_s": 7,
+    "original_duration_s": 16.583333333333332,
+    "retained_original_intervals_s": [
+      [
+        0,
+        3
+      ],
+      [
+        8,
+        12
+      ]
+    ],
+    "removed_original_intervals_s": [
+      [
+        3,
+        8
+      ],
+      [
+        12,
+        16.583333333333332
+      ]
+    ]
+  },
+  {
+    "asset": "push-chair.mp4",
+    "kind": "cropped, trimmed, and brightness-adjusted original simulation recording",
+    "method": "SceneSmith",
+    "scene": "scene80",
+    "action": "action_04 / push chair",
+    "source": "evaluation\\unified_fiveview\\output\\benchmark10_v1\\scenes\\scene80\\dynamic_v1\\action_04\\scenesmith\\action_release_ik02\\target.mp4",
+    "crop_w_h_x_y": "750:500:0:200",
+    "playback": "original 00:01–00:03 excerpt at original speed",
+    "finding": "A non-target book loses its original table support; the matched no-action control retains that support.",
+    "limitation": "Collateral support loss under the evaluation protocol. Falling itself is not evidence of implausible dynamics. Some other objects also fall in the no-action control; these are not attributed to this action.",
+    "duration_s": 2,
+    "original_duration_s": 16.583333333333332,
+    "retained_original_intervals_s": [
+      [
+        1,
+        3
+      ]
+    ],
+    "color_adjustment_ffmpeg_eq": {
+      "gamma": 1.25,
+      "brightness": 0.02,
+      "contrast": 1.02
+    }
+  },
+  {
+    "asset": "sage-kitchen-fridge-open-illustrative.mp4",
+    "kind": "Illustrative animation with a hypothetical hinge and scripted robot; not a physics rollout",
+    "method": "SAGE",
+    "scene": "scene290",
+    "source_scene": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene290/sage/reconstructed.blend",
+    "original_open_action": "NSA: missing_native_mechanism; no original chair-blocked opening rollout",
+    "changes": "Front right panel segmented in a copy of the single fridge mesh; assumed vertical hinge added; robot and mounting pedestal added. Existing furniture positions unchanged.",
+    "chair_fixed": true,
+    "first_geometric_chair_intersection_deg": 13.539586877822877,
+    "claim_limit": "Under the assumed hinge and fixed chair, door/chair geometry intersects around 13.5 degrees. This does not establish physical task failure with movable furniture, nor the cause of the original push failure.",
+    "not_evaluation_evidence": true,
+    "duration_s": 6.8,
+    "source_frame_range": [
+      19,
+      120
+    ],
+    "on_video_text": false,
+    "on_video_contact_marker": false
+  }
+]

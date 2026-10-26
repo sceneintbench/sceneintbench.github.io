@@ -1,0 +1,1476 @@
+{
+  "source_inventory": "evaluation/unified_fiveview/output/benchmark10_v1/inventory.json",
+  "view": "corner_sw",
+  "image_processing": "Full frames resized to 768 x 768, lossless WebP; no crop, recoloring, or content changes.",
+  "scenes": [
+    {
+      "scene_id": "scene3",
+      "room": "Bedroom",
+      "prompt": "A bedroom with a double bed and a mini fridge near the bed, a table across from the door, and a painting on the wall above the bed.",
+      "methods": [
+        {
+          "method": "atiss",
+          "label": "ATISS",
+          "source_render": "evaluation/unified_fiveview/output/atiss/renders/corner_sw.png",
+          "source_sha256": "2d9a81223dcbe88a1e27f7ba32091928c62f3a2ed39d4c9e3fb83a4d0b44ee48",
+          "website_image": "static/images/scene-examples/scene3-atiss.webp",
+          "website_sha256": "dc185b8dac5de46fe6875d5e303bc1b78b880ed29e9bf88fbb51d380bc4f6cad",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/atiss/renders/corner_sw.png",
+              "source_sha256": "2d9a81223dcbe88a1e27f7ba32091928c62f3a2ed39d4c9e3fb83a4d0b44ee48",
+              "website_image": "static/images/scene-examples/scene3-atiss.webp",
+              "website_sha256": "dc185b8dac5de46fe6875d5e303bc1b78b880ed29e9bf88fbb51d380bc4f6cad"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/atiss/renders/corner_se.png",
+              "source_sha256": "c6334f26aa5bb30192a84fdcb8fad0b1747ee32016e28f7433d3b005748a2a83",
+              "website_image": "static/images/scene-examples/views/scene3-atiss-corner_se.webp",
+              "website_sha256": "d7dfa9bc6790816e9f2b79160c46802e797c6094b184925195d2515e3c9d286f"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/atiss/renders/corner_ne.png",
+              "source_sha256": "394b9b7b49bae89642e1dd55e1812b338927852cecad0535f6f80d4204313a86",
+              "website_image": "static/images/scene-examples/views/scene3-atiss-corner_ne.webp",
+              "website_sha256": "8279626b86d93fc515075126331197471f7b48e74941ebdd2d29bc4d2916cfb9"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/atiss/renders/corner_nw.png",
+              "source_sha256": "45c63fb09d92ae534ca9ff8c3fa09faf3190b24ab3aac786393bc9bc64f4ae69",
+              "website_image": "static/images/scene-examples/views/scene3-atiss-corner_nw.webp",
+              "website_sha256": "0e49dbbc88662685dfd8539ee4886b224c6c9a606583015456a5c184a47cd26a"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/atiss/renders/topdown.png",
+              "source_sha256": "a4cd00a4b2e0e03d541d0512c465e1e6cdd167702a8e573092565a6e95b26b04",
+              "website_image": "static/images/scene-examples/views/scene3-atiss-topdown.webp",
+              "website_sha256": "2692074a9f80578bcf218066635263afacd3f184c480a8be2b3786db75c41366"
+            }
+          }
+        },
+        {
+          "method": "diffuscene",
+          "label": "DiffuScene",
+          "source_render": "evaluation/unified_fiveview/output/diffuscene/renders/corner_sw.png",
+          "source_sha256": "343930b87c080a227b009c5ab15fc1cee9f250668185e7da253a8bbfdee9eef9",
+          "website_image": "static/images/scene-examples/scene3-diffuscene.webp",
+          "website_sha256": "ccf60d116bd077cc49826b02807e9375cb90135212ddee34f9f9cdb883e2eb40",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/diffuscene/renders/corner_sw.png",
+              "source_sha256": "343930b87c080a227b009c5ab15fc1cee9f250668185e7da253a8bbfdee9eef9",
+              "website_image": "static/images/scene-examples/scene3-diffuscene.webp",
+              "website_sha256": "ccf60d116bd077cc49826b02807e9375cb90135212ddee34f9f9cdb883e2eb40"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/diffuscene/renders/corner_se.png",
+              "source_sha256": "79d03f922fe1354ba895440fa1511eca85357ab905392491867e537291ce8fb5",
+              "website_image": "static/images/scene-examples/views/scene3-diffuscene-corner_se.webp",
+              "website_sha256": "dd6ef5dc9ca2bc304ee66ca95762ec9abe001591a4c4a4b90b1d78ff441347cd"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/diffuscene/renders/corner_ne.png",
+              "source_sha256": "a467901f6e19f1b227a3ce3b051d3c1bd21840bc168524aeb9834ddfe94167b9",
+              "website_image": "static/images/scene-examples/views/scene3-diffuscene-corner_ne.webp",
+              "website_sha256": "375619766809d94816c5a68ec02b8bcc034932d93826cbe7d9088d1b1ed68072"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/diffuscene/renders/corner_nw.png",
+              "source_sha256": "29a3d3ef86c663892c111505202f0a92f75bf2f6374ce51d86753132efa9dc97",
+              "website_image": "static/images/scene-examples/views/scene3-diffuscene-corner_nw.webp",
+              "website_sha256": "3a917e5b239fffa20303353908ec1d9202e0e1a2bd8fa07c9d4ec9710ed03e43"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/diffuscene/renders/topdown.png",
+              "source_sha256": "edf5c18cdf74955eaa4c34aa5d24b2d0b40533e2c7797cd892977e27b26cf641",
+              "website_image": "static/images/scene-examples/views/scene3-diffuscene-topdown.webp",
+              "website_sha256": "c70ca474aa98dd7eaca9a8fe21893b4f99ddc58c1e95a6afe4570fe16e68bd76"
+            }
+          }
+        },
+        {
+          "method": "instructscene",
+          "label": "InstructScene",
+          "source_render": "evaluation/unified_fiveview/output/instructscene/renders/corner_sw.png",
+          "source_sha256": "7158aa528a229063f63c5c8e9fc9bb456531dc5388b75ce19b59ac18b113db0e",
+          "website_image": "static/images/scene-examples/scene3-instructscene.webp",
+          "website_sha256": "3e14b9a28d43c24d8b68524a091f8cc7074b953aac4cd86a4f945b6236663a38",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/instructscene/renders/corner_sw.png",
+              "source_sha256": "7158aa528a229063f63c5c8e9fc9bb456531dc5388b75ce19b59ac18b113db0e",
+              "website_image": "static/images/scene-examples/scene3-instructscene.webp",
+              "website_sha256": "3e14b9a28d43c24d8b68524a091f8cc7074b953aac4cd86a4f945b6236663a38"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/instructscene/renders/corner_se.png",
+              "source_sha256": "4a006b97566614886e4baceea9f024e128277ba3baccf368aeb9530d6360aaa2",
+              "website_image": "static/images/scene-examples/views/scene3-instructscene-corner_se.webp",
+              "website_sha256": "519113eac199c1fa4da13b98ef37e3d1c4de6ab210e37a4dac9b1feccd638797"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/instructscene/renders/corner_ne.png",
+              "source_sha256": "7201115c20fcbd2ed2d36ab2540af0fe3ba0ffb8e34cef03801b192421002355",
+              "website_image": "static/images/scene-examples/views/scene3-instructscene-corner_ne.webp",
+              "website_sha256": "e906bb054ee695ec1badcfb0ee7786a293964a50c6701c9fa0767022ecca6acf"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/instructscene/renders/corner_nw.png",
+              "source_sha256": "f37f3493b0a7d08a3ca625b9cdccd5878e4e8a7cd4036ede80054078b52dcab6",
+              "website_image": "static/images/scene-examples/views/scene3-instructscene-corner_nw.webp",
+              "website_sha256": "4462dbb1148fc9385bb27bd1096dd41c385ed7b7afde388441b55e3bf7092670"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/instructscene/renders/topdown.png",
+              "source_sha256": "6e8fa9db160aa8fd039c86a18813cdf64625f30fcdb7e3c9b9793fbe2bee30c7",
+              "website_image": "static/images/scene-examples/views/scene3-instructscene-topdown.webp",
+              "website_sha256": "558eeec6c2648155f1fd2c2974a120c5c6c4d864d1461607d204a06bdaa35dca"
+            }
+          }
+        },
+        {
+          "method": "layoutgpt",
+          "label": "LayoutGPT",
+          "source_render": "evaluation/unified_fiveview/output/layoutgpt/renders/corner_sw.png",
+          "source_sha256": "2c57a34c3af11bb2c55c63fad2eeee0707bfc5af6b6bc8da64b1bca62f498b63",
+          "website_image": "static/images/scene-examples/scene3-layoutgpt.webp",
+          "website_sha256": "56269feca42ef297c1c1169e77b9e3853e1589a8421d1bc3fcd9ba8815cac56c",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/layoutgpt/renders/corner_sw.png",
+              "source_sha256": "2c57a34c3af11bb2c55c63fad2eeee0707bfc5af6b6bc8da64b1bca62f498b63",
+              "website_image": "static/images/scene-examples/scene3-layoutgpt.webp",
+              "website_sha256": "56269feca42ef297c1c1169e77b9e3853e1589a8421d1bc3fcd9ba8815cac56c"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/layoutgpt/renders/corner_se.png",
+              "source_sha256": "56e440024c1ff21c5254877c495a20952fbafc3360b20c17d6cce373e8182b21",
+              "website_image": "static/images/scene-examples/views/scene3-layoutgpt-corner_se.webp",
+              "website_sha256": "4697915d0b2c32e8ff3cf9686062b606d16c103bd3deca2ec0da37f68dc549bd"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/layoutgpt/renders/corner_ne.png",
+              "source_sha256": "5b20a66cb5b88f8ae3072067c956c687ed6b11ef23196e1b9dd75906ff82a938",
+              "website_image": "static/images/scene-examples/views/scene3-layoutgpt-corner_ne.webp",
+              "website_sha256": "0cc8de2a943be22305880ac3db337bb843c5b0ab73d72e58f2425be7f2ee63a4"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/layoutgpt/renders/corner_nw.png",
+              "source_sha256": "e2a145c7ebdfb84ce89c6cff75a949559fbd6b8aaf8dd7377387fbe974a39741",
+              "website_image": "static/images/scene-examples/views/scene3-layoutgpt-corner_nw.webp",
+              "website_sha256": "51fd8debae672318e0bba4844b5033e521283b369f0d860e8fac7cf29fcc5747"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/layoutgpt/renders/topdown.png",
+              "source_sha256": "7da8796bf146bf36f831a703d1377c9d91f87e27905aeab70b690ebf44f0501e",
+              "website_image": "static/images/scene-examples/views/scene3-layoutgpt-topdown.webp",
+              "website_sha256": "7fd8a2607c19b78bdb4bf8410feb9e8304cce6667c4d23a1aa6669cadce5c58d"
+            }
+          }
+        },
+        {
+          "method": "layoutvlm",
+          "label": "LayoutVLM",
+          "source_render": "evaluation/unified_fiveview/output/layoutvlm/renders/corner_sw.png",
+          "source_sha256": "ef511f5494b8a8cd3116dffbd20ff9127695a013437027d764416c5374b7c7ec",
+          "website_image": "static/images/scene-examples/scene3-layoutvlm.webp",
+          "website_sha256": "7f84279b1bb7770395180d4df32b2a16d42a683a2ce2e8f33a5ae0ce4193e21f",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/layoutvlm/renders/corner_sw.png",
+              "source_sha256": "ef511f5494b8a8cd3116dffbd20ff9127695a013437027d764416c5374b7c7ec",
+              "website_image": "static/images/scene-examples/scene3-layoutvlm.webp",
+              "website_sha256": "7f84279b1bb7770395180d4df32b2a16d42a683a2ce2e8f33a5ae0ce4193e21f"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/layoutvlm/renders/corner_se.png",
+              "source_sha256": "65c4017adf13d2744be0a31722a929da021b125bef4dacd09148cb527eff8afc",
+              "website_image": "static/images/scene-examples/views/scene3-layoutvlm-corner_se.webp",
+              "website_sha256": "cf444d97c4aea65017b74adb07c801cea06884e0d1e1422837fba30b863738e6"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/layoutvlm/renders/corner_ne.png",
+              "source_sha256": "17dc5c903d0ac63795c05035b228d3106a4489f9bd931d37cf398c512d89baf8",
+              "website_image": "static/images/scene-examples/views/scene3-layoutvlm-corner_ne.webp",
+              "website_sha256": "9bc6d66b2044a286b31263e0ad91e9ad215e3aece2131dc9befbe789175b47f3"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/layoutvlm/renders/corner_nw.png",
+              "source_sha256": "9ec735c22c565a8e8e1e239565dbc0975e20cfde5a60f3e34803a15042192b74",
+              "website_image": "static/images/scene-examples/views/scene3-layoutvlm-corner_nw.webp",
+              "website_sha256": "2461dd7293ddcac1699b1431bc041fe4200be9c78f1067ec25d39c6592e1e8a3"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/layoutvlm/renders/topdown.png",
+              "source_sha256": "62c22d4d71c2a9cd7afbb854dc6ee1b4bb27b53dc8639b48bf58dc84c689b675",
+              "website_image": "static/images/scene-examples/views/scene3-layoutvlm-topdown.webp",
+              "website_sha256": "ea1bdbb9c1d0d4b99244c83e68254e8c5ca11e96765622a1531050c2e631fee2"
+            }
+          }
+        },
+        {
+          "method": "holodeck",
+          "label": "Holodeck",
+          "source_render": "evaluation/unified_fiveview/output/holodeck/renders/corner_sw.png",
+          "source_sha256": "35812011d73a9c79b3938bf6273ad430d1edac7267e3df5f7266faa903fbf816",
+          "website_image": "static/images/scene-examples/scene3-holodeck.webp",
+          "website_sha256": "4755a4490c8a99594b1f7b4e3b1d1591620f45a34f44ce6d827068e0e4dbf0ab",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/holodeck/renders/corner_sw.png",
+              "source_sha256": "35812011d73a9c79b3938bf6273ad430d1edac7267e3df5f7266faa903fbf816",
+              "website_image": "static/images/scene-examples/scene3-holodeck.webp",
+              "website_sha256": "4755a4490c8a99594b1f7b4e3b1d1591620f45a34f44ce6d827068e0e4dbf0ab"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/holodeck/renders/corner_se.png",
+              "source_sha256": "29f2ffc0e343b1f5ea9ddde85241b9070e171b7545e1f7a35ab9549fce667ee2",
+              "website_image": "static/images/scene-examples/views/scene3-holodeck-corner_se.webp",
+              "website_sha256": "1fe62242b450d69dc8fe3e5de199bb10c98801d9db6a39701687b35887459f16"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/holodeck/renders/corner_ne.png",
+              "source_sha256": "bc47d5d5ec7170b08cb737d8d2a2082c0689b175c56019ea330abc38859a7b53",
+              "website_image": "static/images/scene-examples/views/scene3-holodeck-corner_ne.webp",
+              "website_sha256": "05a25b1d63caeafe976f221392babf2f6b398f8068e48aab5323c6c323c8863f"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/holodeck/renders/corner_nw.png",
+              "source_sha256": "6741fccac09680f7420c13aff86cf8cae5276ffa60f608466e1e07b8c3b17d55",
+              "website_image": "static/images/scene-examples/views/scene3-holodeck-corner_nw.webp",
+              "website_sha256": "bdda6574f40047823430c407586c08719445c5973be864d0c1f1f2b1c177733f"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/holodeck/renders/topdown.png",
+              "source_sha256": "92b1ad9dc56901eecb661d13acde61d510b81aca0a05466ce245ccb33a1c44c8",
+              "website_image": "static/images/scene-examples/views/scene3-holodeck-topdown.webp",
+              "website_sha256": "1610e091befc4fe83b377bd7d18abb74ea67879b341efc9a33a559bf59df6bf0"
+            }
+          }
+        },
+        {
+          "method": "hsm",
+          "label": "HSM",
+          "source_render": "evaluation/unified_fiveview/output/hsm/renders/corner_sw.png",
+          "source_sha256": "5b9b27a62e3ff60fae8e2f979eabb399a24e37420b043f293b73ace7170917f7",
+          "website_image": "static/images/scene-examples/scene3-hsm.webp",
+          "website_sha256": "15e5eea0a59dec29be285b157f1d7f7b912c02d96d95890d297b3ca0d0703e9b",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/hsm/renders/corner_sw.png",
+              "source_sha256": "5b9b27a62e3ff60fae8e2f979eabb399a24e37420b043f293b73ace7170917f7",
+              "website_image": "static/images/scene-examples/scene3-hsm.webp",
+              "website_sha256": "15e5eea0a59dec29be285b157f1d7f7b912c02d96d95890d297b3ca0d0703e9b"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/hsm/renders/corner_se.png",
+              "source_sha256": "dfdba1d8ccb55394e2bbc0fcb6d31d653adbd28694389e318c0a426ab37524dd",
+              "website_image": "static/images/scene-examples/views/scene3-hsm-corner_se.webp",
+              "website_sha256": "e31443e936d766a28bc6912a2eebb9cbec7bce125f9c5b44ad176ef7ae2c7dde"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/hsm/renders/corner_ne.png",
+              "source_sha256": "b1bac83d41e3c01f1ad7bbe1bd6e86f0590f5b83d7d7db87e4715958e38b3449",
+              "website_image": "static/images/scene-examples/views/scene3-hsm-corner_ne.webp",
+              "website_sha256": "898d0cdc1955e21ac541e72bad3ff918def501b15e828ceee5b21bcda4f3c000"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/hsm/renders/corner_nw.png",
+              "source_sha256": "b833ad334404c192e53bce5a1093ee4944979c077ff167cfeed084992d86dbad",
+              "website_image": "static/images/scene-examples/views/scene3-hsm-corner_nw.webp",
+              "website_sha256": "d1a9ab8a81e85841c535672b2a0760b97f9d54d0de165cd0198fe9ee79b56fb8"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/hsm/renders/topdown.png",
+              "source_sha256": "28f056ff01032136cc804e68e5bfcdd85d7383429763d814ef2e4c6846bd17e1",
+              "website_image": "static/images/scene-examples/views/scene3-hsm-topdown.webp",
+              "website_sha256": "86bbf078e22f31bfa861b84e8bf5646224c62435405e9e283dae2b900cef1ad9"
+            }
+          }
+        },
+        {
+          "method": "sceneweaver",
+          "label": "SceneWeaver",
+          "source_render": "evaluation/unified_fiveview/output/sceneweaver/renders/corner_sw.png",
+          "source_sha256": "5de16b639b734cfa81068fe0b5c75eb97d7c086b6cafc34ae3693bd8175c4542",
+          "website_image": "static/images/scene-examples/scene3-sceneweaver.webp",
+          "website_sha256": "c107613c93f07558128a313c23dacaf4ae0adb536ff646d384469a62e1f3106a",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/sceneweaver/renders/corner_sw.png",
+              "source_sha256": "5de16b639b734cfa81068fe0b5c75eb97d7c086b6cafc34ae3693bd8175c4542",
+              "website_image": "static/images/scene-examples/scene3-sceneweaver.webp",
+              "website_sha256": "c107613c93f07558128a313c23dacaf4ae0adb536ff646d384469a62e1f3106a"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/sceneweaver/renders/corner_se.png",
+              "source_sha256": "a8793c68f424558739822014a6a3a866787679490f5d2601a037c4708751e641",
+              "website_image": "static/images/scene-examples/views/scene3-sceneweaver-corner_se.webp",
+              "website_sha256": "6c0f22a8e1f8defd48486141110abb6f6b9588d0d1e300170047407b89e6d6a9"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/sceneweaver/renders/corner_ne.png",
+              "source_sha256": "d3a0c8b1b3b47be4acbf9d8541c2e22eef3210707ea971a2e9ca3e6a33d695e0",
+              "website_image": "static/images/scene-examples/views/scene3-sceneweaver-corner_ne.webp",
+              "website_sha256": "874a236952029b9fa06e7ccbd9f131d6a251c35931188d6495599662d283a0c7"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/sceneweaver/renders/corner_nw.png",
+              "source_sha256": "01f2c5c4a40fbabfa9d9f3fef6dfa5c95fe24e08ce8ed35fd4299735dfa40499",
+              "website_image": "static/images/scene-examples/views/scene3-sceneweaver-corner_nw.webp",
+              "website_sha256": "a2a159845ad32730c4d8d9ab29e180b8b6df6dda10bbec2c079b13e23cb286ef"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/sceneweaver/renders/topdown.png",
+              "source_sha256": "48fab30297d4d797cfeb2500aeae11fa448aafcf3e8a8aa6a970c1e959c295c9",
+              "website_image": "static/images/scene-examples/views/scene3-sceneweaver-topdown.webp",
+              "website_sha256": "f0ade4f4aad4a4fdd2751f08e48d50a8fea170706fdc0c5d774d8ccd67e16a93"
+            }
+          }
+        },
+        {
+          "method": "sage",
+          "label": "SAGE",
+          "source_render": "evaluation/unified_fiveview/output/sage/renders/corner_sw.png",
+          "source_sha256": "e9e5fd5c8a2dd93176f79be5a5e6951477cbe655c26aeadd51b7aa842fcfdf57",
+          "website_image": "static/images/scene-examples/scene3-sage.webp",
+          "website_sha256": "f2f9e5d466d1eff857e8bda4c2c699b16b98bd2d9724e4614b45870919b402ab",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/sage/renders/corner_sw.png",
+              "source_sha256": "e9e5fd5c8a2dd93176f79be5a5e6951477cbe655c26aeadd51b7aa842fcfdf57",
+              "website_image": "static/images/scene-examples/scene3-sage.webp",
+              "website_sha256": "f2f9e5d466d1eff857e8bda4c2c699b16b98bd2d9724e4614b45870919b402ab"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/sage/renders/corner_se.png",
+              "source_sha256": "a22cde56496528cd666c952584411b1781a581caf8b34e2926dc733fdcd222ce",
+              "website_image": "static/images/scene-examples/views/scene3-sage-corner_se.webp",
+              "website_sha256": "b77d89f3f8456f4cb20d548ae205f4a5c2ac12bc6c5b01d37c944ddd9302086a"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/sage/renders/corner_ne.png",
+              "source_sha256": "ccde70030fad9b4336eb7a1666489b1f919eda433951ea780e2faf80465358f3",
+              "website_image": "static/images/scene-examples/views/scene3-sage-corner_ne.webp",
+              "website_sha256": "c6d2b4ea0112cd7dc8855a30a8b325915c38fc2676c51910be0268ae2ff664f9"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/sage/renders/corner_nw.png",
+              "source_sha256": "9c3d06f3391f9cc3c1af668d4a47cfb1c54462bd2611b66b3ac7022ad94bbf40",
+              "website_image": "static/images/scene-examples/views/scene3-sage-corner_nw.webp",
+              "website_sha256": "884cf5c2b01bce55fb21b9c677b63011acfb18d5c5e58eab7f593b1ba2090e67"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/sage/renders/topdown.png",
+              "source_sha256": "f8a27fa8b8013f6b4650d143963dcda1cb38e84971303c82b9202d064020f179",
+              "website_image": "static/images/scene-examples/views/scene3-sage-topdown.webp",
+              "website_sha256": "7dbdb3b1d5a4be1e25033aaf2d020503c4f1bf073abea43aebe08075288b2ac2"
+            }
+          }
+        },
+        {
+          "method": "scenesmith",
+          "label": "SceneSmith",
+          "source_render": "evaluation/unified_fiveview/output/scenesmith/renders/corner_sw.png",
+          "source_sha256": "5d40b132efdfeeefd80c187212bf487c8e2ddbd03cc8f003f2606a05f5eab5f8",
+          "website_image": "static/images/scene-examples/scene3-scenesmith.webp",
+          "website_sha256": "e932da6b362d906a89691040bb6f189d1e7db6170a062329977a9323f53a996c",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/scenesmith/renders/corner_sw.png",
+              "source_sha256": "5d40b132efdfeeefd80c187212bf487c8e2ddbd03cc8f003f2606a05f5eab5f8",
+              "website_image": "static/images/scene-examples/scene3-scenesmith.webp",
+              "website_sha256": "e932da6b362d906a89691040bb6f189d1e7db6170a062329977a9323f53a996c"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/scenesmith/renders/corner_se.png",
+              "source_sha256": "4289f98b18afe218eb3df86040c330616a19555f0d78a9e72d7a655db40f3896",
+              "website_image": "static/images/scene-examples/views/scene3-scenesmith-corner_se.webp",
+              "website_sha256": "38009503f111c664902c021080af8cf32f297d375957ddf34058850b2ef3c4da"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/scenesmith/renders/corner_ne.png",
+              "source_sha256": "14181a1c2fea8c20e010c5b802480ced84c120f1838b02d2452578ef13c212bd",
+              "website_image": "static/images/scene-examples/views/scene3-scenesmith-corner_ne.webp",
+              "website_sha256": "7e39c1b38d8da9e8aa795b06933fb3e14b50d8beabb424dad609e265a12cce7d"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/scenesmith/renders/corner_nw.png",
+              "source_sha256": "3de990ca98da1f8355e5424c3537a7363750ce9a412d92b37bddcf6769cbe974",
+              "website_image": "static/images/scene-examples/views/scene3-scenesmith-corner_nw.webp",
+              "website_sha256": "22d09faadef945246421612b286bb092bfbae7f1cf218bd821232d176db41c4a"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/scenesmith/renders/topdown.png",
+              "source_sha256": "ec11fa6acd6a4bfc3397d7b199c60a454fe9d5958ab1f7e211deb2d83194d294",
+              "website_image": "static/images/scene-examples/views/scene3-scenesmith-topdown.webp",
+              "website_sha256": "0dd55ddfde0a6241cc365e4274ddccc70baafa4fb8d7a1ae84b6b49ff80f4a36"
+            }
+          }
+        },
+        {
+          "method": "codex",
+          "label": "Codex",
+          "source_render": "evaluation/unified_fiveview/output/codex/renders/corner_sw.png",
+          "source_sha256": "3baebb416e4e946f51ccb688c88f87de0e471d7b4b5d519fc6809c77a174cb36",
+          "website_image": "static/images/scene-examples/scene3-codex.webp",
+          "website_sha256": "3eb74af9d5326b872e070c202534e7198c9a9ae7da689b444b016fa7613c83b4",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/codex/renders/corner_sw.png",
+              "source_sha256": "3baebb416e4e946f51ccb688c88f87de0e471d7b4b5d519fc6809c77a174cb36",
+              "website_image": "static/images/scene-examples/scene3-codex.webp",
+              "website_sha256": "3eb74af9d5326b872e070c202534e7198c9a9ae7da689b444b016fa7613c83b4"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/codex/renders/corner_se.png",
+              "source_sha256": "39b838b941a87112e8d9e360e4905e68adfc81b8db108c71ddf14c709ec41110",
+              "website_image": "static/images/scene-examples/views/scene3-codex-corner_se.webp",
+              "website_sha256": "f5901c501c77f3eba81c048ae6e96220a753e0187ebbae420f5f465032846ebc"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/codex/renders/corner_ne.png",
+              "source_sha256": "048bf16e5537ac980bb91cfab2fe7cff48f3fb38d7e403515ec2974eaedb0082",
+              "website_image": "static/images/scene-examples/views/scene3-codex-corner_ne.webp",
+              "website_sha256": "32c2d1ac81e93517e0e2f0a341f419d93a491883ef3f01658adef81347dc08bf"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/codex/renders/corner_nw.png",
+              "source_sha256": "a3386924b7bca38e6482881597f74a3cbac4ff5f0a5cbed7672f24431ae9e025",
+              "website_image": "static/images/scene-examples/views/scene3-codex-corner_nw.webp",
+              "website_sha256": "2273c697fd5fb2659507aa190443e3971d1a2c589043657a0a3f8f658ebd37cd"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/codex/renders/topdown.png",
+              "source_sha256": "93c61a98c9242c1bcd39710f4328dce4ce1a5c286a4d907f7cca85bc6252fa1e",
+              "website_image": "static/images/scene-examples/views/scene3-codex-topdown.webp",
+              "website_sha256": "dd5d7e0326f3f158f128507934a3abb9c85b061ac04a9c80386bbcf868d0b51b"
+            }
+          }
+        },
+        {
+          "method": "claudecode",
+          "label": "Claude Code",
+          "source_render": "evaluation/unified_fiveview/output/claudecode/renders/corner_sw.png",
+          "source_sha256": "07e12e7a17bb7110e750f68372249a1b05c113c9d0768586314a6b21498968fe",
+          "website_image": "static/images/scene-examples/scene3-claudecode.webp",
+          "website_sha256": "5034cfb2b81a70068899833918a7547736d3f8187dfdc5794e511089fa6e5688",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/claudecode/renders/corner_sw.png",
+              "source_sha256": "07e12e7a17bb7110e750f68372249a1b05c113c9d0768586314a6b21498968fe",
+              "website_image": "static/images/scene-examples/scene3-claudecode.webp",
+              "website_sha256": "5034cfb2b81a70068899833918a7547736d3f8187dfdc5794e511089fa6e5688"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/claudecode/renders/corner_se.png",
+              "source_sha256": "98de68691251240505e44227391b8f8fa7ea0880cdb618752e60010454b66b15",
+              "website_image": "static/images/scene-examples/views/scene3-claudecode-corner_se.webp",
+              "website_sha256": "591b72061e59b654b6c0e4af13e253ddb7558e74ceb6f658b1634c6cf626de2d"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/claudecode/renders/corner_ne.png",
+              "source_sha256": "abc28d5704067b650f3069d3f89f2b8b24305bbf601804f0c944c7162392a212",
+              "website_image": "static/images/scene-examples/views/scene3-claudecode-corner_ne.webp",
+              "website_sha256": "d1866c5369f61a0ad4382ef99a4e6d047bc2712cef098e4dc8447618993a6931"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/claudecode/renders/corner_nw.png",
+              "source_sha256": "56b8c7cda6ef502fefe4bcf355f3939bedbc5bf2782edc1ddf6e948aeed8cfc4",
+              "website_image": "static/images/scene-examples/views/scene3-claudecode-corner_nw.webp",
+              "website_sha256": "0a6faf095030cb1221363f7bcce595695c0e9c5302be0496ebe62681768d2123"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/claudecode/renders/topdown.png",
+              "source_sha256": "11af387cfe7d04575eb38a7a882e677c6d50d0b34c74077b0ad181ba1376369f",
+              "website_image": "static/images/scene-examples/views/scene3-claudecode-topdown.webp",
+              "website_sha256": "8a31fe302a0444751c9772478cd2247b385e0a9b6d25bd1ed98834f13344175f"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scene_id": "scene9",
+      "room": "Living room",
+      "prompt": "A living room with a sofa in front of a wall-mounted TV, a lamp behind the sofa, and a stool near the TV against the wall.",
+      "methods": [
+        {
+          "method": "atiss",
+          "label": "ATISS",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/atiss/renders/corner_sw.png",
+          "source_sha256": "1e96df3c840c8c05757d84dfcc012eb1020cc8f63c1710dddff769ec3a02fe15",
+          "website_image": "static/images/scene-examples/scene9-atiss.webp",
+          "website_sha256": "65210ec3320003187bdf85ea45bc217a06c9099d4c53311e56cc81b261a6121b",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/atiss/renders/corner_sw.png",
+              "source_sha256": "1e96df3c840c8c05757d84dfcc012eb1020cc8f63c1710dddff769ec3a02fe15",
+              "website_image": "static/images/scene-examples/scene9-atiss.webp",
+              "website_sha256": "65210ec3320003187bdf85ea45bc217a06c9099d4c53311e56cc81b261a6121b"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/atiss/renders/corner_se.png",
+              "source_sha256": "9b5dbea171af45df97c77851885dea1ac73b5bbb2d488f4b1f01e19a5afe1e04",
+              "website_image": "static/images/scene-examples/views/scene9-atiss-corner_se.webp",
+              "website_sha256": "0e338af127b49d54c9c6f263d34a2cf439cd68a5c0c99d88bd21d6d2a94c2dd0"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/atiss/renders/corner_ne.png",
+              "source_sha256": "2875d3caf3a9face3ae50e45fdfb57a0debbdaf6f53cc6df865f3ba6319a5cd2",
+              "website_image": "static/images/scene-examples/views/scene9-atiss-corner_ne.webp",
+              "website_sha256": "f0b0c37024986a93dcf7921a4546805f715bc9f11cf9ccfa49d9e0deb5989319"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/atiss/renders/corner_nw.png",
+              "source_sha256": "177630dcbee1c30e33cc56ae1d3e051878d781c9b75004e92ba2156fea552c9d",
+              "website_image": "static/images/scene-examples/views/scene9-atiss-corner_nw.webp",
+              "website_sha256": "7ba16f6caabf08b137dd533da30e45a64f77299fb3d4a2616f96ad03d6f052de"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/atiss/renders/topdown.png",
+              "source_sha256": "d4af9a92515db6a94651d385b41be2fc2412d420014cb274c61877a3975120cd",
+              "website_image": "static/images/scene-examples/views/scene9-atiss-topdown.webp",
+              "website_sha256": "b3a447762888229848ba450a0aed56a6a06e6f6e95fc9260665ebbd59a51543a"
+            }
+          }
+        },
+        {
+          "method": "diffuscene",
+          "label": "DiffuScene",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/diffuscene/renders/corner_sw.png",
+          "source_sha256": "6d67492cf2ee9506ec5e5f00171fbd2cbd8c59cecc08e16fc4ba7a3fe08dd403",
+          "website_image": "static/images/scene-examples/scene9-diffuscene.webp",
+          "website_sha256": "627dfe1cb3b50e020167f9aaeaa5730ad7a2eed57cc8c6227cd64877e4da1948",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/diffuscene/renders/corner_sw.png",
+              "source_sha256": "6d67492cf2ee9506ec5e5f00171fbd2cbd8c59cecc08e16fc4ba7a3fe08dd403",
+              "website_image": "static/images/scene-examples/scene9-diffuscene.webp",
+              "website_sha256": "627dfe1cb3b50e020167f9aaeaa5730ad7a2eed57cc8c6227cd64877e4da1948"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/diffuscene/renders/corner_se.png",
+              "source_sha256": "68a5f6ca53958b8be9ebb8d4a8785f2fbf161729dc7084aaab0986e41501b3d6",
+              "website_image": "static/images/scene-examples/views/scene9-diffuscene-corner_se.webp",
+              "website_sha256": "9f1a0912cb0753f5928277b4ea8dfcd35bce1f17b0d6f87f8985362d5cb8bfa1"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/diffuscene/renders/corner_ne.png",
+              "source_sha256": "a66eeadd934c3b316544f3090cb9c06c24db0b5b53c18107cf9a456513423a8b",
+              "website_image": "static/images/scene-examples/views/scene9-diffuscene-corner_ne.webp",
+              "website_sha256": "44469b5ebe940bfe3d058c082d161111dd009b79055860eae24568e88c21fed2"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/diffuscene/renders/corner_nw.png",
+              "source_sha256": "93a72d217af46a8391e8feb25dd4c30ab309d563d2986fe3f283313d26d3e6d0",
+              "website_image": "static/images/scene-examples/views/scene9-diffuscene-corner_nw.webp",
+              "website_sha256": "3388605f3b49d4587360db9017d557c94e39ad5e105c080722478778ae93b835"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/diffuscene/renders/topdown.png",
+              "source_sha256": "b5eb71aeec3dc5250171c55a9bf882ec5ef277c0dd15bf60e201ac898ce22cde",
+              "website_image": "static/images/scene-examples/views/scene9-diffuscene-topdown.webp",
+              "website_sha256": "a8bfcabd6f8702bb03004ec595c85cdb50bbaffddf9c69eaa30f7e8ac14b4a95"
+            }
+          }
+        },
+        {
+          "method": "instructscene",
+          "label": "InstructScene",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/instructscene/renders/corner_sw.png",
+          "source_sha256": "3bd30091e69342aec13967dfb51c0db77bcc0ee84b68b2f619c6a8980a49b785",
+          "website_image": "static/images/scene-examples/scene9-instructscene.webp",
+          "website_sha256": "b85acec61f7b6a96c4831d3091f480c1fea776ebeca82d7905a4ff5793b88c07",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/instructscene/renders/corner_sw.png",
+              "source_sha256": "3bd30091e69342aec13967dfb51c0db77bcc0ee84b68b2f619c6a8980a49b785",
+              "website_image": "static/images/scene-examples/scene9-instructscene.webp",
+              "website_sha256": "b85acec61f7b6a96c4831d3091f480c1fea776ebeca82d7905a4ff5793b88c07"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/instructscene/renders/corner_se.png",
+              "source_sha256": "38de8a0c2cfbcc1d2d9dd41a470b6079b8b5e0ea89ec7fbaf7f2dc9a249bb363",
+              "website_image": "static/images/scene-examples/views/scene9-instructscene-corner_se.webp",
+              "website_sha256": "e893b9325cb21e4e9cf26d535d609c9097b0fdf1147d9a4f86e4657ddf38375d"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/instructscene/renders/corner_ne.png",
+              "source_sha256": "db17267b3e116637fb62d8756134c62e12eda0193d8eca1b321f0efd0ee0dd94",
+              "website_image": "static/images/scene-examples/views/scene9-instructscene-corner_ne.webp",
+              "website_sha256": "6a85438dded916bdd9b5d05e41ac5cc2f7ac1687ba9253f52c7f43bd96ae02d6"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/instructscene/renders/corner_nw.png",
+              "source_sha256": "2775242a42dca01a2048b4b37c59ebf7c22f26acd7ce93fc411ac12dfb83f4b4",
+              "website_image": "static/images/scene-examples/views/scene9-instructscene-corner_nw.webp",
+              "website_sha256": "7709e24cade1cad7cab80ba55f8a005356935849bb113f138db69d6379cb4701"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/instructscene/renders/topdown.png",
+              "source_sha256": "16c597a9e27290e4e23bff4d3ba9ff3890eb5dd7a216393eef4839c592044fdf",
+              "website_image": "static/images/scene-examples/views/scene9-instructscene-topdown.webp",
+              "website_sha256": "71f983a91e6475aed872c4bf06e137592fc6e2ba0b780abf4e8102c6c9dccbf1"
+            }
+          }
+        },
+        {
+          "method": "layoutgpt",
+          "label": "LayoutGPT",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/layoutgpt/renders/corner_sw.png",
+          "source_sha256": "da20cf87e9ef9365e1033deba4a57200b9bd1799e5d65fdfc1553bd98b8dee3d",
+          "website_image": "static/images/scene-examples/scene9-layoutgpt.webp",
+          "website_sha256": "62357519021cc141c0707a1ffeb4982e4bcd7207f21300e346924b78ba9c0f52",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/layoutgpt/renders/corner_sw.png",
+              "source_sha256": "da20cf87e9ef9365e1033deba4a57200b9bd1799e5d65fdfc1553bd98b8dee3d",
+              "website_image": "static/images/scene-examples/scene9-layoutgpt.webp",
+              "website_sha256": "62357519021cc141c0707a1ffeb4982e4bcd7207f21300e346924b78ba9c0f52"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/layoutgpt/renders/corner_se.png",
+              "source_sha256": "ccbdd5ca66d4ad333d2607d79de6e9b2db8f5841c90c2f30804dfa30e02e0a55",
+              "website_image": "static/images/scene-examples/views/scene9-layoutgpt-corner_se.webp",
+              "website_sha256": "33952fbe6e0ad80434212a4f996cd58ce418ac0c857e567a42d7d33f7232dbd5"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/layoutgpt/renders/corner_ne.png",
+              "source_sha256": "0184ad7da6cad5104b4a1588ea94d226a8be8ac046b4e1775d4c812b954c22b4",
+              "website_image": "static/images/scene-examples/views/scene9-layoutgpt-corner_ne.webp",
+              "website_sha256": "0c09c7e67e420300e004e213e8d312b4bbb2175200632a20cba9dff52ec0b3db"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/layoutgpt/renders/corner_nw.png",
+              "source_sha256": "3357cb0083903a4fc2db60d56c903034d3477892e0bcb9e4a2feed79c860b92a",
+              "website_image": "static/images/scene-examples/views/scene9-layoutgpt-corner_nw.webp",
+              "website_sha256": "b4d3e9d8224e40ec73107d12f14ebe41905ecd5481adc9b6bbc0474763155e7b"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/layoutgpt/renders/topdown.png",
+              "source_sha256": "3c07611a3a25bab3c373ef01de7e6c7b844c7d0fedd1b31cf61cdc0876468320",
+              "website_image": "static/images/scene-examples/views/scene9-layoutgpt-topdown.webp",
+              "website_sha256": "e1d031eb535cba12dcb6bdbce298233bc4d42ad0e156525b0bd22c3691f2c209"
+            }
+          }
+        },
+        {
+          "method": "layoutvlm",
+          "label": "LayoutVLM",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/layoutvlm/renders/corner_sw.png",
+          "source_sha256": "4bf1e54346d7d684c96d64808a2b776b2f8b3becb40829d5e0c81ae07e1087bc",
+          "website_image": "static/images/scene-examples/scene9-layoutvlm.webp",
+          "website_sha256": "16733ef679c886e38fed159a4078fd19b0e7e49bfc8a21c6d05e7e618bdc3e21",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/layoutvlm/renders/corner_sw.png",
+              "source_sha256": "4bf1e54346d7d684c96d64808a2b776b2f8b3becb40829d5e0c81ae07e1087bc",
+              "website_image": "static/images/scene-examples/scene9-layoutvlm.webp",
+              "website_sha256": "16733ef679c886e38fed159a4078fd19b0e7e49bfc8a21c6d05e7e618bdc3e21"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/layoutvlm/renders/corner_se.png",
+              "source_sha256": "87d538d4cf0083f855ca9c048703fd324ab866a995f2b3a90d0b201580e9af9e",
+              "website_image": "static/images/scene-examples/views/scene9-layoutvlm-corner_se.webp",
+              "website_sha256": "fa0b741150222df9138a4b7536bb6f78434934c34d5e296cb35f9f8346137d00"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/layoutvlm/renders/corner_ne.png",
+              "source_sha256": "61be9a5bd13cd822959eb7138a91e3899faa2cce4399761e7977b380e350c981",
+              "website_image": "static/images/scene-examples/views/scene9-layoutvlm-corner_ne.webp",
+              "website_sha256": "78d8920699a42033a34621179f06eaaa159f55beac05131336a1d3eb1774fda3"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/layoutvlm/renders/corner_nw.png",
+              "source_sha256": "388ed9d736dfa0c7282adbab283d73560143e3f1619db04f83f8cfef7e17882a",
+              "website_image": "static/images/scene-examples/views/scene9-layoutvlm-corner_nw.webp",
+              "website_sha256": "14767c14d6fa6ad389b6fc7b6933200ce73b88f9fcb1cc84f2227ad6d618d132"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/layoutvlm/renders/topdown.png",
+              "source_sha256": "e6f30ce9905a244bea2654f29b1a5e8480a6b7b5891c3ac95c7d324c36a03861",
+              "website_image": "static/images/scene-examples/views/scene9-layoutvlm-topdown.webp",
+              "website_sha256": "e0628cc0ba60cd29f2ec2cddcde54ef75fa180e81b2d760263c91cb43766381f"
+            }
+          }
+        },
+        {
+          "method": "holodeck",
+          "label": "Holodeck",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/holodeck/renders/corner_sw.png",
+          "source_sha256": "4e73403bffb20e00a852862a372fdff6859f2269e06c28ad716ff4896561ea6a",
+          "website_image": "static/images/scene-examples/scene9-holodeck.webp",
+          "website_sha256": "6212b60a4dc8d1b04bb956a2122ba00af410b9f93825cf23e2cf06267485cccd",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/holodeck/renders/corner_sw.png",
+              "source_sha256": "4e73403bffb20e00a852862a372fdff6859f2269e06c28ad716ff4896561ea6a",
+              "website_image": "static/images/scene-examples/scene9-holodeck.webp",
+              "website_sha256": "6212b60a4dc8d1b04bb956a2122ba00af410b9f93825cf23e2cf06267485cccd"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/holodeck/renders/corner_se.png",
+              "source_sha256": "ad68a1ccd8892a1dce3df0bf14001738b39ead74899699ee39558810a994dd18",
+              "website_image": "static/images/scene-examples/views/scene9-holodeck-corner_se.webp",
+              "website_sha256": "2926d509b271f20454cf2b41aa11165adb64b6e53c285578872182ce04a60e92"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/holodeck/renders/corner_ne.png",
+              "source_sha256": "6ca629604b578b0cfe32b3bbb88fa6d13cc40e444c6a81b7b49ef7fb26ad5546",
+              "website_image": "static/images/scene-examples/views/scene9-holodeck-corner_ne.webp",
+              "website_sha256": "11ce89e1c91bb2dd566cbea8ef1e5e32fdb358d9d52b04784e7c4971ae2e8734"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/holodeck/renders/corner_nw.png",
+              "source_sha256": "f6a283cd481b16fcc5f5876475c0d596cdc4170b74029a8e7529d42e51f0a945",
+              "website_image": "static/images/scene-examples/views/scene9-holodeck-corner_nw.webp",
+              "website_sha256": "3a4350f69bc3ae47df4f032c2b9260ab21b93b9ac90f551d72a1e9ba092ed55d"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/holodeck/renders/topdown.png",
+              "source_sha256": "41d0a885f5054b5c563a81020bf757f80d6772616da4f33e680ee816221b50ba",
+              "website_image": "static/images/scene-examples/views/scene9-holodeck-topdown.webp",
+              "website_sha256": "bd5e9ee61af452d7c0865118282fc4ae8f206dab0fe2b12bfab04c9002f7ab5f"
+            }
+          }
+        },
+        {
+          "method": "hsm",
+          "label": "HSM",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/hsm/renders/corner_sw.png",
+          "source_sha256": "3931e11ab0fd9c2adec5ad204ae003f795a2a02b92cbc855482793ca9d796e76",
+          "website_image": "static/images/scene-examples/scene9-hsm.webp",
+          "website_sha256": "b48e8aee8b663f4ca65e22bb6229478a010706f472028dd7a4878e8d57807759",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/hsm/renders/corner_sw.png",
+              "source_sha256": "3931e11ab0fd9c2adec5ad204ae003f795a2a02b92cbc855482793ca9d796e76",
+              "website_image": "static/images/scene-examples/scene9-hsm.webp",
+              "website_sha256": "b48e8aee8b663f4ca65e22bb6229478a010706f472028dd7a4878e8d57807759"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/hsm/renders/corner_se.png",
+              "source_sha256": "03f44ad2d9e2f1b4164ba38cc5cfe8af7bce45815351b1170ea35a01e2dba465",
+              "website_image": "static/images/scene-examples/views/scene9-hsm-corner_se.webp",
+              "website_sha256": "c920a9a1adce9d003ae2d1c97d6b2099752d97481e714cda1ee44fa560cd0d69"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/hsm/renders/corner_ne.png",
+              "source_sha256": "0e3b9c84d89c4aa0cfee5a8effc1cb5bddb8b23dfcced83d808fb4f4c340dada",
+              "website_image": "static/images/scene-examples/views/scene9-hsm-corner_ne.webp",
+              "website_sha256": "3fe1bc6c0ba15dcd88958e9bc4e29059f36d0c7f8e44b71385159d773be33793"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/hsm/renders/corner_nw.png",
+              "source_sha256": "5f85c41f271eb3e07eb73cff5a1b5be7f435bd2ff8937507ccebf4478cda9892",
+              "website_image": "static/images/scene-examples/views/scene9-hsm-corner_nw.webp",
+              "website_sha256": "35556b2ae608b675d4ce8e15e78920b00f320299ad33b27e0166590c1d8e4adc"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/hsm/renders/topdown.png",
+              "source_sha256": "640d00b34f97b94f01dd50c0dfa20eb9e89269c0704331c747767510d28df075",
+              "website_image": "static/images/scene-examples/views/scene9-hsm-topdown.webp",
+              "website_sha256": "e32b81fbcc8c3b25bbb3cf425f07e67ec7fe412931a45e35ea6f7ba8f2fe3645"
+            }
+          }
+        },
+        {
+          "method": "sceneweaver",
+          "label": "SceneWeaver",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/sceneweaver/renders/corner_sw.png",
+          "source_sha256": "19b38f9aa8c03d699e24fc1587ae2f249b67ecb6227e378472657ffc41d36b4d",
+          "website_image": "static/images/scene-examples/scene9-sceneweaver.webp",
+          "website_sha256": "527dfa2ea8e608030844d51abac5f85977b382bc118b390f9dc9d79fe7faa7af",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/sceneweaver/renders/corner_sw.png",
+              "source_sha256": "19b38f9aa8c03d699e24fc1587ae2f249b67ecb6227e378472657ffc41d36b4d",
+              "website_image": "static/images/scene-examples/scene9-sceneweaver.webp",
+              "website_sha256": "527dfa2ea8e608030844d51abac5f85977b382bc118b390f9dc9d79fe7faa7af"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/sceneweaver/renders/corner_se.png",
+              "source_sha256": "e347c393cbf74c9141e22ebce389644ec9fcb607b09352ce038066be61c8f62f",
+              "website_image": "static/images/scene-examples/views/scene9-sceneweaver-corner_se.webp",
+              "website_sha256": "e6b2d77b50ce1bd57aa41c4f8eeab9ba316bbda11d3184e977d8d47cc1082d06"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/sceneweaver/renders/corner_ne.png",
+              "source_sha256": "eb800ee29c849a01890de12bc5eaa33c5218ecc1e17cd5a189f2f6fe47e52cd1",
+              "website_image": "static/images/scene-examples/views/scene9-sceneweaver-corner_ne.webp",
+              "website_sha256": "71a1683ab56c8e125870ebf00d81c2654784abb061f34e60b293864217df6dc5"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/sceneweaver/renders/corner_nw.png",
+              "source_sha256": "50814aef4e84fc189f9a9f48b9680bec1249fa0ba34e6f09ebe68f26e35f0648",
+              "website_image": "static/images/scene-examples/views/scene9-sceneweaver-corner_nw.webp",
+              "website_sha256": "968bd66fde58982b2892b125a93f3c14090d27d82c4da37e8ee81abc97bb6a30"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/sceneweaver/renders/topdown.png",
+              "source_sha256": "18fa3585b461a6b16eb1333ff23c1e34b09d19199cf3bf3aea13f9024e6f97a1",
+              "website_image": "static/images/scene-examples/views/scene9-sceneweaver-topdown.webp",
+              "website_sha256": "18c5f946bdfe05e5a9a065e3045e228e49591cc41a5b7dd12accdb31f230efc6"
+            }
+          }
+        },
+        {
+          "method": "sage",
+          "label": "SAGE",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/sage/renders/corner_sw.png",
+          "source_sha256": "46015bb2494ea820a7d68ff1225165da7484734487466982a2fc7f535b9f2e1e",
+          "website_image": "static/images/scene-examples/scene9-sage.webp",
+          "website_sha256": "9cdc1ec748b587ca56c3933c0206fcfd8baa3ca056ba13831ca6f3f86a975fea",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/sage/renders/corner_sw.png",
+              "source_sha256": "46015bb2494ea820a7d68ff1225165da7484734487466982a2fc7f535b9f2e1e",
+              "website_image": "static/images/scene-examples/scene9-sage.webp",
+              "website_sha256": "9cdc1ec748b587ca56c3933c0206fcfd8baa3ca056ba13831ca6f3f86a975fea"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/sage/renders/corner_se.png",
+              "source_sha256": "99ab45eb588e255f7cadb31b269228ff22583b8bad78833261bc2df5693311aa",
+              "website_image": "static/images/scene-examples/views/scene9-sage-corner_se.webp",
+              "website_sha256": "0e3b38bad83065ef989009f6f8097ef0294e72b5a8d2b73a3187196c094f18b7"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/sage/renders/corner_ne.png",
+              "source_sha256": "3f9284f7de5e91e928a665eac3ec8fb5ed31c7b4f132d7ece3c67c921e00391a",
+              "website_image": "static/images/scene-examples/views/scene9-sage-corner_ne.webp",
+              "website_sha256": "cf5447358b23b94230d345080532d54539c00bf3c5ee61768bba0d9b3b7e963c"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/sage/renders/corner_nw.png",
+              "source_sha256": "4068186b3394bf7bfb2b01ed0a788e529dbf00821aabe61366fc62020e7ae2ea",
+              "website_image": "static/images/scene-examples/views/scene9-sage-corner_nw.webp",
+              "website_sha256": "74711d9900f7cbfc6b252baba7dfb19f89784ab0e1ec1048c008d9b82e70d128"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/sage/renders/topdown.png",
+              "source_sha256": "94fbcf531b58f9b86dde90885a07757bf6f2e79f383e505cb1ebc5e4cd2d9a4d",
+              "website_image": "static/images/scene-examples/views/scene9-sage-topdown.webp",
+              "website_sha256": "0d723c6a86e2f0e3c782a879b34e9a37c13dffd50d47230bee994eafdacd5e69"
+            }
+          }
+        },
+        {
+          "method": "scenesmith",
+          "label": "SceneSmith",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/scenesmith/renders/corner_sw.png",
+          "source_sha256": "3673d968c41ea4af2cfa204696347ecf426bc9a4daba6c674894364abf24d46f",
+          "website_image": "static/images/scene-examples/scene9-scenesmith.webp",
+          "website_sha256": "37af1d08740e6d725f443fb3028283b460c229955e0e4e5ab42f1e43db013fae",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/scenesmith/renders/corner_sw.png",
+              "source_sha256": "3673d968c41ea4af2cfa204696347ecf426bc9a4daba6c674894364abf24d46f",
+              "website_image": "static/images/scene-examples/scene9-scenesmith.webp",
+              "website_sha256": "37af1d08740e6d725f443fb3028283b460c229955e0e4e5ab42f1e43db013fae"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/scenesmith/renders/corner_se.png",
+              "source_sha256": "d19bfe83b97c9f265adb791afe2ef572807b7c932af422beb05e4fcc07a9982e",
+              "website_image": "static/images/scene-examples/views/scene9-scenesmith-corner_se.webp",
+              "website_sha256": "4e1cdb68ca08e3e49b261a67fd6d919229c5591bd3770722e92192efee4b4c76"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/scenesmith/renders/corner_ne.png",
+              "source_sha256": "91c0dfa77329200b88af8ebbd5a237d5e2ebc4c9bc2479ce916f1f0911c27860",
+              "website_image": "static/images/scene-examples/views/scene9-scenesmith-corner_ne.webp",
+              "website_sha256": "9fb802371a82419d4218f2447b26d51c28f75d369d5119f5a477c587410d8821"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/scenesmith/renders/corner_nw.png",
+              "source_sha256": "918165e95b88a08bd9adf19c45cbc28108d721e2f6425645a2d392baf2ff79bd",
+              "website_image": "static/images/scene-examples/views/scene9-scenesmith-corner_nw.webp",
+              "website_sha256": "f953813974b6bf70994705997207b870af61e7407623cc559f10b4d463e60dd8"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/scenesmith/renders/topdown.png",
+              "source_sha256": "2ceb4ce6d306d7de6929e9bc4616bcf3883a59cd060c6b5c1c603727732dfe06",
+              "website_image": "static/images/scene-examples/views/scene9-scenesmith-topdown.webp",
+              "website_sha256": "8679fa0a7ebed7173a3c2f536319efa5da228ab0990f2d85e25f240fe14b5c1e"
+            }
+          }
+        },
+        {
+          "method": "codex",
+          "label": "Codex",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/codex/renders/corner_sw.png",
+          "source_sha256": "aebf4ff734b04c8707cd517c352539a45d28c8690debe9fd5d2c735ab49a6997",
+          "website_image": "static/images/scene-examples/scene9-codex.webp",
+          "website_sha256": "ffd1923cfb1398f33500ec6424f2a1da50e43107e28451cdcc314b5deedf9260",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/codex/renders/corner_sw.png",
+              "source_sha256": "aebf4ff734b04c8707cd517c352539a45d28c8690debe9fd5d2c735ab49a6997",
+              "website_image": "static/images/scene-examples/scene9-codex.webp",
+              "website_sha256": "ffd1923cfb1398f33500ec6424f2a1da50e43107e28451cdcc314b5deedf9260"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/codex/renders/corner_se.png",
+              "source_sha256": "43941845a05410ba97393aa375744879c6e06dcac19c852d0f90354e95aa27a7",
+              "website_image": "static/images/scene-examples/views/scene9-codex-corner_se.webp",
+              "website_sha256": "d74bfa2daa2ab49a22a39c5fad7ba39fb1ebca41691115aa4cb09bed0bd82dfb"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/codex/renders/corner_ne.png",
+              "source_sha256": "63e7cc6a1b8355af14dcc91669db89f652068321288948a643e4f5659c90ae40",
+              "website_image": "static/images/scene-examples/views/scene9-codex-corner_ne.webp",
+              "website_sha256": "0c68223002973134989787f1451f47d3e21365464680851d321fe8c27b76ba2c"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/codex/renders/corner_nw.png",
+              "source_sha256": "db9f9b68476cfb038b151a861a6c3e8809c4b3b4761b17723b5df355cc5708ee",
+              "website_image": "static/images/scene-examples/views/scene9-codex-corner_nw.webp",
+              "website_sha256": "10eaeedc37181cdff6e2a5650f152e9a6e596fdb9a3cab3f157802875cdfb1a2"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/codex/renders/topdown.png",
+              "source_sha256": "8678d9492eba32ab29f9a4bc0741d3029f87859dedf09c0b9b7bec5ad37223ee",
+              "website_image": "static/images/scene-examples/views/scene9-codex-topdown.webp",
+              "website_sha256": "9774a054ba37faa3add5d3a94679a0ec43be18ccb6ee7ac57a942c7a740c6da5"
+            }
+          }
+        },
+        {
+          "method": "claudecode",
+          "label": "Claude Code",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/claudecode/renders/corner_sw.png",
+          "source_sha256": "9b08305ff1a167e2bc0e5086e82cf85b936aa68d310d5e281953d12227ac5a41",
+          "website_image": "static/images/scene-examples/scene9-claudecode.webp",
+          "website_sha256": "b81697c5c274645fdcc0e8e7ae6cf19ff5520c657ae5851fe7afc11013020a11",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/claudecode/renders/corner_sw.png",
+              "source_sha256": "9b08305ff1a167e2bc0e5086e82cf85b936aa68d310d5e281953d12227ac5a41",
+              "website_image": "static/images/scene-examples/scene9-claudecode.webp",
+              "website_sha256": "b81697c5c274645fdcc0e8e7ae6cf19ff5520c657ae5851fe7afc11013020a11"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/claudecode/renders/corner_se.png",
+              "source_sha256": "4a5f989fbb641416f469220ec8eb0da63f472d1c8af5c8550f66ca5edf591144",
+              "website_image": "static/images/scene-examples/views/scene9-claudecode-corner_se.webp",
+              "website_sha256": "af13e328bdfae9dfd78fd41d8ea7c912fe0c20d8b324342d0c6536b0823cc8cb"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/claudecode/renders/corner_ne.png",
+              "source_sha256": "949eca3b13823e296ed1f279a555e651154582402e551ee97cd1ed4c1e88c67b",
+              "website_image": "static/images/scene-examples/views/scene9-claudecode-corner_ne.webp",
+              "website_sha256": "6ac0c6f595bf72fa33d7f3242e1acc417b76b8ecb8122a1fe286c11e68e1902a"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/claudecode/renders/corner_nw.png",
+              "source_sha256": "41d53e26b610414184810f833038c249c83523419b2405439f25ccec82d0abe7",
+              "website_image": "static/images/scene-examples/views/scene9-claudecode-corner_nw.webp",
+              "website_sha256": "36ec7c64876834cfc09eded90745e5bcaf2bad23ea10aa26b71e3f5abd4dd8ba"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene9/claudecode/renders/topdown.png",
+              "source_sha256": "c4ec8a76c270367239381a471c920259364438502c8b6d131e97aa4ea9b0b6a5",
+              "website_image": "static/images/scene-examples/views/scene9-claudecode-topdown.webp",
+              "website_sha256": "30b510b57924f25734889e6a4572d2a4fa416dbab6aefb7e8128769d2768fd39"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scene_id": "scene34",
+      "room": "Dining room",
+      "prompt": "A dining room with a bar table positioned in the middle of the room. A wooden shelf is mounted on the wall, holding a potted plant and a jug, adding a touch of decor and functionality. Along the wall, there is a fridge and a wine cabinet, providing ample storage and a cohesive design.",
+      "methods": [
+        {
+          "method": "atiss",
+          "label": "ATISS",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/atiss/renders/corner_sw.png",
+          "source_sha256": "71ea766ad231273f9196790d1380edac4395a156b0b382242e1f69a54f6afb85",
+          "website_image": "static/images/scene-examples/scene34-atiss.webp",
+          "website_sha256": "e2e3667a2268bb491a125ce0bb4e6b977be67d46cf41a47f71e685845af5c595",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/atiss/renders/corner_sw.png",
+              "source_sha256": "71ea766ad231273f9196790d1380edac4395a156b0b382242e1f69a54f6afb85",
+              "website_image": "static/images/scene-examples/scene34-atiss.webp",
+              "website_sha256": "e2e3667a2268bb491a125ce0bb4e6b977be67d46cf41a47f71e685845af5c595"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/atiss/renders/corner_se.png",
+              "source_sha256": "c811ec4ef7c572e4200214191cf3154045facd415e6c5ef04767821c6d2ae952",
+              "website_image": "static/images/scene-examples/views/scene34-atiss-corner_se.webp",
+              "website_sha256": "b78f5a6437c683559d49fe0c54072d78bdf2f8d35e765f2813c37fb342f25811"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/atiss/renders/corner_ne.png",
+              "source_sha256": "78b40aead4bc4ffb50d7130505b39d20f9e96c9b4d143ee340ce5a49edd7b470",
+              "website_image": "static/images/scene-examples/views/scene34-atiss-corner_ne.webp",
+              "website_sha256": "d0ad2ea2ca391f6f3853bb617cbde826316dc30b6677bf2b534b8405d64d263b"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/atiss/renders/corner_nw.png",
+              "source_sha256": "7cd21d503a26471715ea33faa79a948287e2595084d470337eeb0bb3e6aa8175",
+              "website_image": "static/images/scene-examples/views/scene34-atiss-corner_nw.webp",
+              "website_sha256": "333d86643831e4b8c720f473e478a365a55be4799443be9a18f87460d4990b7e"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/atiss/renders/topdown.png",
+              "source_sha256": "c69c4bd117d8ed778ecff779eab19d105a6494ea78af4249a9fc4e6226f973fb",
+              "website_image": "static/images/scene-examples/views/scene34-atiss-topdown.webp",
+              "website_sha256": "21147c826dfd9d96091a4d116d6e60ab647b488dabca0a482b4117e26da5f0e2"
+            }
+          }
+        },
+        {
+          "method": "diffuscene",
+          "label": "DiffuScene",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/diffuscene/renders/corner_sw.png",
+          "source_sha256": "26f766193238a962db71af5bdcb16da868b463959fb65be8b022a9e34fed0cf8",
+          "website_image": "static/images/scene-examples/scene34-diffuscene.webp",
+          "website_sha256": "a3967c8855135dce17ed4e6e3757f7991ef8db803906ed2ba4b1030906d7e32b",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/diffuscene/renders/corner_sw.png",
+              "source_sha256": "26f766193238a962db71af5bdcb16da868b463959fb65be8b022a9e34fed0cf8",
+              "website_image": "static/images/scene-examples/scene34-diffuscene.webp",
+              "website_sha256": "a3967c8855135dce17ed4e6e3757f7991ef8db803906ed2ba4b1030906d7e32b"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/diffuscene/renders/corner_se.png",
+              "source_sha256": "7ec7fdd9f9aaaf6204f991d2dcaf8b54a9c935b4d17419774b6647205e15cf50",
+              "website_image": "static/images/scene-examples/views/scene34-diffuscene-corner_se.webp",
+              "website_sha256": "3866f266351afc4ebf25d67653ed4a86ccf4ae17cb1111ce2313a23c8f5aa7e3"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/diffuscene/renders/corner_ne.png",
+              "source_sha256": "56d269f544c442acf6b6c13eebab89ead4f28d0a98d7f8400013d3979d144006",
+              "website_image": "static/images/scene-examples/views/scene34-diffuscene-corner_ne.webp",
+              "website_sha256": "a35ff71024f93ee74b664f38091b3100aa4b47470a6d018741405a977e9d805f"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/diffuscene/renders/corner_nw.png",
+              "source_sha256": "d1859cea9ab9d616e103a7bacca5f839492ac1ce81b851dada6213225559f338",
+              "website_image": "static/images/scene-examples/views/scene34-diffuscene-corner_nw.webp",
+              "website_sha256": "3fa685e090aced3fd0d976f9a72103d425779e79525ccbaa99842d62ed6bdeb5"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/diffuscene/renders/topdown.png",
+              "source_sha256": "b9e5231a82104e28d1523dc0502ed0641e66f601c4626d3c53dd709e1d63e6fe",
+              "website_image": "static/images/scene-examples/views/scene34-diffuscene-topdown.webp",
+              "website_sha256": "6633a73c151c1ce1719e7c29db9d0da3bf6dcc56568c0c190188194ddc1911ca"
+            }
+          }
+        },
+        {
+          "method": "instructscene",
+          "label": "InstructScene",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/instructscene/renders/corner_sw.png",
+          "source_sha256": "aaf3f3267c350b476dd877f96485a41fe07597cb87fc17e9672d2d0e347b4daf",
+          "website_image": "static/images/scene-examples/scene34-instructscene.webp",
+          "website_sha256": "3e28e507f5fdd4a38565c7a83618f3a8fff2e69e73f8603feffd6291ca56de0e",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/instructscene/renders/corner_sw.png",
+              "source_sha256": "aaf3f3267c350b476dd877f96485a41fe07597cb87fc17e9672d2d0e347b4daf",
+              "website_image": "static/images/scene-examples/scene34-instructscene.webp",
+              "website_sha256": "3e28e507f5fdd4a38565c7a83618f3a8fff2e69e73f8603feffd6291ca56de0e"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/instructscene/renders/corner_se.png",
+              "source_sha256": "486c96bae3c5dfae4eff799e4232a2a38c1deddf3ef31dc82aec8a7b376c8770",
+              "website_image": "static/images/scene-examples/views/scene34-instructscene-corner_se.webp",
+              "website_sha256": "84ca1bd749edc84e221a70c81a1e8e48bf7b697c98ce04b454677daed0de3d27"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/instructscene/renders/corner_ne.png",
+              "source_sha256": "9117541d5f938ee170f708391eb9a5044259dd47913f7f00d6bf58c7bb403785",
+              "website_image": "static/images/scene-examples/views/scene34-instructscene-corner_ne.webp",
+              "website_sha256": "6de00ffb771bdc87ef0d08a5fb1f61fcd9b38074fa8eea3e49135b417a933f5d"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/instructscene/renders/corner_nw.png",
+              "source_sha256": "5c04014b20f50bf87374856fcd8225060ef9707c82544ce79ae8337cd2bef77f",
+              "website_image": "static/images/scene-examples/views/scene34-instructscene-corner_nw.webp",
+              "website_sha256": "cf05d926090c70486f8bac9964c50f14a4b06ef82896abb7af2be77e21e1cc08"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/instructscene/renders/topdown.png",
+              "source_sha256": "79d1476513615fecafd6cd340210563bd0048249aac464104ae4e6117c323932",
+              "website_image": "static/images/scene-examples/views/scene34-instructscene-topdown.webp",
+              "website_sha256": "72aec1912568aaffd15451e66283447d0a1c1cc56a529dd200b1c7b16d83b003"
+            }
+          }
+        },
+        {
+          "method": "layoutgpt",
+          "label": "LayoutGPT",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/layoutgpt/renders/corner_sw.png",
+          "source_sha256": "5df51e0e57a975b9d6fbb3a3e1b373f562fa22cfc86b6e05fc880d310697bbed",
+          "website_image": "static/images/scene-examples/scene34-layoutgpt.webp",
+          "website_sha256": "b5d18f707d7799e2b29387ff5fd9ae38636d87e64910c8e4ead2117cd34900e5",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/layoutgpt/renders/corner_sw.png",
+              "source_sha256": "5df51e0e57a975b9d6fbb3a3e1b373f562fa22cfc86b6e05fc880d310697bbed",
+              "website_image": "static/images/scene-examples/scene34-layoutgpt.webp",
+              "website_sha256": "b5d18f707d7799e2b29387ff5fd9ae38636d87e64910c8e4ead2117cd34900e5"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/layoutgpt/renders/corner_se.png",
+              "source_sha256": "16e23a923d901d3e612dc127c785d9e05f550d6d3551cf951a08d4aa7b7b19c6",
+              "website_image": "static/images/scene-examples/views/scene34-layoutgpt-corner_se.webp",
+              "website_sha256": "e2e22bb3ea940f14863da8de02cda8b3171a8a62fbe18fba1f884f3ebf6a0e54"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/layoutgpt/renders/corner_ne.png",
+              "source_sha256": "3342b75809e2d08f2497a03319a52abb202cb625ea5ed6c3ff71f74b49b71a17",
+              "website_image": "static/images/scene-examples/views/scene34-layoutgpt-corner_ne.webp",
+              "website_sha256": "b8f0363cf7ecda98331ab90000e3ea935eaa5840645fed8d0310046a6b0d69fe"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/layoutgpt/renders/corner_nw.png",
+              "source_sha256": "3840d21003b70351c5dddad2908a9b9c263d28e182717cf1a239732d953eb1c9",
+              "website_image": "static/images/scene-examples/views/scene34-layoutgpt-corner_nw.webp",
+              "website_sha256": "be983e2a729cff71c45a2ff54ac0c2a40207c29dea0635596cdd7662db2065a6"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/layoutgpt/renders/topdown.png",
+              "source_sha256": "6c63b61335038244e290f27cb7eaf7a299e6f891b03488b711cf96e8637ff70a",
+              "website_image": "static/images/scene-examples/views/scene34-layoutgpt-topdown.webp",
+              "website_sha256": "1ef6d25c1989f30738db1caa8ad336a4540e08a550f77c8d9d76b7f868ce2086"
+            }
+          }
+        },
+        {
+          "method": "layoutvlm",
+          "label": "LayoutVLM",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/layoutvlm/renders/corner_sw.png",
+          "source_sha256": "5988301b27b82155ed89820d0e8a08864a21cbc487aa1540ba15a38a70554aa6",
+          "website_image": "static/images/scene-examples/scene34-layoutvlm.webp",
+          "website_sha256": "ca9383fd56344cbcdb5a230e53b9371c6309d42aa7d4502cc79facb0b0fe5452",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/layoutvlm/renders/corner_sw.png",
+              "source_sha256": "5988301b27b82155ed89820d0e8a08864a21cbc487aa1540ba15a38a70554aa6",
+              "website_image": "static/images/scene-examples/scene34-layoutvlm.webp",
+              "website_sha256": "ca9383fd56344cbcdb5a230e53b9371c6309d42aa7d4502cc79facb0b0fe5452"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/layoutvlm/renders/corner_se.png",
+              "source_sha256": "4a4e649bd4f7a21dc53800524e91a47b29c5bb8c45d46d02bb24df251997dc86",
+              "website_image": "static/images/scene-examples/views/scene34-layoutvlm-corner_se.webp",
+              "website_sha256": "4e474ff474c389e09ea224e906b32f6ca8d32b9794564f6e0739fb58f61420c4"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/layoutvlm/renders/corner_ne.png",
+              "source_sha256": "1ccc92bf4e547df7fc21ce08fa932870caa8cc2bc4d04acdd2cece81f6daf60b",
+              "website_image": "static/images/scene-examples/views/scene34-layoutvlm-corner_ne.webp",
+              "website_sha256": "8880112327cf6d5cf4e9de4f93a296a3b572a6215779a225bb3a2506e39d87b5"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/layoutvlm/renders/corner_nw.png",
+              "source_sha256": "24f4075b075862cdbd2c5d9ac1c3edc7795e594cd1182e176ed3e6214bc5f101",
+              "website_image": "static/images/scene-examples/views/scene34-layoutvlm-corner_nw.webp",
+              "website_sha256": "8413ec82edb7ccfa653a660ba64f8712f18e21a7c1f34dbc1588a362aea18c6d"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/layoutvlm/renders/topdown.png",
+              "source_sha256": "6dcdac4f561c043e11b28fa377f1b8e261fb0f2eb0d7cc307cb183960bf34f33",
+              "website_image": "static/images/scene-examples/views/scene34-layoutvlm-topdown.webp",
+              "website_sha256": "d2b2d964266573fc2c2c3a6fdddaa4d21f3298b13e28ec86a3016a0d4ae328f3"
+            }
+          }
+        },
+        {
+          "method": "holodeck",
+          "label": "Holodeck",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/holodeck/renders/corner_sw.png",
+          "source_sha256": "9ca97c4e0b9c363f6db1be627209c1eddd058455c3d8181477882d2c5fe0cbb8",
+          "website_image": "static/images/scene-examples/scene34-holodeck.webp",
+          "website_sha256": "469c7a39b755c21f39a55708a8c96658669362600667a7ffc1459c6be05c31d2",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/holodeck/renders/corner_sw.png",
+              "source_sha256": "9ca97c4e0b9c363f6db1be627209c1eddd058455c3d8181477882d2c5fe0cbb8",
+              "website_image": "static/images/scene-examples/scene34-holodeck.webp",
+              "website_sha256": "469c7a39b755c21f39a55708a8c96658669362600667a7ffc1459c6be05c31d2"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/holodeck/renders/corner_se.png",
+              "source_sha256": "f095ca31573a698ed1f35a436e73d9d03764de29f2980f7c2cecc7df32426485",
+              "website_image": "static/images/scene-examples/views/scene34-holodeck-corner_se.webp",
+              "website_sha256": "3e63242e8783848db3dbaec36c8cdafb16aa92020af9c10760a810223ef73441"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/holodeck/renders/corner_ne.png",
+              "source_sha256": "b792e8813efafa847d3dabdbf568a45c57658c491dcc4c8df3cbe03e63dd457d",
+              "website_image": "static/images/scene-examples/views/scene34-holodeck-corner_ne.webp",
+              "website_sha256": "a6a66e5406d515d5cdb724cb69be7bf8df0b61266f525615ffc5e35b7957980d"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/holodeck/renders/corner_nw.png",
+              "source_sha256": "8008f84bba4ea991a3df9528430e113937f7a7b6b9cff73bddc726b4bf888b30",
+              "website_image": "static/images/scene-examples/views/scene34-holodeck-corner_nw.webp",
+              "website_sha256": "8f27e9f8e912c6296244f88559afac89162581221c73c3bc7af19c3ff1ca4d39"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/holodeck/renders/topdown.png",
+              "source_sha256": "8cbd9e189a4f3a9b41767ae4ddf7987cced5026f7a89f9f4064b94c1b38fc157",
+              "website_image": "static/images/scene-examples/views/scene34-holodeck-topdown.webp",
+              "website_sha256": "cddea0d0e61f15b283a3301dafdc5f0991a528fcee1ae3d209f88880eb57b545"
+            }
+          }
+        },
+        {
+          "method": "hsm",
+          "label": "HSM",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/hsm/renders/corner_sw.png",
+          "source_sha256": "2cf1429655fea0e124aa43de447104b14b838cfdc21cbcdf0198725a5da0f8a8",
+          "website_image": "static/images/scene-examples/scene34-hsm.webp",
+          "website_sha256": "a2053401383addde29f8d3ecd400f33c53a80417b3abb2983471142cc5228e2e",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/hsm/renders/corner_sw.png",
+              "source_sha256": "2cf1429655fea0e124aa43de447104b14b838cfdc21cbcdf0198725a5da0f8a8",
+              "website_image": "static/images/scene-examples/scene34-hsm.webp",
+              "website_sha256": "a2053401383addde29f8d3ecd400f33c53a80417b3abb2983471142cc5228e2e"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/hsm/renders/corner_se.png",
+              "source_sha256": "8c91c38c566879e0f263e6ce47bf0fa725b70ae50f6bbcb44e8898357f7ead21",
+              "website_image": "static/images/scene-examples/views/scene34-hsm-corner_se.webp",
+              "website_sha256": "f25e9c837af934d17561241ba671eeb9e9dbab3ff49ae36b378ec18f39a422a2"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/hsm/renders/corner_ne.png",
+              "source_sha256": "bffb32732984bc69df6f99f06e00d7c3c4fcfc51afc5889f3b16bb2b71fba31f",
+              "website_image": "static/images/scene-examples/views/scene34-hsm-corner_ne.webp",
+              "website_sha256": "920b0315af678a060fe5334ad4aea6c50f3900f0f8c004fb1063ab14a8498170"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/hsm/renders/corner_nw.png",
+              "source_sha256": "b8ecc40b9c8568b6fc0a8bf077ffb026b97221d52959588fc2a21b526c4ae469",
+              "website_image": "static/images/scene-examples/views/scene34-hsm-corner_nw.webp",
+              "website_sha256": "c1ceaacc037607ddaff92b90c7a37e6337aa884897d5accd5f36a7fb6e7d0584"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/hsm/renders/topdown.png",
+              "source_sha256": "8b0d141d59032245c2fedbbf4d3341ec40323bc2cce6d3a0314214e4e5bf3ae2",
+              "website_image": "static/images/scene-examples/views/scene34-hsm-topdown.webp",
+              "website_sha256": "577d86080c6023d24c612cdee91fb4086435367804b13da9de2d010484c61c0f"
+            }
+          }
+        },
+        {
+          "method": "sceneweaver",
+          "label": "SceneWeaver",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/sceneweaver/renders/corner_sw.png",
+          "source_sha256": "b8831ed7f5597c6a5f23f333a09a5291269bd60732f8498289cb0cbf95261b9c",
+          "website_image": "static/images/scene-examples/scene34-sceneweaver.webp",
+          "website_sha256": "b9444ad4ea2f6749905ad6ad351d64e6f399f3ddf5e9f7e85899b53156390e66",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/sceneweaver/renders/corner_sw.png",
+              "source_sha256": "b8831ed7f5597c6a5f23f333a09a5291269bd60732f8498289cb0cbf95261b9c",
+              "website_image": "static/images/scene-examples/scene34-sceneweaver.webp",
+              "website_sha256": "b9444ad4ea2f6749905ad6ad351d64e6f399f3ddf5e9f7e85899b53156390e66"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/sceneweaver/renders/corner_se.png",
+              "source_sha256": "12b6d5d104f9fb03958abc6f331322f7a48603dd2ef47f58d94972525ba2556e",
+              "website_image": "static/images/scene-examples/views/scene34-sceneweaver-corner_se.webp",
+              "website_sha256": "c68f577d21ec3c62a54aa8b2a2da2792b4ee958118598090879b1ee4030a3a0c"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/sceneweaver/renders/corner_ne.png",
+              "source_sha256": "44cb68974f3d7180bc30d2bb6421786919b427157a4979a09d14416e34ebcdd6",
+              "website_image": "static/images/scene-examples/views/scene34-sceneweaver-corner_ne.webp",
+              "website_sha256": "826a264fe2fc7d8df739610a06c8b0ea3fd39b12a42c13663f7afb2d88006f23"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/sceneweaver/renders/corner_nw.png",
+              "source_sha256": "d1dc58649da8dffa3917df26c34e6c6680b3e333b42644a7ad36e844d1fd7ed9",
+              "website_image": "static/images/scene-examples/views/scene34-sceneweaver-corner_nw.webp",
+              "website_sha256": "acde1e8f4603925cdcb06c3d6bca1b98c8b80f1b69336b083b70f64a26b3b0b0"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/sceneweaver/renders/topdown.png",
+              "source_sha256": "63bb720a7e5b47a906bd4e96500e602e04a1817b0fa619e8d2b1f223ef21905a",
+              "website_image": "static/images/scene-examples/views/scene34-sceneweaver-topdown.webp",
+              "website_sha256": "9e144e52379d32672ac023c32923d400026528b8c66441eb31971d5ee6124248"
+            }
+          }
+        },
+        {
+          "method": "sage",
+          "label": "SAGE",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/sage/renders/corner_sw.png",
+          "source_sha256": "27d4fe1f5a772c9f072279794794fa908d373d981caabf76cba6882dd9d06443",
+          "website_image": "static/images/scene-examples/scene34-sage.webp",
+          "website_sha256": "f583cbeb541f08b42e11b0d5580765589bed2fbe2dd78a43a0f7a3a0d9273e7c",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/sage/renders/corner_sw.png",
+              "source_sha256": "27d4fe1f5a772c9f072279794794fa908d373d981caabf76cba6882dd9d06443",
+              "website_image": "static/images/scene-examples/scene34-sage.webp",
+              "website_sha256": "f583cbeb541f08b42e11b0d5580765589bed2fbe2dd78a43a0f7a3a0d9273e7c"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/sage/renders/corner_se.png",
+              "source_sha256": "c8543bb2b460fac307d9c8abc50c7f40c348cfe2c6029141db07fa287b42bb0e",
+              "website_image": "static/images/scene-examples/views/scene34-sage-corner_se.webp",
+              "website_sha256": "a43f2bad4065ca36a5b4e69587975b57df00dfce55194bd7c8b5bf59d0c46d3f"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/sage/renders/corner_ne.png",
+              "source_sha256": "c8e9b977024813792722c8334e58944d0c5b12b29c26772ccb8f14afbd19c6f5",
+              "website_image": "static/images/scene-examples/views/scene34-sage-corner_ne.webp",
+              "website_sha256": "629a821212fb2012f503611e36b6d7eeff9e6909389ed2a242d6940b19740f97"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/sage/renders/corner_nw.png",
+              "source_sha256": "4fdb320dfc521a1a87d036fc6cc26f79fffb9d7e6d46bbfc81fc0d79813981e9",
+              "website_image": "static/images/scene-examples/views/scene34-sage-corner_nw.webp",
+              "website_sha256": "261171abd49d4d795191b63ad1efb9f47bdb8a71a03eba2567edba64dd397c1a"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/sage/renders/topdown.png",
+              "source_sha256": "6c5167c7b80bbb9c1c9687e50bfa4ad0bcc0a2d39be3b6a016de6bcadc0d2c97",
+              "website_image": "static/images/scene-examples/views/scene34-sage-topdown.webp",
+              "website_sha256": "77bfd16b8598a897492dba728b434402e8d22d0db468417efba409f0e35408b9"
+            }
+          }
+        },
+        {
+          "method": "scenesmith",
+          "label": "SceneSmith",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/scenesmith/renders/corner_sw.png",
+          "source_sha256": "ec3d93501fafac0d504014b5704702d00e074f52598ab317f0d0e830f9fe894a",
+          "website_image": "static/images/scene-examples/scene34-scenesmith.webp",
+          "website_sha256": "ea75f99743f7c27e7ece6b8a308268c382002ec56399fb492b6416bf694326c6",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/scenesmith/renders/corner_sw.png",
+              "source_sha256": "ec3d93501fafac0d504014b5704702d00e074f52598ab317f0d0e830f9fe894a",
+              "website_image": "static/images/scene-examples/scene34-scenesmith.webp",
+              "website_sha256": "ea75f99743f7c27e7ece6b8a308268c382002ec56399fb492b6416bf694326c6"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/scenesmith/renders/corner_se.png",
+              "source_sha256": "6199bc80de48a6a2ebd032b457e3d7243638eae5b418c2bb1b322720e7442e2d",
+              "website_image": "static/images/scene-examples/views/scene34-scenesmith-corner_se.webp",
+              "website_sha256": "b8fe99d65d6871bcb54d8092d4615763c8925a24f98e14bbf538eda4ed3cc13d"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/scenesmith/renders/corner_ne.png",
+              "source_sha256": "b0ad4a205fb18f5bccb06ccfb2527e8d72aee909d3dceb2963370516b430847a",
+              "website_image": "static/images/scene-examples/views/scene34-scenesmith-corner_ne.webp",
+              "website_sha256": "d8e477e5b435c707ef983bd6cbd5b88038aa1adfa26be574aa304bc2146e623c"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/scenesmith/renders/corner_nw.png",
+              "source_sha256": "e554ecb03bc6f1b62174981d6eb667a0e8850e243278389fe629e2dd410c3da4",
+              "website_image": "static/images/scene-examples/views/scene34-scenesmith-corner_nw.webp",
+              "website_sha256": "78282e70ac2a5279e0b5ee2bd231d97acd29a71bb9602547ac2b39cd1c8f0818"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/scenesmith/renders/topdown.png",
+              "source_sha256": "7d4fdddc5f02150d8e13b1c018bb3ae19099a3ce5799647a38adb88da8ab1ca8",
+              "website_image": "static/images/scene-examples/views/scene34-scenesmith-topdown.webp",
+              "website_sha256": "a7094a3fabb834862bbd4791a764315bed107cfb89412246df65d8bd806dbd0d"
+            }
+          }
+        },
+        {
+          "method": "codex",
+          "label": "Codex",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/codex/renders/corner_sw.png",
+          "source_sha256": "43357583f76f53cfd1de1c0cc3731bf014466666d1da6a6a405e226a5864a810",
+          "website_image": "static/images/scene-examples/scene34-codex.webp",
+          "website_sha256": "1ca07678ca0dfb969341aa45530de2abd0fc2fd2dbafbc2f475de915a6ffe62d",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/codex/renders/corner_sw.png",
+              "source_sha256": "43357583f76f53cfd1de1c0cc3731bf014466666d1da6a6a405e226a5864a810",
+              "website_image": "static/images/scene-examples/scene34-codex.webp",
+              "website_sha256": "1ca07678ca0dfb969341aa45530de2abd0fc2fd2dbafbc2f475de915a6ffe62d"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/codex/renders/corner_se.png",
+              "source_sha256": "3f30289eb4c7c24c6ab50605e42920ae990df224c233feb0e853332ad6db129c",
+              "website_image": "static/images/scene-examples/views/scene34-codex-corner_se.webp",
+              "website_sha256": "ba359c803070b9ec7a0e3a7983246719602a2fcefe9e36bd9f87452fb46c1033"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/codex/renders/corner_ne.png",
+              "source_sha256": "95cfa1fb6cfbf6e010c1cb6d22565c20f1734f44d9bef38e593de2f5b2658d5e",
+              "website_image": "static/images/scene-examples/views/scene34-codex-corner_ne.webp",
+              "website_sha256": "ce522b62c1aa90dce2d319b16ad8909996cb56a9d25206d60fe7b140c9019ab9"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/codex/renders/corner_nw.png",
+              "source_sha256": "ec1c7cb7fcbd2a5cff182fc2c893df85ec6104237403d96d819d578cffe09f67",
+              "website_image": "static/images/scene-examples/views/scene34-codex-corner_nw.webp",
+              "website_sha256": "de98396f62007a196a8e13940e93585d078317842d682b9060492eb0848913ee"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/codex/renders/topdown.png",
+              "source_sha256": "8ae1b564c6d0c9d5460e16794aeb6add1362a000dbb6844b838d166f58097f0e",
+              "website_image": "static/images/scene-examples/views/scene34-codex-topdown.webp",
+              "website_sha256": "97a7c4bebe79e9c2dbb1bb782369e3545182a6fef44d72d4dd1655b577e28e18"
+            }
+          }
+        },
+        {
+          "method": "claudecode",
+          "label": "Claude Code",
+          "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/claudecode/renders/corner_sw.png",
+          "source_sha256": "5b26506c0d29db3ac6433ab73a33cfe28a8530172cb586fa7601627c39b2992d",
+          "website_image": "static/images/scene-examples/scene34-claudecode.webp",
+          "website_sha256": "ff7d83d9e610ed828691ee8a368583486b012e53fce6d8308c2232914227a07c",
+          "views": {
+            "corner_sw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/claudecode/renders/corner_sw.png",
+              "source_sha256": "5b26506c0d29db3ac6433ab73a33cfe28a8530172cb586fa7601627c39b2992d",
+              "website_image": "static/images/scene-examples/scene34-claudecode.webp",
+              "website_sha256": "ff7d83d9e610ed828691ee8a368583486b012e53fce6d8308c2232914227a07c"
+            },
+            "corner_se": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/claudecode/renders/corner_se.png",
+              "source_sha256": "7164777412f5f47e780cfb07a171dbb5954272e03be0c65c816a093a2b3ab70d",
+              "website_image": "static/images/scene-examples/views/scene34-claudecode-corner_se.webp",
+              "website_sha256": "5ca167bb137d3e0a057b4248feeea3de54a41333d47309e9999dbaaebbbb0ba0"
+            },
+            "corner_ne": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/claudecode/renders/corner_ne.png",
+              "source_sha256": "1dcb72541f4a7136945e298941b1c3520990ef09b0c70f9a8b2ca9837389f6b3",
+              "website_image": "static/images/scene-examples/views/scene34-claudecode-corner_ne.webp",
+              "website_sha256": "98424bd7d5a56a91bd7ff1171eaa0f51378de4c33e68c6daf8653a4e858bc2df"
+            },
+            "corner_nw": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/claudecode/renders/corner_nw.png",
+              "source_sha256": "d31f9b20680ab7948f60af8326337ef14330a07b49d736c16eab3a840615a26b",
+              "website_image": "static/images/scene-examples/views/scene34-claudecode-corner_nw.webp",
+              "website_sha256": "4ce49875a98dc74c3485c82170edf2997a8bc14595a1274be86fc7f6a0a69e3e"
+            },
+            "topdown": {
+              "source_render": "evaluation/unified_fiveview/output/benchmark10_v1/scenes/scene34/claudecode/renders/topdown.png",
+              "source_sha256": "bb9f29551c0728d6bd1cd3ea7696fd17b256bd803de02ee66471d960d41c3e33",
+              "website_image": "static/images/scene-examples/views/scene34-claudecode-topdown.webp",
+              "website_sha256": "a53fbbf2e646a270e735a9c9b65fb7d8d440b47a599b173ffd95c1ecd6a16a29"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "available_views": [
+    "corner_sw",
+    "corner_se",
+    "corner_ne",
+    "corner_nw",
+    "topdown"
+  ],
+  "default_view": "corner_sw"
+}

@@ -1,0 +1,25 @@
+{
+  "source": "evaluation/unified_fiveview/output/benchmark30_ci95_v1/summary.json",
+  "source_sha256": "8a54cffa12ddc918586870fc3a010a194af248363011baa83f104dc6318f6f63",
+  "selection": [
+    "scene3",
+    "scene9",
+    "scene34"
+  ],
+  "records": 36,
+  "policy": "Saved scene-level values, no new evaluations, no zero imputation; no scene-level confidence interval computed.",
+  "field_mapping": {
+    "Real": "realism",
+    "Func": "functionality",
+    "Lay": "layout",
+    "Comp": "completion",
+    "COL": "collision_percent",
+    "OB": "out_of_bound_percent",
+    "SUP": "support_percent",
+    "STAB": "stability_native_percent",
+    "ISR": "ie_success_percent",
+    "ICP": "ie_score",
+    "PIV": "damage_rate_percent",
+    "DP": "dp"
+  }
+}
