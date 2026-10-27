@@ -5,24 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- Project metadata -->
-  <meta name="title" content="SceneIntBench: Benchmarking Interaction-Level Physical Plausibility in 3D Indoor Scene Generation">
-  <meta name="description" content="SceneIntBench evaluates text-conditioned 3D indoor scene generation through semantic quality, static physics, and simulation-based interaction metrics.">
-  <meta name="keywords" content="SceneIntBench, 3D indoor scene generation, scene evaluation, physical plausibility, interaction, simulation">
+  <meta name="title" content="ScIntBench: Physical Interaction Plausibility in 3D Scene Generation">
+  <meta name="description" content="ScIntBench evaluates text-conditioned 3D indoor scene generation through semantic quality, static physics, and simulation-based interaction metrics.">
+  <meta name="keywords" content="ScIntBench, 3D indoor scene generation, scene evaluation, physical plausibility, interaction, simulation">
   <meta name="author" content="Wendi Ying, Daochang Liu, Leonid Sigal, Ajmal Saeed Mian">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
 
   <!-- Social previews; add the site URL and preview image when the website is published. -->
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="SceneIntBench">
-  <meta property="og:title" content="SceneIntBench: Benchmarking Interaction-Level Physical Plausibility in 3D Indoor Scene Generation">
-  <meta property="og:description" content="SceneIntBench evaluates text-conditioned 3D indoor scene generation through semantic quality, static physics, and simulation-based interaction metrics.">
+  <meta property="og:site_name" content="ScIntBench">
+  <meta property="og:title" content="ScIntBench: Physical Interaction Plausibility in 3D Scene Generation">
+  <meta property="og:description" content="ScIntBench evaluates text-conditioned 3D indoor scene generation through semantic quality, static physics, and simulation-based interaction metrics.">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="SceneIntBench: Benchmarking Interaction-Level Physical Plausibility in 3D Indoor Scene Generation">
-  <meta name="twitter:description" content="SceneIntBench evaluates text-conditioned 3D indoor scene generation through semantic quality, static physics, and simulation-based interaction metrics.">
+  <meta name="twitter:title" content="ScIntBench: Physical Interaction Plausibility in 3D Scene Generation">
+  <meta name="twitter:description" content="ScIntBench evaluates text-conditioned 3D indoor scene generation through semantic quality, static physics, and simulation-based interaction metrics.">
 
   <!-- Citation metadata; publication details will be added when available. -->
-  <meta name="citation_title" content="SceneIntBench: Benchmarking Interaction-Level Physical Plausibility in 3D Indoor Scene Generation">
+  <meta name="citation_title" content="ScIntBench: Physical Interaction Plausibility in 3D Scene Generation">
   <meta name="citation_author" content="Ying, Wendi">
   <meta name="citation_author" content="Liu, Daochang">
   <meta name="citation_author" content="Sigal, Leonid">
@@ -35,14 +35,12 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   
   <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://ajax.googleapis.com">
   <link rel="preconnect" href="https://documentcloud.adobe.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
 
-  <title>SceneIntBench | Interaction-Level Physical Plausibility</title>
+  <title>ScIntBench: Physical Interaction Plausibility in 3D Scene Generation</title>
   
   <!-- Add a project favicon when available. -->
 
@@ -64,9 +62,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
   
-  <!-- Fonts - Optimized loading -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
+  <!-- Fonts - Optimized loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+
   <!-- Defer non-critical JavaScript -->
   <script defer src="static/js/interaction-videos.js"></script>
   <script defer src="static/js/scene-examples.js"></script>
@@ -83,8 +84,8 @@
 {
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
-  "headline": "SceneIntBench: Benchmarking Interaction-Level Physical Plausibility in 3D Indoor Scene Generation",
-  "description": "SceneIntBench evaluates text-conditioned 3D indoor scene generation through semantic quality, static physics, and simulation-based interaction metrics.",
+  "headline": "ScIntBench: Physical Interaction Plausibility in 3D Scene Generation",
+  "description": "ScIntBench evaluates text-conditioned 3D indoor scene generation through semantic quality, static physics, and simulation-based interaction metrics.",
   "author": [
     {
       "@type": "Person",
@@ -119,7 +120,7 @@
       }
     }
   ],
-  "abstract": "Existing evaluations of text-conditioned 3D indoor scene generation largely emphasize semantic fidelity and physical validity at rest, leaving interaction-time physical reliability insufficiently assessed. To address this gap, we introduce SceneIntBench, a unified benchmark centered on interaction readiness: it executes prescribed manipulation actions (e.g., pushing, opening, and surface probing) in physics simulation and measures task success, capability and progress, post-interaction integrity, and dynamic plausibility. Multi-view semantic and static physical evaluations complement these metrics and help explain interaction outcomes. We systematically evaluate 12 state-of-the-art scene generation systems across 10 room types. Our results reveal that strong semantic and static physical performance does not necessarily translate into interaction readiness: a system with near-perfect static plausibility completes only 11.54% of interactions, 7 of the 12 systems produce scenes that cannot support any interaction, and even the best system succeeds in only 36.92% of prescribed tasks. These findings highlight two fundamental challenges in generating interaction-ready scenes: providing the necessary physical interaction capabilities and ensuring reliable physical behavior under active manipulation.",
+  "abstract": "Existing evaluations of text-conditioned 3D indoor scene generation largely emphasize semantic fidelity and physical validity at rest, leaving interaction-time physical reliability insufficiently assessed. To address this gap, we introduce ScIntBench, a unified benchmark centered on interaction readiness: it executes prescribed manipulation actions (e.g., pushing, opening, and surface probing) in physics simulation and measures task success, capability and progress, post-interaction integrity, and dynamic plausibility. Multi-view semantic and static physical evaluations complement these metrics and help explain interaction outcomes. We systematically evaluate 12 state-of-the-art scene generation systems across 10 room types. Our results reveal that strong semantic and static physical performance does not necessarily translate into interaction readiness: a system with near-perfect static plausibility completes only 11.54% of interactions, 7 of the 12 systems produce scenes that cannot support any interaction, and even the best system succeeds in only 36.92% of prescribed tasks. These findings highlight two fundamental challenges in generating interaction-ready scenes: providing the necessary physical interaction capabilities and ensuring reliable physical behavior under active manipulation.",
   "keywords": [
     "3D indoor scene generation",
     "scene evaluation",
@@ -190,7 +191,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-3 publication-title">SceneIntBench: Benchmarking Interaction-Level Physical Plausibility in 3D Indoor Scene Generation</h1>
+            <h1 class="title is-3 publication-title">ScIntBench: Physical Interaction Plausibility in 3D Scene Generation</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">Wendi Ying<sup>1</sup></span>
               <span class="author-block">Daochang Liu<sup>1</sup></span>
@@ -260,22 +261,20 @@
 </section>
 
 
-<!-- SceneIntBench overview -->
+<!-- ScIntBench overview -->
 <section class="hero teaser">
   <div class="hero-body">
     <div class="container">
       <figure class="benchmark-overview">
-        <a href="static/pdfs/web1.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the SceneIntBench overview PDF">
-          <img src="static/images/sceneintbench-overview.svg" width="3200" height="1855" alt="SceneIntBench overview: multi-view semantic assessment, static physical plausibility, active interaction evaluation, and examples of interaction failures." loading="lazy">
-        </a>
+        <img src="static/images/sceneintbench-overview.svg" width="3200" height="1855" alt="ScIntBench overview: multi-view semantic assessment, static physical plausibility, active interaction evaluation, and examples of interaction failures." loading="lazy">
         <figcaption>
-          <strong>Overview of SceneIntBench.</strong> A comprehensive benchmark for text-conditioned 3D indoor scene generation that extends conventional evaluation with simulation-based, interaction-level physical plausibility metrics. Our framework integrates multi-view semantic assessment and static physical checks, while further measuring interaction success, capability progress, post-interaction violations, and dynamic plausibility. We benchmark various scene generation systems and identify representative failure modes, revealing that plausible appearance at rest does not guarantee interaction readiness.
+          <strong>Overview of ScIntBench.</strong> A comprehensive benchmark for text-conditioned 3D indoor scene generation that extends conventional evaluation with simulation-based, interaction-level physical plausibility metrics. Our framework integrates multi-view semantic assessment and static physical checks, while further measuring interaction success, capability progress, post-interaction violations, and dynamic plausibility. We benchmark various scene generation systems and identify representative failure modes, revealing that plausible appearance at rest does not guarantee interaction readiness.
         </figcaption>
       </figure>
     </div>
   </div>
 </section>
-<!-- End SceneIntBench overview -->
+<!-- End ScIntBench overview -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -285,7 +284,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Existing evaluations of text-conditioned 3D indoor scene generation largely emphasize semantic fidelity and physical validity at rest, leaving interaction-time physical reliability insufficiently assessed. To address this gap, we introduce SceneIntBench, a unified benchmark centered on interaction readiness: it executes prescribed manipulation actions (e.g., pushing, opening, and surface probing) in physics simulation and measures task success, capability and progress, post-interaction integrity, and dynamic plausibility. Multi-view semantic and static physical evaluations complement these metrics and help explain interaction outcomes. We systematically evaluate 12 state-of-the-art scene generation systems across 10 room types. Our results reveal that strong semantic and static physical performance does not necessarily translate into interaction readiness: a system with near-perfect static plausibility completes only 11.54% of interactions, 7 of the 12 systems produce scenes that cannot support any interaction, and even the best system succeeds in only 36.92% of prescribed tasks. These findings highlight two fundamental challenges in generating interaction-ready scenes: providing the necessary physical interaction capabilities and ensuring reliable physical behavior under active manipulation.
+            Existing evaluations of text-conditioned 3D indoor scene generation largely emphasize semantic fidelity and physical validity at rest, leaving interaction-time physical reliability insufficiently assessed. To address this gap, we introduce ScIntBench, a unified benchmark centered on interaction readiness: it executes prescribed manipulation actions (e.g., pushing, opening, and surface probing) in physics simulation and measures task success, capability and progress, post-interaction integrity, and dynamic plausibility. Multi-view semantic and static physical evaluations complement these metrics and help explain interaction outcomes. We systematically evaluate 12 state-of-the-art scene generation systems across 10 room types. Our results reveal that strong semantic and static physical performance does not necessarily translate into interaction readiness: a system with near-perfect static plausibility completes only 11.54% of interactions, 7 of the 12 systems produce scenes that cannot support any interaction, and even the best system succeeds in only 36.92% of prescribed tasks. These findings highlight two fundamental challenges in generating interaction-ready scenes: providing the necessary physical interaction capabilities and ensuring reliable physical behavior under active manipulation.
           </p>
         </div>
       </div>
@@ -299,7 +298,7 @@
 <section class="section interaction-examples" id="interactions" aria-labelledby="interactions-title">
   <div class="container">
     <div class="interaction-intro has-text-centered">
-      <h2 class="title is-3" id="interactions-title">Plausible at rest. <em>Reliable in action?</em></h2>
+      <h2 class="title is-3" id="interactions-title"><span class="interaction-word-plausible">Plausible</span> at rest, but physically <span class="interaction-word-unreliable">unreliable</span> in action.</h2>
       <p>Visual realism and static validity tell only part of the story. These assessments provide limited evidence of whether generated scenes can support physical manipulation and exhibit plausible responses to active interaction.</p>
     </div>
     <div class="interaction-grid">
@@ -360,10 +359,10 @@
 </section>
 <!-- End interaction examples -->
 
-<!-- SceneIntBench benchmark overview -->
+<!-- ScIntBench benchmark overview -->
 <section id="sceneintbench" class="section sceneintbench-benchmark" aria-labelledby="sceneintbench-heading">
   <div class="container">
-    <h2 id="sceneintbench-heading" class="title is-3 has-text-centered">SceneIntBench</h2>
+    <h2 id="sceneintbench-heading" class="title is-3 has-text-centered">ScIntBench</h2>
 
     <dl class="benchmark-stats" aria-label="Benchmark statistics">
       <div class="benchmark-stat benchmark-stat-scenes">
@@ -406,7 +405,7 @@
     </div>
   </div>
 </section>
-<!-- End SceneIntBench benchmark overview -->
+<!-- End ScIntBench benchmark overview -->
 
 <!-- Scene generation examples -->
 <section class="section scene-examples" id="scene-examples" aria-labelledby="scene-examples-title">
@@ -838,13 +837,13 @@
 <section id="benchmark-results" class="section benchmark-results" aria-labelledby="benchmark-results-heading">
   <div class="container results-container">
     <h2 id="benchmark-results-heading" class="title is-3 has-text-centered">Benchmark Results</h2>
-    <p class="results-intro">Performance comparison of 12 scene generation methods on SceneIntBench.</p>
+    <p class="results-intro">Performance comparison of 12 scene generation methods on ScIntBench.</p>
     <div class="results-reading-guide" id="results-reading-guide">
       <p>Mean ± 95% t-distribution confidence interval. <strong>Bold</strong> = best; <span class="result-second">underline</span> = second best.</p>
     </div>
-    <div class="results-table-wrap" role="region" aria-label="SceneIntBench results table" aria-describedby="results-reading-guide results-table-notes">
+    <div class="results-table-wrap" role="region" aria-label="ScIntBench results table" aria-describedby="results-reading-guide results-table-notes">
       <table class="results-table">
-        <caption>SceneIntBench evaluation results by method and metric</caption>
+        <caption>ScIntBench evaluation results by method and metric</caption>
         <colgroup><col class="results-method-column"></colgroup>
         <colgroup span="4"></colgroup>
         <colgroup span="4"></colgroup>
@@ -1153,6 +1152,15 @@ End Another Carousel -->
 End Poster -->
 
 
+
+<!-- Acknowledgements -->
+<section class="section" id="acknowledgements" aria-labelledby="acknowledgements-title">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-4" id="acknowledgements-title">Acknowledgements</h2>
+    <p>This research is supported by the Australian Research Council (ARC) under the Discovery Project scheme (Project ID: DP240101926).</p>
+  </div>
+</section>
+<!-- End Acknowledgements -->
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
